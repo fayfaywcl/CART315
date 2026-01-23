@@ -15,12 +15,12 @@ Core Game Idea:
 
 Level Setup (Original):
 -	Level 1: Two-door riddle (2 identical doors, horizontal line) – 2 guards
-•	Level 2: Three-door riddle (3 identical doors, horizontal line) – 2 guards
-•	Level 3: Five-door riddle (5 identical doors, horizontal line) – 4 guards
-•	Level 4: Escape room (find key in box) – hint box
-•	Level 5: Four-door riddle (color-based)
-•	Level 6: Five-door riddle (shape-based)
-•	Level 7: Maze to find the door
+-	Level 2: Three-door riddle (3 identical doors, horizontal line) – 2 guards
+-	Level 3: Five-door riddle (5 identical doors, horizontal line) – 4 guards
+-	Level 4: Escape room (find key in box) – hint box
+-	Level 5: Four-door riddle (color-based)
+-	Level 6: Five-door riddle (shape-based)
+-	Level 7: Maze to find the door
 
 #### What Worked Well
 Surprisingly, the core logic of the game actually works. Players can move through levels by choosing the correct door, and choosing the wrong one reliably ends the game. This sounds simple, but getting the flow to work without breaking anything felt like a win. The walls, door placement, and one-way paths help guide the player naturally, so they do not wander off or break the intended experience.
