@@ -55,8 +55,8 @@ For the hints and guards’ speech, I first wrote everything myself. Later on, b
 
 Overall, while there are still many parts that could be improved, the final game reflects my original idea, which I feel pretty satisfied with!!!
 
-   
-	
+
+## Week2 (23-1-2026 to 28-1-2026)
  	
 
 
