@@ -56,7 +56,7 @@ For the hints and guards’ speech, I first wrote everything myself. Later on, b
 Overall, while there are still many parts that could be improved, the final game reflects my original idea, which I feel pretty satisfied with!!!
 
 
-## **Week2** (23.1.2026 to 28.1.2026) – Unity 3D
+## **Week2** (23.1.2026 to 28.1.2026) – Unity 3D Movements 
 
 This week, I started by reading and watching the class materials to understand the focus for the week. From that and this week design journal guidelines , it seems that we would be working mainly with movement, colliders, and basic interaction, so I planned my exploration around those topics. Since I’m more interested in 3D, I decided to focus entirely on Unity’s 3D workflow. 
 
@@ -74,11 +74,15 @@ As I worked through the tutorials, I learned a lot of the editor itself , includ
 
 As part of understanding physics, I built a bouncy ball that hits and knocks down tower blocks. This helped me clearly see how Rigidbody, colliders, mass, and physics materials affect gameplay. I also explored lighting, background settings, and camera angles, noticing how even simple changes significantly affect how a scene feels.
 
+  ![BounceBall](Media/BounceBallHitblocks.gif)
+
 I also followed a tutorial to add a frame object and put a cat image inside it. While following the tutorial, it felt like completely new knowledge, even though I had done similar things before. This made me realize how much I had forgotten simply because I hadn’t used Unity in a long time, especially the 3D version. It shows that why going through structured tutorials again was necessary instead of relying on memory.
 
 Also, since the tutorial also include an audio section , I experimented with audio by adding audio sources to game objects, setting background sounds, placing random bird sounds outside the main area, and testing Audio Reverb Zones to improve atmosphere. ( It is a useful skill that I could implement in my future prototype)
 
 From there, I implemented several gameplay systems: movement scripts using child objects, rotating collectible items, a collect function with visual effects, jumping, and doors that open when the player approaches using triggers and tags.
+
+ ![Collect&jump&dooropen](Media/JumpAndOpenDoor.gif)
 
 After finishing the tutorials and individual experiments, I wanted to check whether I actually understood what I learned. Instead of following another guide, I built a **small original prototype** using only the systems I had practiced during the week.
 
@@ -87,6 +91,8 @@ After finishing the tutorials and individual experiments, I wanted to check whet
 - jumping
 - collectible objects (with rotation and effects)
 - a simple environment built from square shapes
+
+  ![Gameplay Demo](Media/Week2OwnGame.gif)
 
 The visuals are very basic, but all systems work together, which confirmed that I understood how the components connect. So is Greattttt!!!!! And I also did a small prototyoe as met my expectations for this week
 
@@ -101,13 +107,19 @@ During this process, I noted several common issues and technical reminders that 
 - If a **bouncing ball gets stuck inside another object**, it is likely because the object does not have a **Mesh Collider**.
   - Reminder: make sure the Mesh Collider component is added and enabled.
 
+![MeshCollider](Media/MeshCollider.png)
+
 - ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle.
+
+![CameraAlign](Media/CameraAlign.png)
 
 ### **Next Steps**
 
 Now that I’ve caught up on many of the basics, I plan to go back to the first-person movement video and other external tutorials. With a stronger foundation, I think I’ll be able to understand them more deeply and customize them instead of just following along.
 
 Also, there is a issue I faced in my small prototype that is player flipping when landing on uneven surfaces. Since the Rigidbody can rotate during jumps , it may causes the player to fall over and get stuck. There maybe a chance that the problem come from other sessions too , so I will keep figuring it next week 
+
+  ![GameObjectFlip](Media/GameObjectFlip.png)
 
 Overall, this week felt like a strong process approach: reading class materials first, choosing focused goals, using structured tutorials, and then experimenting on my own. If I had only relied on self-discovery and random tutorials, I would have spent most of my time debugging unknown issues without understanding why things weren’t working. I wouldn’t have been able to learn as efficiently as I did this week. 
 
