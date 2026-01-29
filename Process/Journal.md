@@ -56,7 +56,7 @@ For the hints and guards’ speech, I first wrote everything myself. Later on, b
 Overall, while there are still many parts that could be improved, the final game reflects my original idea, which I feel pretty satisfied with!!!
 
 
-## **Week2** (23.1.2026 to 28.1.2026) – Unity 3D Movements 
+## **Week2** (23.1.2026 to 29.1.2026) – Unity 3D Movements 
 
 This week, I started by reading and watching the class materials to understand the focus for the week. From that and this week design journal guidelines , it seems that we would be working mainly with movement, colliders, and basic interaction, so I planned my exploration around those topics. Since I’m more interested in 3D, I decided to focus entirely on Unity’s 3D workflow. 
 
@@ -68,7 +68,7 @@ To fix this, I switched to Unity’s official [Unity Learn tutorials](https://le
 
 There is one issues that I initially struggled to find the Unity Essentials project, but after returning to the Editor Essentials tutorials ( the first tutorial in the series) , I realized it must be opened through [Unity Hub](https://learn.unity.com/pathway/unity-essentials/unit/editor-essentials/tutorial/open-the-unity-essentials-project?version=6.0). Once that was resolved, the tutorials aligned correctly with my workspace.
 
-- Note to self: any unknown/ unfamiliar material showed in the tutorial, find the creator or the beginning tutorial of that series first.That’s may helps !
+- Note to self: any unknown/unfamiliar material showed in the tutorial, find the creator or the beginning tutorial of that series first.That’s may helps !
 
 As I worked through the tutorials, I learned a lot of the editor itself , including flythrough mode, camera alignment, and working with child objects and pivots. These tools made scene navigation and setup much more efficient for me!
 
@@ -84,7 +84,7 @@ From there, I implemented several gameplay systems: movement scripts using child
 
  ![Collect&jump&dooropen](Media/JumpAndOpenDoor.gif)
 
-After finishing the tutorials and individual experiments, I wanted to check whether I actually understood what I learned. Instead of following another guide, I built a **small original prototype** using only the systems I had practiced during the week.
+After finishing the tutorials and individual experiments, I wanted to check whether I actually understood what I learned. Instead of following another guide, I built a small original prototype using only the systems I had practiced during the week.
 
 - first-person movement
 - a child camera
@@ -113,7 +113,7 @@ During this process, I noted several common issues and technical reminders that 
 
 ![CameraAlign](Media/CameraAlign.png)
 
-### **Next Steps**
+### Next Steps
 
 Now that I’ve caught up on many of the basics, I plan to go back to the first-person movement video and other external tutorials. With a stronger foundation, I think I’ll be able to understand them more deeply and customize them instead of just following along.
 
