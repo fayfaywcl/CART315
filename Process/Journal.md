@@ -62,7 +62,7 @@ This week, I started by reading and watching the class materials to understand t
 
 My idea for this week was to build a small prototype to test basic movement, interaction, and physics working together in Unity 3D.
 
-I began by exploring YouTube tutorials related to 3D and movement. I tried a [first-person movement tutorial](https://www.youtube.com/watch?v=f473C43s8nE) first because it looked engaging and looked like I could learn the code quickly. However, while following it, I realized I had forgotten many Unity basics, such as where to find certain settings and how the editor is organized. (Also ,I only tried 2D mode before , maybe it’s also the reason why it was hard for me to catch up with the 3D workflow at first.) So, at that point, I noticed that copying a video without fully understanding the editor was slowing me down.
+I began by exploring YouTube tutorials related to 3D and movement. I tried a [first-person movement tutorial](https://www.youtube.com/watch?v=f473C43s8nE) first because it looked engaging and looked like I could learn the code quickly. However, while following it, I realized I had forgotten many Unity basics, such as where to find certain settings and how the editor is organized. (Also ,I only tried 2D mode before , maybe it’s also the reason why it was hard for me to catch up with the 3D workflow at first.) So, at that point, I noticed that copying a video without fully understanding the Unity editor was slowing me down.
 
 To fix this, I switched to Unity’s official [Unity Learn tutorials](https://learn.unity.com/) which I found on internet randomly, it called  [Unity Essentials pathway](https://learn.unity.com/pathway/unity-essentials?version=6.3), which includes guided practice directly inside Unity, especially a section call [movement script](https://learn.unity.com/pathway/unity-essentials/unit/programming-essentials/tutorial/add-a-movement-script?version=6.3)( which I am looking for ).  This really helped me rebuild my foundation, especially around movement, colliders, and Rigidbody.
 
@@ -72,7 +72,7 @@ There is one issues that I initially struggled to find the Unity Essentials proj
 
 As I worked through the tutorials, I learned a lot of the editor itself , including flythrough mode, camera alignment, and working with child objects and pivots. These tools made scene navigation and setup much more efficient for me!
 
-As part of understanding physics, I built a bouncy ball that hits and knocks down tower blocks. This helped me clearly see how Rigidbody, colliders, mass, and physics materials affect gameplay. I also explored lighting, background settings, and camera angles, noticing how even simple changes significantly affect how a scene feels.
+As part of understanding physics, I built a bouncy ball that hits and knocks down tower blocks. This helped me clearly see how Rigidbody, colliders, mass, and physics materials affect gameplay. I also explored different lighting, background settings, and camera angles throughout the process.
 
   ![BounceBall](Media/BounceBallHitblocks.gif)
 
@@ -98,13 +98,13 @@ The visuals are very basic, but all systems work together, which confirmed that 
 
 During this process, I noted several common issues and technical reminders that will be useful for future prototypes:
 
-- Remember to set colliders to **Is Trigger** if want the player to pass through an object while still detecting interactions
+- Remember to set colliders to "Is Trigger" if want the player to pass through an object while still detecting interactions
 
-- Assign the correct **Tag** to an object if code uses tags for comparison (for example, checking which object the player interacts with) [Common Error that I faced]
+- Assign the correct "Tag" to an object if code uses tags for comparison (for example, checking which object the player interacts with) [Common Error that I faced]
 
-- **Box Colliders** should be set slightly larger than the object. If the collider is too small, the player may collide with the door before it has time to open
+- "Box Colliders" should be set slightly larger than the object. If the collider is too small, the player may collide with the door before it has time to open
 
-- If a **bouncing ball gets stuck inside another object**, it is likely because the object does not have a **Mesh Collider**.
+- If a bouncing ball gets stuck inside another object, it is likely because the object does not have a "Mesh Collider".
   - Reminder: make sure the Mesh Collider component is added and enabled.
 
 ![MeshCollider](Media/MeshCollider.png)
