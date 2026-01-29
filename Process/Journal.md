@@ -104,12 +104,12 @@ During this process, I noted several common issues and technical reminders that 
 
 - "Box Colliders" should be set slightly larger than the object. If the collider is too small, the player may collide with the door before it has time to open
 
-- If a bouncing ball gets stuck inside another object, it is likely because the object does not have a "Mesh Collider".
-  - Reminder: make sure the Mesh Collider component is added and enabled.
+- If a bouncing ball gets stuck inside another object, it is likely because the object does not have a "Mesh Collider"
+  - Reminder: make sure the Mesh Collider component is added and enabled
 
 ![MeshCollider](Media/MeshCollider.png)
 
-- ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle.
+- ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle
 
 ![CameraAlign](Media/CameraAlign.png)
 
