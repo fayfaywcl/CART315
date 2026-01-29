@@ -66,7 +66,7 @@ I began by exploring YouTube tutorials related to 3D and movement. I tried a [fi
 
 To fix this, I switched to Unity’s official [Unity Learn tutorials](https://learn.unity.com/) which I found on internet randomly, it called  [Unity Essentials pathway](https://learn.unity.com/pathway/unity-essentials?version=6.3), which includes guided practice directly inside Unity, especially a section call [movement script](https://learn.unity.com/pathway/unity-essentials/unit/programming-essentials/tutorial/add-a-movement-script?version=6.3)( which I am looking for ).  This really helped me rebuild my foundation, especially around movement, colliders, and Rigidbody.
 
-There is one issues that I initially struggled to find the Unity Essentials project, but after returning to the Editor Essentials tutorials ( the first tutorial in the series) , I realized it must be opened through **Unity Hub**. Once that was resolved, the tutorials aligned correctly with my workspace.
+There is one issues that I initially struggled to find the Unity Essentials project, but after returning to the Editor Essentials tutorials ( the first tutorial in the series) , I realized it must be opened through [Unity Hub](https://learn.unity.com/pathway/unity-essentials/unit/editor-essentials/tutorial/open-the-unity-essentials-project?version=6.0). Once that was resolved, the tutorials aligned correctly with my workspace.
 
 - Note to self: any unknown/ unfamiliar material showed in the tutorial, find the creator or the beginning tutorial of that series first.That’s may helps !
 
@@ -100,6 +100,8 @@ During this process, I noted several common issues and technical reminders that 
 
 - If a **bouncing ball gets stuck inside another object**, it is likely because the object does not have a **Mesh Collider**.
   - Reminder: make sure the Mesh Collider component is added and enabled.
+
+- ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle.
 
 ### **Next Steps**
 
