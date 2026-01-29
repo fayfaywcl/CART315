@@ -56,11 +56,60 @@ For the hints and guards’ speech, I first wrote everything myself. Later on, b
 Overall, while there are still many parts that could be improved, the final game reflects my original idea, which I feel pretty satisfied with!!!
 
 
-## Week2 (23-1-2026 to 28-1-2026)
+## **Week2** (23.1.2026 to 28.1.2026) – Unity 3D
+
+This week, I started by reading and watching the class materials to understand the focus for the week. From that and this week design journal guidelines , it seems that we would be working mainly with movement, colliders, and basic interaction, so I planned my exploration around those topics. Since I’m more interested in 3D, I decided to focus entirely on Unity’s 3D workflow. 
+
+My idea for this week was to build a small prototype to test basic movement, interaction, and physics working together in Unity 3D.
+
+I began by exploring YouTube tutorials related to 3D and movement. I tried a [first-person movement tutorial](https://www.youtube.com/watch?v=f473C43s8nE) first because it looked engaging and looked like I could learn the code quickly. However, while following it, I realized I had forgotten many Unity basics, such as where to find certain settings and how the editor is organized. (Also ,I only tried 2D mode before , maybe it’s also the reason why it was hard for me to catch up with the 3D workflow at first.) So, at that point, I noticed that copying a video without fully understanding the editor was slowing me down.
+
+To fix this, I switched to Unity’s official [Unity Learn tutorials](https://learn.unity.com/) which I found on internet randomly, it called  [Unity Essentials pathway](https://learn.unity.com/pathway/unity-essentials?version=6.3), which includes guided practice directly inside Unity, especially a section call [movement script](https://learn.unity.com/pathway/unity-essentials/unit/programming-essentials/tutorial/add-a-movement-script?version=6.3)( which I am looking for ).  This really helped me rebuild my foundation, especially around movement, colliders, and Rigidbody.
+
+There is one issues that I initially struggled to find the Unity Essentials project, but after returning to the Editor Essentials tutorials ( the first tutorial in the series) , I realized it must be opened through **Unity Hub**. Once that was resolved, the tutorials aligned correctly with my workspace.
+
+- Note to self: any unknown/ unfamiliar material showed in the tutorial, find the creator or the beginning tutorial of that series first.That’s may helps !
+
+As I worked through the tutorials, I learned a lot of the editor itself , including flythrough mode, camera alignment, and working with child objects and pivots. These tools made scene navigation and setup much more efficient for me!
+
+As part of understanding physics, I built a bouncy ball that hits and knocks down tower blocks. This helped me clearly see how Rigidbody, colliders, mass, and physics materials affect gameplay. I also explored lighting, background settings, and camera angles, noticing how even simple changes significantly affect how a scene feels.
+
+I also followed a tutorial to add a frame object and put a cat image inside it. While following the tutorial, it felt like completely new knowledge, even though I had done similar things before. This made me realize how much I had forgotten simply because I hadn’t used Unity in a long time, especially the 3D version. It shows that why going through structured tutorials again was necessary instead of relying on memory.
+
+Also, since the tutorial also include an audio section , I experimented with audio by adding audio sources to game objects, setting background sounds, placing random bird sounds outside the main area, and testing Audio Reverb Zones to improve atmosphere. ( It is a useful skill that I could implement in my future prototype)
+
+From there, I implemented several gameplay systems: movement scripts using child objects, rotating collectible items, a collect function with visual effects, jumping, and doors that open when the player approaches using triggers and tags.
+
+After finishing the tutorials and individual experiments, I wanted to check whether I actually understood what I learned. Instead of following another guide, I built a **small original prototype** using only the systems I had practiced during the week.
+
+- first-person movement
+- a child camera
+- jumping
+- collectible objects (with rotation and effects)
+- a simple environment built from square shapes
+
+The visuals are very basic, but all systems work together, which confirmed that I understood how the components connect. So is Greattttt!!!!! And I also did a small prototyoe as met my expectations for this week
+
+During this process, I noted several common issues and technical reminders that will be useful for future prototypes:
+
+- Remember to set colliders to **Is Trigger** if want the player to pass through an object while still detecting interactions
+
+- Assign the correct **Tag** to an object if code uses tags for comparison (for example, checking which object the player interacts with) [Common Error that I faced]
+
+- **Box Colliders** should be set slightly larger than the object. If the collider is too small, the player may collide with the door before it has time to open
+
+- If a **bouncing ball gets stuck inside another object**, it is likely because the object does not have a **Mesh Collider**.
+  - Reminder: make sure the Mesh Collider component is added and enabled.
+
+### **Next Steps**
+
+Now that I’ve caught up on many of the basics, I plan to go back to the first-person movement video and other external tutorials. With a stronger foundation, I think I’ll be able to understand them more deeply and customize them instead of just following along.
+
+Also, there is a issue I faced in my small prototype that is player flipping when landing on uneven surfaces. Since the Rigidbody can rotate during jumps , it may causes the player to fall over and get stuck. There maybe a chance that the problem come from other sessions too , so I will keep figuring it next week 
+
+Overall, this week felt like a strong process approach: reading class materials first, choosing focused goals, using structured tutorials, and then experimenting on my own. If I had only relied on self-discovery and random tutorials, I would have spent most of my time debugging unknown issues without understanding why things weren’t working. I wouldn’t have been able to learn as efficiently as I did this week. 
+
+This made it much easier to focus on learning the actual systems instead of fighting the tool.
+
+So , Keep Moving On !!! and Learn Smartly 😉
  	
-
-
-           
-
-
-
