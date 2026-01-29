@@ -80,7 +80,7 @@ I also followed a tutorial to add a frame object and put a cat image inside it. 
 
 Also, since the tutorial also include an audio section , I experimented with audio by adding audio sources to game objects, setting background sounds, placing random bird sounds outside the main area, and testing Audio Reverb Zones to improve atmosphere. ( It is a useful skill that I could implement in my future prototype)
 
-From there, I implemented several gameplay systems: movement scripts using child objects, rotating collectible items, a collect function with visual effects, jumping, and doors that open when the player approaches using triggers and tags.
+From there, I implemented several gameplay systems: movement scripts using child objects, rotating collectible items, a collect function with visual effects, jumping, and doors that open when the player(the vacuum cleaner, the one that the player controls) approaches using triggers and tags.
 
  ![Collect&jump&dooropen](Media/JumpAndOpenDoor.gif)
 
@@ -98,9 +98,9 @@ The visuals are very basic, but all systems work together, which confirmed that 
 
 During this process, I noted several common issues and technical reminders that will be useful for future prototypes:
 
-- Remember to set colliders to "Is Trigger" if want the player to pass through an object while still detecting interactions
+- Remember to set colliders to "Is Trigger" if want the player object to pass through an object while still detecting interactions
 
-- Assign the correct "Tag" to an object if code uses tags for comparison (for example, checking which object the player interacts with) [Common Error that I faced]
+- Assign the correct "Tag" to an object if code uses tags for comparison [Common Error that I faced]
 
 - "Box Colliders" should be set slightly larger than the object. If the collider is too small, the player may collide with the door before it has time to open
 
@@ -117,7 +117,7 @@ During this process, I noted several common issues and technical reminders that 
 
 Now that I’ve caught up on many of the basics, I plan to go back to the first-person movement video and other external tutorials. With a stronger foundation, I think I’ll be able to understand them more deeply and customize them instead of just following along.
 
-Also, there is a issue I faced in my small prototype that is player flipping when landing on uneven surfaces. Since the Rigidbody can rotate during jumps , it may causes the player to fall over and get stuck. There maybe a chance that the problem come from other sessions too , so I will keep figuring it next week 
+Also, there is a issue I faced in the small prototype that is player (the UFO object) flipping when landing on uneven surfaces. Since the Rigidbody can rotate during jumps , it may causes the player to fall over and get stuck. There maybe a chance that the problem come from other sessions too , so I will keep figuring it next week 
 
   ![GameObjectFlip](Media/GameObjectFlip.png)
 
