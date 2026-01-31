@@ -34,27 +34,45 @@ One level was supposed to be based on choosing the correct door by color. In the
 
 #### Challenges Encountered
 1.	Color Choices and Contrast
-As I wanted a mysterious vibe, so I started with purple for the building blocks. Unfortunately, purple does not always cooperate with other colors. The blocks blended into the background more than I expected, which made the space harder to read. I ended up testing different background colors using Adobe Color until the contrast actually worked. 
- 
-<img src="Media/MAT-colour.png" alt="Alt Text" width="400" height="300">
+As I wanted a mysterious vibe, so I started with purple for the building blocks. Unfortunately, purple does not always cooperate with other colors. The blocks blended into the background more than I expected, which made the space harder to read. I ended up testing different background colors using Adobe Color until the contrast actually worked.
+
+ <p align="center">
+  <img src="Media/MAT-colour.png" alt="MAT-colour.png" width="400" height="300">
+ </p>
 
 2.	Door and Exit Logic Confusion
 Because this was my first time using Bitsy, I built all the rooms before fully understanding how exits worked. I did not know doors could have logic attached to them, so I created one-way paths and placed invisible exits before the doors instead. Later, I realized the “correct” way to do it. While my solution was a bit messy, it had one unexpected benefit, which is players do not instantly “die” by barely touching a wrong door.
- 
+
+ <p align="center">
+  <img src="Media/MAT-doorexit.png" alt="MAT-doorexit.png" width="300" height="300">
+ </p>
 
 3.	Ignoring Rules	
 During the game testing, I realized that some players completely ignored the rules and guessed randomly. This was not how I wanted the game to be played, since the core idea is logic-based problem solving. To address this, I added hint NPCs (the cloud-shaped characters) at each level to explain the rules or give small tips. However, testing again showed that players could still skip all the hints and continue guessing anyway. To fix this at least partially, I added a rule in the main starting room that forces the player to view the first hint before opening the door and entering the game. I considered doing this for every level, but the logic became much more complicated. I would need to track whether the player read the hints, whether they also read all the guards’ dialogue, and then unlock the doors based on that. Since each level has slightly different logic, this quickly stopped being a universal rule system. In the end, I decided to let the doors work normally (except for the room escape section and the main starting room). The idea became “I already warned you, if you ignore the hints, you are choosing to guess, and guessing has a high chance of failure”. I am not sure this is the perfect solution, but it supports the original idea of the game and worked reasonably well during testing.
+
+ <p align="center">
+  <img src="Media/MAT-IgnorRule.png" alt="MAT-doorexit.png" width="300" height="300">
+ </p>
  
-4.	Naming Organization
+5.	Naming Organization
 Since all guards in the game look the same, and all hint NPCs use the same cloud appearance, while they each have different dialogue. This made organization more difficult than expected. At first, I used long and descriptive names for each character, but this quickly became time-consuming and hard to check, especially when looking at the scene as a whole.To solve this, I switched to a simple naming pattern such as “T1_guard1” or “F1_guard2,” meaning Level 1 guard1 who tells the truth, or Level 1 guard2 who lies. This system made it much easier for me to check whether a guard was saying the correct dialogue and appearing at the correct level.
 
-5.	Using AI as assistance for Dialogue and Logic
+ <p align="center">
+  <img src="Media/MAT-NameOrg.png" alt="MAT-doorexit.png" width="300" height="300">
+ </p>
+ 
+6.	Using AI as assistance for Dialogue and Logic
 For the hints and guards’ speech, I first wrote everything myself. Later on, because I wanted the game to feel more mysterious and require more logical thinking from the player, I asked AI for some help. For storytelling and general tone, it actually did a pretty good job. However, for the rules and guard dialogue, I only used some of its ideas and still had to fix and adjust the logic myself.I would say AI helped speed up the game-making process, but since I already had my own ideas in mind, I still needed to fine-tune its suggestions to make sure everything worked the way I wanted.
 
 
 
 Overall, while there are still many parts that could be improved, the final game reflects my original idea, which I feel pretty satisfied with!!!
 
+ <p align="center">
+  <img src="Media/MAT-G1.png" alt="MAT-G1.png" width="200" height="200">
+  <img src="Media/MAT-G2.png" alt="MAT-G2.png" width="200" height="200">
+  <img src="Media/MAT-G2.png" alt="MAT-G2.png" width="200" height="200">
+ </p>
 
 ## **Week2** (23.1.2026 to 29.1.2026) – Unity 3D Movements 
 
