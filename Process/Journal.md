@@ -36,7 +36,7 @@ One level was supposed to be based on choosing the correct door by color. In the
 1.	Color Choices and Contrast
 As I wanted a mysterious vibe, so I started with purple for the building blocks. Unfortunately, purple does not always cooperate with other colors. The blocks blended into the background more than I expected, which made the space harder to read. I ended up testing different background colors using Adobe Color until the contrast actually worked. 
  
- 
+<img src="Media/MAT-colour.png" alt="Alt Text" width="400" height="300">
 
 2.	Door and Exit Logic Confusion
 Because this was my first time using Bitsy, I built all the rooms before fully understanding how exits worked. I did not know doors could have logic attached to them, so I created one-way paths and placed invisible exits before the doors instead. Later, I realized the “correct” way to do it. While my solution was a bit messy, it had one unexpected benefit, which is players do not instantly “die” by barely touching a wrong door.
@@ -111,7 +111,7 @@ During this process, I noted several common issues and technical reminders that 
 
 - ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle
 
-<img src="Media/CameraAlign.png" alt="Alt Text" width="400" height="300">
+<img src="Media/CameraAlign.png" alt="CameraAlign.png" width="400" height="300">
 
 
 ### Next Steps
