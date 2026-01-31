@@ -107,11 +107,12 @@ During this process, I noted several common issues and technical reminders that 
 - If a bouncing ball gets stuck inside another object, it is likely because the object does not have a "Mesh Collider"
   - Reminder: make sure the Mesh Collider component is added and enabled
 
-![MeshCollider](Media/MeshCollider.png)
+<img src="Media/MeshCollider.png" alt="MeshCollider" width="400" height="300">
 
 - ShortCut: **Ctrl + Shift + F**: Aligns the camera to the current view angle
 
-![CameraAlign](Media/CameraAlign.png)
+<img src="Media/CameraAlign.png" alt="Alt Text" width="400" height="300">
+
 
 ### Next Steps
 
@@ -119,7 +120,7 @@ Now that I’ve caught up on many of the basics, I plan to go back to the first-
 
 Also, there is a issue I faced in the small prototype that is player (the UFO object) flipping when landing on uneven surfaces. Since the Rigidbody can rotate during jumps , it may causes the player to fall over and get stuck. There maybe a chance that the problem come from other sessions too , so I will keep figuring it next week 
 
-  ![GameObjectFlip](Media/GameObjectFlip.png)
+  <img src="Media/GameObjectFlip.png" alt="GameObjectFlip" width="400" height="300">
 
 Overall, this week felt like a strong process approach: reading class materials first, choosing focused goals, using structured tutorials, and then experimenting on my own. If I had only relied on self-discovery and random tutorials, I would have spent most of my time debugging unknown issues without understanding why things weren’t working. I wouldn’t have been able to learn as efficiently as I did this week. 
 
