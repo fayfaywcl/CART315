@@ -181,6 +181,7 @@ This felt new, and I hadn’t really seen people talk about it in relation to Pa
 
 From there, I started questioning every part of the game. 
 
+
 #### Ball Behavior
 - whether I should add gravity? (probably no)
 - whether the ball should curve? (maybe later, additional feature )
@@ -218,7 +219,7 @@ Multiplayer raised even more questions.
 
 When I started testing by myself, some questions began to resolve naturally. I also marked some notes next to the questions so I could review them later, and I saw some of them as future plans too. 
  <p align="center">
-  <img src="Week3Prototype" alt="Week3Prototype.jpeg" width="400" height="300">
+  <img src="Week3Prototype.jpeg" alt="Week3Prototype.jpeg" width="400" height="300">
  </p>
 
 #### low Prototype
@@ -241,7 +242,7 @@ This is where a lot of technical struggle started. I tried [Trail Renderer]([htt
 During testing, the screen started to lag after just one hit, and I kept asking myself how I could solve this. Below are some notes on specific issues I faced and how I fixed them.
 
 <p align="center">
-  <img src="lag after one hit" alt="lagafter1hit.png" width="300" height="200">
+  <img src="lagafter1hit.png" alt="lagafter1hit.png" width="300" height="200">
  </p>
 
 To solve the lagging issue,  I removed the `ReadPixels` call, since reading from the RenderTexture every frame was slowing everything down.I also removed the feature that showed the color distribution all the time, and instead calculated the distribution only at the end of the game. That helped a lot!
@@ -249,13 +250,13 @@ To solve the lagging issue,  I removed the `ReadPixels` call, since reading from
 Another major issue was that all colors turned red, even when I assigned different ones. After reading [Unity discussions](https://discussions.unity.com/t/rendertexture-format-missing-rgb/826685), I discovered that the RenderTexture color format was the problem. When I changed it to **A2B10G10R10**, it finally worked. 
 
  <p align="center">
-  <img src="IssueRenderTextureColor" alt="IssueRenderTextureColor.png" width="300" height="200">
+  <img src="IssueRenderTextureColor.png" alt="IssueRenderTextureColor.png" width="300" height="200">
  </p>
 
 When the timer ended, the game still kept running. The physics didn’t stop. That felt wrong, so I fixed it by stopping the ball and enlarging the result text. I added a result panel (panel, not canvas) with a semi-transparent background so the result feels clear. Also, with issue was that the Winner Player was hard to identify because both paddles looked the same, I fixed that by adding text with the corresponding player color and placing it in the panel as well.
 
  <p align="center">
-  <img src="AddPanel" alt="AddPanel.png" width="300" height="200">
+  <img src="AddPanel.png" alt="AddPanel.png" width="300" height="200">
  </p>
 
 #### Common Mistakes
@@ -268,7 +269,7 @@ Also , I marked some notes for basic and common mistakes that I faced this time:
 
 Finally, the game worked!!! The ball painted the screen. The score showed correctly. The winner was displayed.
 
-  ![BallPaintGame Demo](Media/BallPaintGame.gif)
+![BallPaintGame Demo](Media/BallPaintGame.gif)
 
 ### Player Testing
 Then , I asked friends to try the game, here are some notes I marked for their feedbacks:
@@ -279,9 +280,9 @@ Then , I asked friends to try the game, here are some notes I marked for their f
 - placing paddles at the top and bottom might improve the challenge.
 
 There is still a bug where the ball gets stuck bouncing vertically near the wall until time runs out. This is something I would solve in the future. 
- <p align="center">
-  <img src="LogicBug" alt="LogicBug.png" width="300" height="200">
- </p>
+<p align="center">
+ <img src="LogicBug" alt="LogicBug.png" width="300" height="200">
+</p>
 
 ### Next Steps
 For the future scope , I will fix the bug and test the features I questioned earlier and marked as additional features:
