@@ -209,9 +209,8 @@ For scoring, I decided that calculating score by **percentage of color coverage*
 
 #### Multiplayer Concerns
 Multiplayer raised even more questions.
-- How would paddle placement work on a landscape screen?
-    - Would that be unfair?
-- Can paddles collide with each other?
+- How would paddle placement work on a landscape screen? (Need to test)
+- Can paddles collide with each other? (Should be no)
 - What keys should be used for control?
     (WASD and arrow keys already feel limited, and more players would make it worse.)  
 
@@ -242,7 +241,7 @@ During testing, the screen started to lag after just one hit, and I kept asking 
   <img src="Media/lagafter1hit.png" alt="lagafter1hit.png" width="300" height="200">
  </p>
 
-To solve the lagging issue,  I removed the `ReadPixels` call, since reading from the RenderTexture every frame was slowing everything down.I also removed the feature that showed the color distribution all the time, and instead calculated the distribution only at the end of the game. That helped a lot!
+To solve the lagging issue,  I removed the "ReadPixels" call, since reading from the RenderTexture every frame was slowing everything down.I also removed the feature that showed the color distribution all the time, and instead calculated the distribution only at the end of the game. That helped a lot!
 
 Another major issue was that all colors turned red, even when I assigned different ones. After reading [Unity discussions](https://discussions.unity.com/t/rendertexture-format-missing-rgb/826685), I discovered that the RenderTexture color format was the problem. When I changed it to **A2B10G10R10**, it finally worked. 
 
@@ -260,9 +259,9 @@ When the timer ended, the game still kept running. The physics didn’t stop. Th
 Also , I marked some notes for basic and common mistakes that I faced this time:
 
 - constantly check whether textures were assigned
-- the canvas “must” be linked to the camera,
+- the canvas "must" be linked to the camera,
 - Check whether objects were actually connected.
-- When using `TMP_Text` instead of `Text`, remember to add `using TMPro;`, and creating empty objects when scripts don’t belong to a specific object.
+- When using "TMP_Text" instead of "Text", remember to add "using TMPro;", and creating empty objects when scripts don’t belong to a specific object.
 
 Finally, the game worked!!! The ball painted the screen. The score showed correctly. The winner was displayed.
 
