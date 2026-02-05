@@ -191,14 +191,12 @@ From there, I started questioning every part of the game.
 
 #### Paddle Design
 - whether I should keep the rectangle shape or try something different like a circle or triangle. (need testing)
-- how the paddle should move
+- how the paddle should move?
     - only up and down / also left and right (will that would make the game too complicated? need testing)
-        
-- where paddles should start: (Need to test) 
+- where paddles should start? (Need to test) 
     - on the sides of the screen / at the top and bottom.
 
 #### Arena and Boundaries
-
 - Should the ball be able to pass through walls?
    (as idea is continuous drawing, I decided that it shouldn’t. That means all four walls should block the ball, and the ball should bounce instead of exiting.)
 
@@ -219,15 +217,14 @@ Multiplayer raised even more questions.
 
 When I started testing by myself, some questions began to resolve naturally. I also marked some notes next to the questions so I could review them later, and I saw some of them as future plans too. 
  <p align="center">
-  <img src="Week3Prototype.jpeg" alt="Week3Prototype.jpeg" width="400" height="300">
+  <img src="Media/Week3Prototype.jpeg" alt="Week3Prototype.jpeg" width="400" height="300">
  </p>
 
-#### low Prototype
+#### Low Prototype
 I started with a low prototype, creating a storyboard and paper video prototype. 
-
 Two paddles on each side, ball in the middle, random start. The first ball path uses background color, and once a paddle hits the ball, the path changes to that player’s color. The timer counts down, the game ends, and the winner is shown.
 
-  ![Week3VideoPrototype](Week3VideoPrototype.gif)
+![Week3VideoPrototype](Media/Week3VideoPrototype.gif)
 
 #### Mid Prototype
 For the mid prototype, I implemented this idea using the class Pawng project and started adding features.
@@ -242,7 +239,7 @@ This is where a lot of technical struggle started. I tried [Trail Renderer]([htt
 During testing, the screen started to lag after just one hit, and I kept asking myself how I could solve this. Below are some notes on specific issues I faced and how I fixed them.
 
 <p align="center">
-  <img src="lagafter1hit.png" alt="lagafter1hit.png" width="300" height="200">
+  <img src="Media/lagafter1hit.png" alt="lagafter1hit.png" width="300" height="200">
  </p>
 
 To solve the lagging issue,  I removed the `ReadPixels` call, since reading from the RenderTexture every frame was slowing everything down.I also removed the feature that showed the color distribution all the time, and instead calculated the distribution only at the end of the game. That helped a lot!
@@ -250,13 +247,13 @@ To solve the lagging issue,  I removed the `ReadPixels` call, since reading from
 Another major issue was that all colors turned red, even when I assigned different ones. After reading [Unity discussions](https://discussions.unity.com/t/rendertexture-format-missing-rgb/826685), I discovered that the RenderTexture color format was the problem. When I changed it to **A2B10G10R10**, it finally worked. 
 
  <p align="center">
-  <img src="IssueRenderTextureColor.png" alt="IssueRenderTextureColor.png" width="300" height="200">
+  <img src="Media/IssueRenderTextureColor.png" alt="IssueRenderTextureColor.png" width="300" height="200">
  </p>
 
 When the timer ended, the game still kept running. The physics didn’t stop. That felt wrong, so I fixed it by stopping the ball and enlarging the result text. I added a result panel (panel, not canvas) with a semi-transparent background so the result feels clear. Also, with issue was that the Winner Player was hard to identify because both paddles looked the same, I fixed that by adding text with the corresponding player color and placing it in the panel as well.
 
  <p align="center">
-  <img src="AddPanel.png" alt="AddPanel.png" width="300" height="200">
+  <img src="Media/AddPanel.png" alt="AddPanel.png" width="300" height="200">
  </p>
 
 #### Common Mistakes
@@ -281,7 +278,7 @@ Then , I asked friends to try the game, here are some notes I marked for their f
 
 There is still a bug where the ball gets stuck bouncing vertically near the wall until time runs out. This is something I would solve in the future. 
 <p align="center">
- <img src="LogicBug" alt="LogicBug.png" width="300" height="200">
+ <img src="Media/LogicBug.png" alt="LogicBug.png" width="300" height="200">
 </p>
 
 ### Next Steps
