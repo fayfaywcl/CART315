@@ -221,6 +221,7 @@ When I started testing by myself, some questions began to resolve naturally. I a
 
 #### Low Prototype
 I started with a low prototype, creating a storyboard and paper video prototype. 
+
 Two paddles on each side, ball in the middle, random start. The first ball path uses background color, and once a paddle hits the ball, the path changes to that player’s color. The timer counts down, the game ends, and the winner is shown.
 
 ![Week3VideoPrototype.gif](Media/Week3VideoPrototype.gif)
