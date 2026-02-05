@@ -228,7 +228,7 @@ Two paddles on each side, ball in the middle, random start. The first ball path 
 #### Mid Prototype
 For the mid prototype, I implemented this idea using the class Pawng project and started adding features.
 
-The first goal : simply to test whether the path could be recorded by color and whether the score could be counted.
+- The first goal : simply to test whether the path could be recorded by color and whether the score could be counted.
 
 This is where a lot of technical struggle started. I tried [Trail Renderer]([https://learn.unity.com/pathway/unity-essentials/unit/editor-essentials/tutorial/open-the-unity-essentials-project?version=6.0](https://docs.unity3d.com/2022.3/Documentation/Manual/class-TrailRenderer.html)), which looked good, but it didn’t actually record anything onto the background, so it couldn’t act as what I originally planned. Then , I turned to use [RenderTexture](https://www.youtube.com/watch?v=tRTbPGalJXk&t=81s) .
 
