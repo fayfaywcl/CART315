@@ -155,7 +155,7 @@ So , Keep Moving On !!! and Learn Smartly 😉
 
 This week I started by thinking about what kind of idea I should work on, and I kept coming back to the same direction: **small scale, small scope**. I didn’t want to start with something too big or complicated. I wanted something simple enough to actually finish, but still flexible enough to explore.
 
-Because of that, I began by searching through io games. Io games are usually simple, many of them feel duplicated, they often support multiplayer, and they rely heavily on simple color and simple shapes. From a coding perspective, this also makes sense, because simpler visuals usually mean cleaner logic. 
+Because of that, I began by searching through io games. Io games are usually simple, they often support multiplayer, and they rely heavily on simple color and simple shapes. From a coding perspective, this also makes sense, because simpler visuals usually mean cleaner logic. 
 
 At the same time, I was following the class structure like last week — reading the chapters , watching the suggested tutorials and starting a prototype. 
 
