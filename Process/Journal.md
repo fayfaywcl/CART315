@@ -216,7 +216,7 @@ Multiplayer raised even more questions.
 
 When I started testing by myself, some questions began to resolve naturally. I also marked some notes next to the questions so I could review them later, and I saw some of them as future plans too. 
  <p align="left">
-  <img src="Media/Week3Prototype.jpeg" alt="Week3Prototype.jpeg" width="400" height="300">
+  <img src="Media/Week3Prototype.jpeg" alt="Week3Prototype.jpeg" width="600" height="500">
  </p>
 
 #### Low Prototype
