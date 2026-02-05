@@ -151,3 +151,124 @@ This made it much easier to focus on learning the actual systems instead of figh
 
 So , Keep Moving On !!! and Learn Smartly 😉
  	
+## **Week3** (30.1.2026 to 5.2.2026) – Exploring Mechanics Through Pawng
+
+This week I started by thinking about what kind of idea I should work on, and I kept coming back to the same direction: **small scale, small scope**. I didn’t want to start with something too big or complicated. I wanted something simple enough to actually finish, but still flexible enough to explore.
+
+Because of that, I began by searching through io games. Io games are usually simple, many of them feel duplicated, they often support multiplayer, and they rely heavily on simple color and simple shapes. From a coding perspective, this also makes sense, because simpler visuals usually mean cleaner logic. 
+
+At the same time, I was following the class structure like last week — reading the chapters , watching the suggested tutorials and starting a prototype. 
+
+Even though I was still thinking about io games , I wanted to use what we learned in class: physics, object tags, scoring, sound, and so on and expand and put the creativity on it . But at a certain point, I felt stuck again. I had many ideas, but none of them felt like they were moving forward.
+
+That’s when I turned back to the **Pawng game**. Instead of building a brand new game, I asked myself how Pawng could be experimented with in different ways.
+
+I decided to start from a simple concept and expand from there. Pawng only has a few core elements, so I began thinking about how those features could change. I listed a lot of rule-based questions. 
+
+- What if each hit paints the arena, like Splatoon, but in 2D and with Pawng mechanics?
+- What if the game is about area capture instead of scoring points?
+- What if the ball bounce feels like basketball keep-up game?
+- What if Pawng becomes a football game where you shoot the ball into cages at the sides?
+- Or what if the player actually needs to avoid hitting the ball?
+
+After reading the book chapters, I saw a mention of recording and showcasing **Boids motion paths**, and that gave me another idea. 
+
+- How about **ball path itself** becomes the important element? like the ball path is recorded by player color???
+
+This felt new, and I hadn’t really seen people talk about it in relation to Pawng. Then, I started!!!
+
+### Questioning Every Element
+
+From there, I started questioning every part of the game. 
+
+#### Ball Behavior
+- whether I should add gravity? (probably no)
+- whether the ball should curve? (maybe later, additional feature )
+- whether repeated hits should increase speed (fun but needs testing)
+- whether the ball should change size as it gets hit more ( maybe no for this time)
+- whether there should only be one ball, or if a new ball should spawn every ten seconds as an additional feature. (fun feature , additional feature)
+
+#### Paddle Design
+- whether I should keep the rectangle shape or try something different like a circle or triangle. (need testing)
+- how the paddle should move
+    - only up and down / also left and right (will that would make the game too complicated? need testing)
+        
+- where paddles should start: (Need to test) 
+    - on the sides of the screen / at the top and bottom.
+
+#### Arena and Boundaries
+
+- Should the ball be able to pass through walls?
+   (as idea is continuous drawing, I decided that it shouldn’t. That means all four walls should block the ball, and the ball should bounce instead of exiting.)
+
+#### Color Choices
+- What should the base background color be? Black? Half-and-half? Should players start on sections opposite their color?
+    (It is better to be black as the background)
+
+#### Scoring and UI
+For scoring, I decided that calculating score by **percentage of color coverage** made the most sense.Then I questioned when the game should end. One minute? Two minutes? And whether the percentage distribution should be shown during the game or only at the end. I also thought about where the score UI should appear , maybe in a circle at the top middle of the screen.
+
+#### Multiplayer Concerns
+Multiplayer raised even more questions.
+- How would paddle placement work on a landscape screen?
+    - Would that be unfair?
+- Can paddles collide with each other?
+- What keys should be used for control?
+    (WASD and arrow keys already feel limited, and more players would make it worse.)  
+
+When I started testing by myself, some questions began to resolve naturally. I also marked some notes next to the questions so I could review them later, and I saw some of them as future plans too. 
+
+### Prototyping the Idea
+From there, I moved into prototype thinking. 
+
+#### low Prototype
+I started with a low prototype, creating a storyboard and paper prototype. 
+
+Two paddles on each side, ball in the middle, random start. The first ball path uses background color, and once a paddle hits the ball, the path changes to that player’s color. The timer counts down, the game ends, and the winner is shown.
+
+#### Mid Prototype
+For the mid prototype, I implemented this idea using the class Pawng project and started adding features.
+
+The first goal : simply to test whether the path could be recorded by color and whether the score could be counted.
+
+This is where a lot of technical struggle started. I tried **Trail Renderer**, which looked good, but it didn’t actually record anything onto the background, so it couldn’t act as what I originally planned. Then , I turned to use **RenderTexture .** 
+
+### What Went Wrong (and How I Fixed It)
+During testing, the screen started to lag after just one hit, and I kept asking myself how I could solve this. Below are some notes on specific issues I faced and how I fixed them.
+
+To solve the lagging issue,  I removed the `ReadPixels` call, since reading from the RenderTexture every frame was slowing everything down.I also removed the feature that showed the color distribution all the time, and instead calculated the distribution only at the end of the game. That helped a lot!
+
+Another major issue was that all colors turned red, even when I assigned different ones. After reading Unity discussions, I discovered that the RenderTexture color format was the problem. When I changed it to **A2B10G10R10**, it finally worked. 
+
+When the timer ended, the game still kept running. The physics didn’t stop. That felt wrong, so I fixed it by stopping the ball and enlarging the result text. I added a result panel (panel, not canvas) with a semi-transparent background so the result feels clear. Also, with issue was that the Winner Player was hard to identify because both paddles looked the same, I fixed that by adding text with the corresponding player color and placing it in the panel as well.
+
+#### Common Mistakes
+Also , I marked some notes for basic and common mistakes that I faced this time:
+
+- constantly check whether textures were assigned
+- the canvas “must” be linked to the camera,
+- Check whether objects were actually connected.
+- When using `TMP_Text` instead of `Text`, remember to add `using TMPro;`, and creating empty objects when scripts don’t belong to a specific object.
+
+Finally, the game worked!!! The ball painted the screen. The score showed correctly. The winner was displayed.
+
+### Player Testing
+Then , I asked friends to try the game, here are some notes I marked for their feedbacks:
+
+- Game idea was good
+- the paddle shape is fine, no need to change it to a circle or other shape
+- multiplayer on one computer would be hard
+- placing paddles at the top and bottom might improve the challenge.
+
+There is still a bug where the ball gets stuck bouncing vertically near the wall until time runs out. This is something I would solve in the future. 
+
+### Next Steps
+For the future scope , I will fix the bug and test the features I questioned earlier and marked as additional features:
+
+- place paddles on different position
+- make paddle can move by 4 directions
+- make the ball path curve
+- add new ball for every 10 seconds
+- change the paddle color to match the player color
+
+Overall,  the ball path painting works, the scoring works. I feel pretty happy with this prototype!!!✌ 
