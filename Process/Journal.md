@@ -171,9 +171,9 @@ I decided to start from a simple concept and expand from there. Pawng only has a
 - What if Pawng becomes a football game where you shoot the ball into cages at the sides?
 - Or what if the player actually needs to avoid hitting the ball?
 
-After reading the book chapters, I saw a mention of recording and showcasing **Boids motion paths**, and that gave me another idea. 
+After reading the book chapters, I saw a mention of recording and showcasing "Boids motion paths", and that gave me another idea. 
 
-- How about **ball path itself** becomes the important element? like the ball path is recorded by player color???
+- How about ball path itself becomes the important element? like the ball path is recorded by player color???
 
 This felt new, and I hadn’t really seen people talk about it in relation to Pawng. Then, I started!!!
 
@@ -185,12 +185,12 @@ From there, I started questioning every part of the game.
 #### Ball Behavior
 - whether I should add gravity? (probably no)
 - whether the ball should curve? (maybe later, additional feature )
-- whether repeated hits should increase speed (fun but needs testing)
-- whether the ball should change size as it gets hit more ( maybe no for this time)
-- whether there should only be one ball, or if a new ball should spawn every ten seconds as an additional feature. (fun feature , additional feature)
+- whether repeated hits should increase speed? (fun but needs testing)
+- whether the ball should change size as it gets hit more? ( maybe no for this time)
+- whether there should only be one ball, or if a new ball should spawn every ten seconds as an additional feature? (fun feature , additional feature)
 
 #### Paddle Design
-- whether I should keep the rectangle shape or try something different like a circle or triangle. (need testing)
+- whether I should keep the rectangle shape or try something different like a circle or triangle? (need testing)
 - how the paddle should move?
     - only up and down / also left and right (will that would make the game too complicated? need testing)
 - where paddles should start? (Need to test) 
