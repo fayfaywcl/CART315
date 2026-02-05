@@ -224,6 +224,8 @@ When I started testing by myself, some questions began to resolve naturally. I a
 I started with a low prototype, creating a storyboard and paper video prototype. 
 Two paddles on each side, ball in the middle, random start. The first ball path uses background color, and once a paddle hits the ball, the path changes to that player’s color. The timer counts down, the game ends, and the winner is shown.
 
+![Week3VideoPrototype.gif](Media/Week3VideoPrototype.gif)
+
 #### Mid Prototype
 For the mid prototype, I implemented this idea using the class Pawng project and started adding features.
 
@@ -245,13 +247,13 @@ To solve the lagging issue,  I removed the `ReadPixels` call, since reading from
 Another major issue was that all colors turned red, even when I assigned different ones. After reading [Unity discussions](https://discussions.unity.com/t/rendertexture-format-missing-rgb/826685), I discovered that the RenderTexture color format was the problem. When I changed it to **A2B10G10R10**, it finally worked. 
 
  <p align="center">
-  <img src="Media/IssueRenderTextureColor.png" alt="IssueRenderTextureColor.png" width="300" height="200">
+  <img src="Media/IssueRenderTextureColor.png" alt="IssueRenderTextureColor.png" width="300" height="300">
  </p>
 
 When the timer ended, the game still kept running. The physics didn’t stop. That felt wrong, so I fixed it by stopping the ball and enlarging the result text. I added a result panel (panel, not canvas) with a semi-transparent background so the result feels clear. Also, with issue was that the Winner Player was hard to identify because both paddles looked the same, I fixed that by adding text with the corresponding player color and placing it in the panel as well.
 
  <p align="center">
-  <img src="Media/AddPanel.png" alt="AddPanel.png" width="300" height="200">
+  <img src="Media/AddPanel.png" alt="AddPanel.png" width="300" height="300">
  </p>
 
 #### Common Mistakes
