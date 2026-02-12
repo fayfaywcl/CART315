@@ -406,7 +406,6 @@ During the implementation, I found that there were better ways to present the ga
     Therefore, I created a LaserContainer prefab with a ScrollingLaser script, and a LaserSpawner object to instantiate them. This connects directly to spawning children objects from what we learned in class. Each laser container behaves independently ,  they have their own position and different way to give lazer light.
     
 - Also , I initially believed that giving each LaserContainer a random X position would increase the difficulty level and improve visual variety, preventing the scene from feeling repetitive. I implemented: float randomX = Random.Range(minX, maxX);
-- 
     
     However, during testing, I found that my minX and maxX values were too large (-7f to 7f), which made the layout feel messy and inconsistent. The scene lacked intentional design.
   
