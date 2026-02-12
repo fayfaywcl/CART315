@@ -403,7 +403,9 @@ During the implementation, I found that there were better ways to present the ga
     
 - Second, for the scrolling gameplay, I chose the laser-moving-down approach. The player stays mostly in the lower part of the screen, and laser containers spawn above and scroll downward. When they reach the bottom, I originally destroyed them, but I noted that destroying objects repeatedly is heavy. It might be better to recycle them later.
     
-    Therefore, I created a LaserContainer prefab with a ScrollingLaser script, and a LaserSpawner object to instantiate them. This connects directly to spawning children objects from what we learned in class. Each laser container behaves independently ,  they have their own position and different way to give lazer light.
+    Therefore, I created a LaserContainer prefab with a ScrollingLaser script, and a LaserSpawner object to instantiate them. This connects directly to spawning children objects from what we learned in class. Each laser container behaves independently ,  they have their own position and different way to give laser light.
+
+  While implementing the laser performance, I followed a [YouTube tutorial](https://www.youtube.com/watch?v=vdci2oxVaoA&t=156s) as a technical reference. However, I adjusted the structure and parameters to integrate it into my own spawning and collision system.
     
 - Also , I initially believed that giving each LaserContainer a random X position would increase the difficulty level and improve visual variety, preventing the scene from feeling repetitive. I implemented: float randomX = Random.Range(minX, maxX);
     
