@@ -313,6 +313,10 @@ However, I got stuck at the idea stage again. I understood the technical require
 
 So I started searching IO games for inspiration again. As through IO games’ repeated shapes, duplicated objects, minimal mechanics,  I hoped I could gain an idea while still following basic features that I could extend. While watching YouTube recommendations, a laser tag game advertisement appeared. That gave me direction. Around the same time, I was also looking at Apple Watch UI design, especially how circle sizes scale smoothly. That visual stayed in my head.
 
+<p align="left">
+ <img src="Media/Week4AppleDesign.png" alt="Week4AppleDesign.png" width="300" height="200">
+</p>
+
 ### Core Idea – Bouncing Ball + Scrolling Lasers
 
 Combining those references with what we learned last week, I broke the idea down into something manageable: 
@@ -329,16 +333,11 @@ At first, my rule prototype looked like this:
 - Touching the bottom space 3 times means losing the game.
 - Passing each laser adds 1 score.
 
-Also, here is the prototype game flow of the scene that I drew:
-
+To visualise this idea, I created sketches of the scene layout, different ball size levels, and variations of laser designs.
 <p align="left">
- <img src="Media/Week4GameFlow.jpeg" alt="Week4GameFlow.jpeg" width="300" height="200">
-</p>
-
-<p align="left">
- <img src="Media/Week4ScenesDesign.jpeg" alt="Week4ScenesDesign.jpeg" width="300" height="200">
-  <img src="Media/Week4LazerDesigns.jpeg" alt="Week4LazerDesigns.jpeg" width="300" height="200">
+ <img src="Media/Week4ScenesDesign.jpeg" alt="Week4ScenesDesign.jpeg" width="400" height="200">
  <img src="Media/Week4BallSizes.jpeg" alt="Week4BallSizes.jpeg" width="300" height="200">
+  <img src="Media/Week4LazerDesigns.jpeg" alt="Week4LazerDesigns.jpeg" width="300" height="200">
 </p>
 
 However, while thinking through the system, I realized a design issue. If the player keeps successfully passing lasers, the ball could become infinitely large. That would break the balance and also look strange visually.
@@ -360,6 +359,11 @@ Interestingly, this size system created tension naturally. Through my own and my
 
 During the gameplay flow prototype, I found another issue. If the ball starts at Level 1 and immediately hits a laser, then according to the rule the game ends instantly. That feels unfair. So I adjusted it so the ball starts at Level 2. When it hits a laser, it reduces one level. If it misses the paddle and drops, it restarts at the same position, level does not change, but drop count increases. If drop count equals 3, then GameOver.
 
+After refining these rules, I updated the prototype game flow diagram to reflect the revised system.
+<p align="left">
+ <img src="Media/Week4GameFlow.jpeg" alt="Week4GameFlow.jpeg" width="600" height="500">
+</p>
+
 
 Since last week, I’ve found that creating a video prototype is very useful for expressing my ideas and guiding me in implementing the scene and code in Unity. For this week’s idea, I created a similar video prototype, but I used an app to assist with the stop-motion video. As in last week, my hand blocked some of the object movements, so this time I wanted to avoid that issue.
 
@@ -376,7 +380,7 @@ The video prototype is not mentioned the whole game rule flow , but hightlight:
 
 In my implementation testing, I will not only include the features mentioned above, but I will also experiment with additional features. For example, I would like to count the number of times the ball is dropped and the number of times it hits the laser light, along with sound implementation.
 
-### Mid Prototype - What I Was Testing
+#### Mid Prototype - What I Was Testing
 
 So overall , this prototype I wish to mainly tested:
 
@@ -389,7 +393,7 @@ So overall , this prototype I wish to mainly tested:
     - Sound control
 4. Can the player handle paddle + bouncing ball ?
 
-### Issue and Adjustments
+#### Issue and Adjustments
 
 During the implementation, I found that there were better ways to present the game and debug certain logic issues. As a result, I revised and refined several parts of my original game rule design.
 
@@ -401,8 +405,8 @@ During the implementation, I found that there were better ways to present the ga
     
     Therefore, I created a LaserContainer prefab with a ScrollingLaser script, and a LaserSpawner object to instantiate them. This connects directly to spawning children objects from what we learned in class. Each laser container behaves independently ,  they have their own position and different way to give lazer light.
     
-- Also , I initially believed that giving each LaserContainer a random X position would increase the difficulty level and improve visual variety, preventing the scene from feeling repetitive. I implemented:
-    - float randomX = Random.Range(minX, maxX);
+- Also , I initially believed that giving each LaserContainer a random X position would increase the difficulty level and improve visual variety, preventing the scene from feeling repetitive. I implemented: float randomX = Random.Range(minX, maxX);
+- 
     
     However, during testing, I found that my minX and maxX values were too large (-7f to 7f), which made the layout feel messy and inconsistent. The scene lacked intentional design.
   
@@ -411,8 +415,7 @@ During the implementation, I found that there were better ways to present the ga
     
     - Note: Sometimes less randomness can create a stronger visual rhythm and better game clarity.
     
-- Lastly , A major bug occurred when I attempted to reduce the ball’s level after it hit the laser. The ball suddenly froze and stopped moving, and Unity displayed the following error:
-    - IndexOutOfRangeException: Index was outside the bounds of the array.
+- Lastly , A major bug occurred when I attempted to reduce the ball’s level after it hit the laser. The ball suddenly froze and stopped moving, and Unity displayed the following error: IndexOutOfRangeException: Index was outside the bounds of the array.
     
     The issue was that my currentLevel variable did not properly match the size of my levelSizes array. Since Unity arrays are 0-indexed, I failed to correctly account for level 0. When currentLevel became 0 or exceeded the array size, the program crashed.
     
@@ -436,6 +439,7 @@ During this prototype development, I also encountered several technical issues. 
  <p align="left">
  <img src="Media/Week4SoundSource.png" alt="Week4SoundSource.png" width="300" height="200">
 </p>
+
 - When the background appears incorrect, check the camera’s Background Type. Change it from “Skybox”(Default) to “Solid Colour” if want a self-defined background.
  <p align="left">
  <img src="Media/Week4ChangeBackground.png" alt="Week4ChangeBackground.png" width="300" height="200">
