@@ -352,6 +352,8 @@ Here is the prototype game flow of the scene that I drew:
 
 Since last week, I’ve found that creating a video prototype is very useful for expressing my ideas and guiding me in implementing the scene and code in Unity. For this week’s idea, I created a similar video prototype, but I used an app to assist with the stop-motion video. As in last week, my hand blocked some of the object movements, so this time I wanted to avoid that issue.
 
+![Week4prototype Demo](Media/Week4prototype.gif)
+
 The video prototype is not mentioned the whole game rule flow , but hightlight: 
 
 - Ball size reduction when hitting laser
@@ -403,7 +405,6 @@ During the implementation, I found that there were better ways to present the ga
     The issue was that my currentLevel variable did not properly match the size of my levelSizes array. Since Unity arrays are 0-indexed, I failed to correctly account for level 0. When currentLevel became 0 or exceeded the array size, the program crashed.
     
     To fix this, I:
-    
     - Expanded the array to include enough elements
     - Added proper boundary checks before accessing the array
     
@@ -432,6 +433,8 @@ I also found some additional successes:
 - Simplified collision logic (counting only the ball hitting lasers) improved system stability.
 
 The most interesting success was the unexpected emergence of tension. The bigger ball mechanic naturally created risk–reward dynamics. 
+
+![Week4LazerTag Demo](Media/Week4LazerTag.gif)
 
 ### Next Steps
 
