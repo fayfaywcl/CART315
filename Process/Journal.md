@@ -291,3 +291,160 @@ For the future scope , I will fix the bug and test the features I questioned ear
 - change the paddle color to match the player color
 
 Overall,  the ball path painting works, the scoring works. I feel pretty happy with this prototype!!!✌ 
+
+## **Week4** (6.2.2026 to 12.2.2026) – Singleton GameManager & Laser Challenges
+
+As same as last week, I finished the reading first and then tried to start my prototype. This week the focus is on singletons and spawning children objects with potentially different variables. I told myself to keep the scope small this time also , because last week I found that it is good to prototype a small scale game first . not only for beginner process , but also easy to edit and check the testing .
+
+My starting structure was simple. I wanted:
+
+- Children objects that can change (one or more of the following):
+    - Object numbers (more / less)
+    - Colour
+    - Speed
+    - Shape
+    - Score / health effect
+- A Singleton GameManager to:
+    - Control game state
+    - Control score
+    - Handle GameOver
+
+However, I got stuck at the idea stage again. I understood the technical requirement, but I didn’t know what kind of game mechanic would naturally use spawning and a singleton in a meaningful way.
+
+So I started searching IO games for inspiration again. As through IO games’ repeated shapes, duplicated objects, minimal mechanics,  I hoped I could gain an idea while still following basic features that I could extend. While watching YouTube recommendations, a laser tag game advertisement appeared. That gave me direction. Around the same time, I was also looking at Apple Watch UI design, especially how circle sizes scale smoothly. That visual stayed in my head.
+
+### Core Idea – Bouncing Ball + Scrolling Lasers
+
+Combining those references with what we learned last week, I broke the idea down into something manageable: 
+
+- a bouncing ball that the player controls, and scrolling laser tags that the ball must pass through.
+
+The core rule I imagined was: hold the bouncing ball, do not miss it, and pass through all the laser tags.
+
+At first, my rule prototype looked like this:
+
+- The ball becomes larger each time it passes a laser.
+- Hitting a laser reduces one level of the ball size.
+- Different lasers could reduce different levels (for example green -1, red -2).
+- Touching the bottom space 3 times means losing the game.
+- Passing each laser adds 1 score.
+
+However, while thinking through the system, I realized a design issue. If the player keeps successfully passing lasers, the ball could become infinitely large. That would break the balance and also look strange visually.
+
+So I redesigned the system into five fixed levels of ball size. The ball can grow until Level 5, and then it remains at that size. Losing conditions become either:
+
+- Dropping the ball 3 times, or
+- Reducing the ball level to 0.
+
+I also adjusted the starting size. I changed Level 1 to 0.7 scale instead of 0.9 so the growth would feel more noticeable. The scaling became:
+
+- Level 1 = 0.7x
+- Level 2 = 1.0x
+- Level 3 = 1.15x
+- Level 4 = 1.3x
+- Level 5 = 1.45x
+
+Interestingly, this size system created tension naturally. Through my own and my friends testing a bigger ball feels stronger and rewarding, but it also becomes harder to dodge lasers. That risk–reward effect was not originally planned. It emerged from testing.
+
+During the gameplay flow prototype, I found another issue. If the ball starts at Level 1 and immediately hits a laser, then according to the rule the game ends instantly. That feels unfair. So I adjusted it so the ball starts at Level 2. When it hits a laser, it reduces one level. If it misses the paddle and drops, it restarts at the same position, level does not change, but drop count increases. If drop count equals 3, then GameOver.
+
+Here is the prototype game flow of the scene that I drew:
+
+Since last week, I’ve found that creating a video prototype is very useful for expressing my ideas and guiding me in implementing the scene and code in Unity. For this week’s idea, I created a similar video prototype, but I used an app to assist with the stop-motion video. As in last week, my hand blocked some of the object movements, so this time I wanted to avoid that issue.
+
+The video prototype is not mentioned the whole game rule flow , but hightlight: 
+
+- Ball size reduction when hitting laser
+- Ball falling from paddle
+- Ball bouncing
+- Scrolling laser collider repeating
+- Text UI showing ball level and drop count
+- GameOver scene appearing
+
+In my implementation testing, I will not only include the features mentioned above, but I will also experiment with additional features. For example, I would like to count the number of times the ball is dropped and the number of times it hits the laser light, along with sound implementation.
+
+### What I Was Testing
+
+So overall , this prototype I wish to mainly tested:
+
+1. Can I implement a vertical scrolling laser system?
+2. Can I change ball size dynamically using an array?
+3. Can I use Singleton properly for:
+    - Score
+    - Drop counting
+    - Scene switching
+    - Sound control
+4. Can the player handle paddle + bouncing ball ?
+
+### Issue and Adjustments
+
+During the implementation, I found that there were better ways to present the game and debug certain logic issues. As a result, I revised and refined several parts of my original game rule design.
+
+- First , I simplified collision logic. Originally I wanted both the paddle and the ball hitting the laser to count. But during testing, it became messy and harder to trigger properly. So I reduced it to only count when the ball hits the laser. This made the system smoother and easier to debug.
+    
+    Also during testing, the scrolling setup made it hard to increase the level and verify whether the ball and paddle successfully passed through the LaserCollider. Because in the code implementation the Scroller Scene repeats LaserColliders, collision checks became tricky. To make the process easier , I temporarily removed the “add points” function and started the ball at Level 5, so it could only reduce in size.
+    
+- Second, for the scrolling gameplay, I chose the laser-moving-down approach. The player stays mostly in the lower part of the screen, and laser containers spawn above and scroll downward. When they reach the bottom, I originally destroyed them, but I noted that destroying objects repeatedly is heavy. It might be better to recycle them later.
+    
+    Therefore, I created a LaserContainer prefab with a ScrollingLaser script, and a LaserSpawner object to instantiate them. This connects directly to spawning children objects from what we learned in class. Each laser container behaves independently ,  they have their own position and different way to give lazer light.
+    
+- Also , I initially believed that giving each LaserContainer a random X position would increase the difficulty level and improve visual variety, preventing the scene from feeling repetitive. I implemented:
+    - float randomX = Random.Range(minX, maxX);
+    
+    However, during testing, I found that my minX and maxX values were too large (-7f to 7f), which made the layout feel messy and inconsistent. The scene lacked intentional design.
+    
+    I first attempted to reduce the range, but the result still felt visually chaotic. So finally, I removed the randomness and used fixed starting positions instead. This made the overall composition much cleaner and more balanced.
+    
+    - Note: Sometimes less randomness can create a stronger visual rhythm and better game clarity.
+    
+- Lastly , A major bug occurred when I attempted to reduce the ball’s level after it hit the laser. The ball suddenly froze and stopped moving, and Unity displayed the following error:
+    - IndexOutOfRangeException: Index was outside the bounds of the array.
+    
+    The issue was that my currentLevel variable did not properly match the size of my levelSizes array. Since Unity arrays are 0-indexed, I failed to correctly account for level 0. When currentLevel became 0 or exceeded the array size, the program crashed.
+    
+    To fix this, I:
+    
+    - Expanded the array to include enough elements
+    - Added proper boundary checks before accessing the array
+    
+    After these adjustments, the system worked correctly.
+    
+    - Note: Game rules and data structures must align exactly.
+    
+    If the system logic defines 5 levels (0–5), then the data structure must safely support all 6 indices. Consistency between logic and data is essential for stability.
+    
+
+### Common Issues and Technical Reminders
+
+During this prototype development, I also encountered several technical issues. I noted them down as reminders for future projects:
+
+- When using SceneManager.LoadScene(), remember in the script add “using UnityEngine.SceneManagement;”” [Common Mistake]
+- When using GetComponent<AudioSource>(), ensure that the GameObject actually has an AudioSource component attached. Cannot drag an AudioClip directly into the script unless the AudioSource exists on the object , since they are AudioResource , not AudioSource.
+- When the background appears incorrect, check the camera’s Background Type. Change it from “Skybox”(Default) to “Solid Colour” if want a self-defined background.
+
+### What Was Successful
+
+The core loop works clearly.Yeahhhhhh!!!!!! The scrolling laser system functions properly, and the ball scaling system responds correctly to collisions. The GameManager successfully controls score, drop count, and GameOver transitions.
+
+I also found some additional successes:
+
+- I implemented GameOver scene that the player can restart by pressing “R”, returning to the Laser Tag scene. This makes the game flow more user-friendly and reflects what I learned in previous classes.
+- Simplified collision logic (counting only the ball hitting lasers) improved system stability.
+
+The most interesting success was the unexpected emergence of tension. The bigger ball mechanic naturally created risk–reward dynamics. 
+
+### Next Steps
+
+I shared the prototype with my friends and got some suggestions:
+
+From testing with friends, they recommended adding more variation in laser timing. Currently, many lasers flash with the same pattern. In the future, I could offset their timers so some have a 2-second break and some a 1-second break to create more unpredictable flashing intervals
+
+I also noticed issues with sound effects. I already added sound sources for ball hit, ball drop, and GameOver. However, the GameOver sound was cut off because the scene loaded too quickly. I removed the GameOver sound effect to make the transition smoother, but fixing this will be part of the future scope.
+
+For future testing and development, I want to continue exploring:
+
+- Adding different laser difficulty patterns (which I already designed in my paper prototype, but did not implement in this test)
+- Improving sound and visual feedback
+- Allowing different lasers to reduce the ball by different levels (currently, there is only one LaserObject with one material, so in future implementation could include more variety and difficulty)
+
+Overall , I feel like I made good progress this week. The game stayed simple, but how to make the prototype feels much clearer.😃
