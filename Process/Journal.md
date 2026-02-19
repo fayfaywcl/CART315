@@ -474,3 +474,217 @@ For future testing and development, I want to continue exploring:
 - Allowing different lasers to reduce the ball by different levels (currently, there is only one LaserObject with one material, so in future implementation could include more variety and difficulty)
 
 Overall , I feel like I made good progress this week. The game stayed simple, but how to make the prototype feels much clearer.😃
+
+## **Week5** (13.2.2026 to 19.2.2026) – Expanding the Laser Tag System
+
+When I looked at the guideline for Prototype 4, I did not immediately think about building something completely new. Instead, I went back to what I wrote in last week’s “next steps.” I already had unfinished ideas:
+
+- Adding different laser difficulty patterns (based on my paper prototype)
+- Improving sound and visual feedback
+- Allowing different lasers to reduce the ball by different levels (e.g., -2 level laser)
+- Fixing the GameOver sound
+
+At first, I thought this week would simply be refinement. But once I started thinking deeper, many new ideas appeared. I considered turning the game into 3D, improving the visual outlook of the laser shooter and ball, adding shooting features instead of just holding the bounce ball, changing scroll direction from up–down to right–left, adding holes, extra point materials, freeze animations, even boss fights.
+
+The problem was not lack of ideas ,  it was too many ideas. I felt unsure whether I should deepen the current mechanic or completely transform it.
+
+### Influence – Pattern, Telegraph, Memory
+
+I remembered the video I watched for the upcoming class: [How Cuphead’s Bosses (Try to) Kill You](https://www.youtube.com/watch?v=F8T6Ul4aHTI) by Game Maker's Toolkit. That video changed the way I looked at difficulty design. 
+
+Here are my notes:
+
+focused on ideas such as tricky attack variation, non-straight movement, changes in speed and size, and especially telegraphing.
+
+What stood out most was the idea that players learn through memory, reaction, and skill. A good challenge is not purely random. It may feel overwhelming at first, but there is always a readable pattern behind it. The player might get hit the first time, but after observing, they understand the structure. They improve because they remember.
+
+When I compared this concept to my bouncing ball and laser system, I realized something important. My game already requires the player to think about multiple elements at once , paddle control, bounce physics, and scrolling obstacles. However, the difficulty progression was not strong enough. It needed clearer pattern learning and more structured unpredictability.
+
+Around the same time, I noticed a newly released Steam game called [Log Riders](https://store.steampowered.com/app/4082750/Log_Riders/). Although the mechanics are different, the way it forces directional movement and creates pressure through motion inspired me. I started imagining how similar “forced movement” ideas could be translated into rotating lasers and obstacle patterns in 2D form.
+
+
+### Clarifying This Week’s Direction
+
+Instead of completely changing the game genre, I decided to keep the core identity of my previous prototype:
+
+- The laser obstacle concept
+- A paddle that can move in four directions
+- A bouncing ball controlled through paddle interaction
+
+Rather than redesigning everything, I focused on implementing different “tasks” or obstacle variations inside this structure. I also read about level design patterns in 2D games and became interested in the idea of guidance and safe zones. That concept felt suitable for my game, because the bouncing mechanic already creates tension. If I could give the player brief safe moments, the rhythm would feel more intentional instead of constantly chaotic.
+
+### Design thinking before implementation
+
+After clarifying the core bouncing ball + laser survival structure, I began listing different gameplay tasks that could appear in the game. These ideas were not random additions. They were inspired by my early sketches and by the article [Level Design Patterns in 2D Games](https://www.gamedeveloper.com/design/level-design-patterns-in-2d-games#branching), especially the ideas of "Guidance" and "Safe Zones". From that reading, I understood that difficulty should not only increase by adding more hazards, but by controlling player movement, visual direction, and moments of relief.
+
+For the laser tag variations, I explored multiple movement and pattern possibilities:
+
+- **Swing Clock (Half-circle spin)**
+    
+    This creates a predictable arc motion. The player can observe the pattern and learn the timing.
+    
+- **Full circle spin (with block at the laser end)**
+  
+    Rotating laser variations (1-side / 2-side / 3-side / 4-side)
+  
+- **Multiple lasers placed close together**
+    
+    This forms a “large laser wall” effect. Instead of just timing jumps, the player is forced to reposition strategically.
+    
+- **Laser moving down with screen scroll, then unexpectedly moving up**
+    
+    An element of surprise while still keeping pattern logic. It tests adaptability instead of only reaction speed.
+    
+- **Pattern-based laser formation (e.g., square lighting up 1 → 2 → 3 → 4)**
+    
+    Rather than chaotic movement, this creates rhythm. The player can memorize the sequence, making the challenge feel fair.
+    
+
+Beyond lasers, I explored additional features that expand interaction without changing the survival identity of the game:
+
+- **Hole system**
+    
+    If the ball falls into a hole, it loses one life, similar to missing a platform. I extended this idea by linking it to ball levels. For example, a Level 4 ball would not fall into a Level 1 hole. 
+    
+- **Blocking walls that force repositioning**
+    
+    Unlike lasers (which apply timing pressure), blocks apply positional pressure. This creates variation in gameplay tension.
+    
+- **Extra attacks (bullets, birds, flying objects)**
+    
+    These would function similarly to laser damage , so touching them will cause reducing points or life. (However, I had to consider visual overload, as too many moving objects could make the screen chaotic. Hence , this would be put future for future testing). 
+    
+- **Safe Zone areas**
+    
+    Inspired directly by the article, I imagined a long protected block area where, if the player chooses correctly, they can briefly rest from danger. 
+    
+
+[Image] 
+
+When I mapped out these level designs, I realized that implementing a big boss would be difficult. My game currently has no attack mechanic, which the player only survives. Adding a boss would require redesigning the entire interaction system. Instead of forcing that idea, I explored alternatives:
+
+- Adding a timer system, similar to my Week 3 game (Exploring Mechanics Through Pawng), where survival until countdown reaches zero indicates success.
+- Displaying a completion message like “You Survived” or “Great Job” triggered by scrolling progression.
+
+These solutions maintain the survival identity without introducing combat.
+
+During implementation, I also discovered that the screen scrolling system is technically challenging. It is not always consistent, and object synchronization can break if scripts are not carefully managed. This limitation forced me to evaluate which ideas were realistic rather than idealistic.
+
+To support the visual direction (as wrote in my previous week future scope), I designed pixel art elements using [Pixilart](https://www.pixilart.com/draw), including:
+
+- Laser container
+- Laser hit effect
+- Blocks
+
+For the ball, flying elements, and hearts, I used existing templates from asset libraries and slightly modified them to maintain visual consistency. 
+
+## What Was Successful
+
+This week, several systems worked successfully, and I am genuinely happy about them.
+
+#### 1. Rotating Laser System
+
+I created a RotatingLaser script attached to my Laser Container prefab. With some AI assistance, I reorganized the script so that rotation behavior could be controlled more clearly through Unity’s Inspector. Now I can switch between:
+
+- Continuous rotation (full circle)
+- PingPong rotation (swing between minimum and maximum angles)
+
+This improvement made level design much easier. Instead of rewriting logic each time, I can now adjust rotation speed and angle directly in the UI. It feels more like designing rather than coding every variation manually.
+
+##### 2. Hole Level Detection
+
+I added a HoleLevelGate script. Each hole can detect ball level. For example:
+
+- If hole is Level 3
+    - Level 2 ball → lose life
+    - Level 4 ball → no effect
+
+This connects nicely to the ball size system from last week. It makes ball level more meaningful beyond just size.
+
+#### 3. Safe Zone
+
+I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
+
+#### 4. Heart Life System
+
+Instead of showing life as numbers, I switched to heart icons using Canvas UI. I created an array of images that switch between full and empty heart sprites depending on current life.
+
+This small UI change makes the game feel much more complete. I was honestly very excited when it worked.
+
+#### 5. Game Ending
+
+The game is no longer an infinite loop. It now has an ending condition. This changes the structure completely. Instead of “how long can you survive,” it becomes “can you survive until the end?”
+
+## Design Struggles (Deeper Reflection)
+
+This week was much harder than last week, mainly because I was building on top of an existing prototype. Every new feature interacts with old logic.
+
+#### 1. Forcing Horizontal Movement
+
+I wanted to design obstacles like multiple lasers or safe zones that force the player to move left or right. However, the bounce mechanic limits direct control. The player cannot freely move the ball horizontally — only influence it during paddle contact.
+
+I tried several approaches:
+
+- Removing fall detection
+- Letting the ball follow paddle horizontally
+- Adding paddle influence script
+
+But none of them felt correct. Either the bounce feeling disappeared, or the control became visually awkward.
+
+As my bounce identity limits certain obstacle types. If I want strong directional forcing, I may need to rethink the control system instead of forcing it through patches. Right now, this remains an unresolved issue. It is not just a coding problem, it is a design logic problem.
+
+#### 2. Rotating Blocks with Laser
+
+Another struggle was rotating blocks together with the laser. At first, I wrote an additional script to make blocks rotate with the same speed and angle. But they rotated around their own centers instead of around the laser pivot.
+
+After searching online and finding a [tutorial](https://www.youtube.com/watch?v=x7BWNooNAGM&t=62s), I fixed the issue by debugging and properly adjusting the Transform hierarchy. The block now rotates correctly as a child object with the proper pivot behavior.
+
+This debugging took a long time, but it was a valuable learning experience.
+
+#### 3. Pattern Laser Conflict
+
+The square pattern laser (1→2→3→4 lighting sequence) conflicted with my original timer-based flashing system inside the Laser Container. Since the container already controlled timing, adding another pattern layer caused logical interference.
+
+While I attempted to debug the issue, I realized that simply adding more code was not enough. The system likely requires refactoring at a foundational level, which I plan to address in the future.
+
+## Notes of Unity Control / Script (Important Reminders)
+
+I also to document these main notes during implementation for future reference:
+
+- To resize image properly:
+    - Go to image settings → edit Max Size & Pixels Per Unit
+    - Pixel Per Unit 10 → bigger
+    - Pixel Per Unit 500 → smaller
+- Always attach scrolling script to objects that need to move.
+    
+    Otherwise, they remain static on screen (this happened to my hole object).
+
+## Future Plan
+
+Due to the time spent debugging, I was not able to implement several features that I had originally planned. I also did not gather peer feedback this week, as most of my time was dedicated to redesigning and fixing internal logic.
+
+In the future, I plan to:
+
+- Test the most effective way to move the ball left and right while preserving its bounce identity
+- Properly implement multiple lasers that force player movement
+- Refactor the laser pattern logic to avoid timer conflicts
+- Implement additional attack elements (e.g., bullets or flying objects), if feasible
+- Add a freeze-motion feature
+- Experiment with lasers that move downward and then return upward
+- Combine all difficulty variations into one final structured scrolling level
+
+The final goal is to integrate all difficulty mechanics into a cohesive scrolling scene with clear progression.
+
+I also plan to ask friends to playtest the game and provide feedback on their experience.
+
+## Final Reflection
+
+This week’s exploration is much harder than the previous one. Building on top of another prototype requires more awareness of system interaction. Many bugs were not just coding errors but logic design problems.
+
+I realize now that maybe each new feature should be tested as a smaller isolated prototype first, before merging into the main system.
+
+Even though I felt overwhelmed at times, I am still happy with the progress. The rotating difficulty patterns work. The hole system works. The safe zone works. The heart UI works. The game now has an ending.
+
+Most importantly, the system is slowly moving toward the pattern-learning idea inspired by Game Maker's Toolki ,  memory, reaction, and skill. Which’s Gooddd!
+
+After taking a short break, I believe I can return with clearer thinking and better balance between player control and difficulty progression. Even though this week was much harder, it also felt like a more serious step forward in understanding system design.
