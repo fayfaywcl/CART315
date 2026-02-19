@@ -488,7 +488,7 @@ At first, I thought this week would simply be refinement. But once I started thi
 
 The problem was not lack of ideas ,  it was too many ideas. I felt unsure whether I should deepen the current mechanic or completely transform it.
 
-### Influence – Pattern, Telegraph, Memory
+### Influence by Pattern, Telegraph, Memory
 
 I remembered the video I watched for the upcoming class: [How Cuphead’s Bosses (Try to) Kill You](https://www.youtube.com/watch?v=F8T6Ul4aHTI) by Game Maker's Toolkit. That video changed the way I looked at difficulty design. 
 
