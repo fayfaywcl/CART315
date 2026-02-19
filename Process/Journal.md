@@ -704,7 +704,7 @@ In the future, I plan to:
 - Experiment with lasers that move downward and then return upward
 - Combine all difficulty variations into one final structured scrolling level
 
-The final goal is to integrate all difficulty mechanics into a cohesive scrolling scene with clear progression.
+The final goal is to integrate all difficulty mechanics into a scrolling scene and link with all already made pixel art components.
 
 I also plan to ask friends to playtest the game and provide feedback on their experience.
 
