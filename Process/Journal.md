@@ -592,15 +592,7 @@ For the ball, flying elements, and hearts, I used existing templates from asset 
 Here are my rough drawing and below are the pixel arts:
  <p align="left">
  <img src="Media/Week5DesignComponent.jpeg" alt="Week5DesignComponent.jpeg" width="300" height="200">
-</p>
-
- <p align="left">
- <img src="Media/Week5Lazer.png" alt="Week5Lazer.png" width="200" height="200">
-  <img src="Media/Week5LazerShootrt.png" alt="Week5LazerShootrt.png" width="200" height="200">
-  <img src="Media/Week5Blocks.png" alt="Week5Blocks.png" width="200" height="200">
-  <img src="Media/Week5FireBall.png" alt="Week5FireBall.png" width="200" height="200">
-  <img src="Media/Week5FullHeart.png" alt="Week5FullHeart.png" width="200" height="200">
-  <img src="Media/Week5EmptyHeart.png" alt="Week5EmptyHeart.png" width="200" height="200">
+   <img src="Media/Week5Pixel art.png" alt="Week5Pixelart.png" width="300" height="300">
 </p>
 
 ## What Was Successful
@@ -631,9 +623,7 @@ This connects nicely to the ball size system from last week. It makes ball level
 #### 3. Safe Zone
 
 I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
-
 ![Week5withSafeZonemp4.gif](Media/Week5withSafeZonemp4.gif)
-
 #### 4. Heart Life System
 
 Instead of showing life as numbers, I switched to heart icons using Canvas UI. I created an array of images that switch between full and empty heart sprites depending on current life.
@@ -670,7 +660,7 @@ Another struggle was rotating blocks together with the laser. At first, I wrote 
 
 After searching online and finding a [tutorial](https://www.youtube.com/watch?v=x7BWNooNAGM&t=62s), I fixed the issue by debugging and properly adjusting the Transform hierarchy. The block now rotates correctly as a child object with the proper pivot behavior.
 
-![Week5withSafeZonemp4.gif](Media/Week5withSafeZonemp4.gif)
+![Week5LazerRotateWork.gif](Media/Week5LazerRotateWork.gif)
 
 This debugging took a long time, but it was a valuable learning experience.
 
@@ -688,6 +678,10 @@ I also to document these main notes during implementation for future reference:
     - Go to image settings → edit Max Size & Pixels Per Unit
     - Pixel Per Unit 10 → bigger
     - Pixel Per Unit 500 → smaller
+<p align="left">
+ <img src="Media/Week5Note1.png" alt="Week5Note1.png" width="300" height="200">
+</p>
+
 - Always attach scrolling script to objects that need to move.
     
     Otherwise, they remain static on screen (this happened to my hole object).
