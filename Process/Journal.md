@@ -564,7 +564,9 @@ Beyond lasers, I explored additional features that expand interaction without ch
     
 - **Safe Zone areas**
     
-    Inspired directly by the article, I imagined a long protected block area where, if the player chooses correctly, they can briefly rest from danger. 
+    Inspired directly by the article, I imagined a long protected block area where, if the player chooses correctly, they can briefly rest from danger.
+
+Here are the task ideas I came up with, along with a video paper prototype of them:
 
  <p align="left">
  <img src="Media/Week5DifferentLevel.jpeg" alt="Week5DifferentLevel.jpeg" width="400" height="300">
