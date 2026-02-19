@@ -618,12 +618,12 @@ I added a HoleLevelGate script. Each hole can detect ball level. For example:
 
 This connects nicely to the ball size system from last week. It makes ball level more meaningful beyond just size.
 
-![Week5Movetheball.gif](Media/Week5Movetheball.gif)
-
 #### 3. Safe Zone
 
 I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
-![Week5withSafeZonemp4.gif](Media/Week5withSafeZonemp4.gif)
+
+![Week5withSafeZone.gif](Media/Week5withSafeZone.gif)
+
 #### 4. Heart Life System
 
 Instead of showing life as numbers, I switched to heart icons using Canvas UI. I created an array of images that switch between full and empty heart sprites depending on current life.
@@ -640,7 +640,7 @@ This week was much harder than last week, mainly because I was building on top o
 
 #### 1. Forcing Horizontal Movement
 
-I wanted to design obstacles like multiple lasers or safe zones that force the player to move left or right. However, the bounce mechanic limits direct control. The player cannot freely move the ball horizontally — only influence it during paddle contact.
+I wanted to design obstacles like multiple lasers or safe zones that force the player to move left or right. However, the bounce mechanic limits direct control.The player cannot freely move the ball horizontally, only influence it during paddle contact.
 
 I tried several approaches:
 
