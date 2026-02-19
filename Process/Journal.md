@@ -589,7 +589,7 @@ To support the visual direction (as wrote in my previous week future scope), I d
 
 For the ball, flying elements, and hearts, I used existing templates from asset libraries and slightly modified them to maintain visual consistency. 
 
-Here are my rough drawing and below are the pixel arts:
+Here are my rough drawing and the pixel arts:
  <p align="left">
  <img src="Media/Week5DesignComponent.jpeg" alt="Week5DesignComponent.jpeg" width="300" height="200">
    <img src="Media/Week5Pixel art.png" alt="Week5Pixelart.png" width="300" height="300">
@@ -622,13 +622,15 @@ This connects nicely to the ball size system from last week. It makes ball level
 
 I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
 
-![Week5withSafeZone.gif](Media/Week5withSafeZone.gif)
+![Week5LoseHeart.gif](Media/Week5LoseHeart.gif)
 
 #### 4. Heart Life System
 
 Instead of showing life as numbers, I switched to heart icons using Canvas UI. I created an array of images that switch between full and empty heart sprites depending on current life.
 
 This small UI change makes the game feel much more complete. I was honestly very excited when it worked.
+
+![Week5withSafeZone.gif](Media/Week5withSafeZone.gif)
 
 #### 5. Game Ending
 
