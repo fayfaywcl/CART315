@@ -499,7 +499,14 @@ Here are my notes:
 
 When I compared this concept to my bouncing ball and laser system, I realized something important. My game already requires the player to think about multiple elements at once , paddle control, bounce physics, and scrolling obstacles. However, the difficulty progression was not strong enough. It needed clearer pattern learning and more structured unpredictability.
 
-Around the same time, I noticed a newly released Steam game called [Log Riders](https://store.steampowered.com/app/4082750/Log_Riders/). Although the mechanics are different, the way it forces directional movement and creates pressure through motion inspired me. I started imagining how similar “forced movement” ideas could be translated into rotating lasers and obstacle patterns in 2D form.
+Around the same time, I noticed a newly released Steam game called [Log Riders](https://store.steampowered.com/app/4082750/Log_Riders/). Although the mechanics are different, the way it forces directional movement and creates pressure through motion inspired me. I started imagining how similar “forced movement” ideas could be translated into rotating lasers and obstacle patterns in 2D form. 
+
+Notes inspired by the Log Riders game:
+- Vertical pressure mechanics (Blocks move up and down)
+- Rotating circular laser systems:
+    - Center positioned at the top (appearing as a half-circle sweep)
+    - Center positioned in the middle (forming a full circular rotation)
+- One-sided force movement (pushing the player toward one direction)
 
 
 ### Clarifying This Week’s Direction
