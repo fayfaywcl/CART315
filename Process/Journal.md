@@ -594,6 +594,10 @@ Here are my rough drawing and below are the pixel arts:
  <img src="Media/Week5DesignComponent.jpeg" alt="Week5DesignComponent.jpeg" width="300" height="200">
 </p>
 
+ <p align="left">
+ <img src="Media/Week5Lazer.png" alt="Week5Lazer.png" width="300" height="300">
+</p>
+
 ## What Was Successful
 
 This week, several systems worked successfully, and I am genuinely happy about them.
