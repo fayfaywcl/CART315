@@ -519,11 +519,11 @@ Instead of completely changing the game genre, I decided to keep the core identi
 - A paddle that can move in four directions
 - A bouncing ball controlled through paddle interaction
 
-Rather than redesigning everything, I focused on implementing different “tasks” or obstacle variations inside this structure. I also read about level design patterns in 2D games and became interested in the idea of guidance and safe zones. That concept felt suitable for my game, because the bouncing mechanic already creates tension. If I could give the player brief safe moments, the rhythm would feel more intentional instead of constantly chaotic.
+Rather than redesigning everything, I focused on implementing different “tasks” or obstacle variations inside this structure. I also read about [Level Design Patterns in 2D Games](https://www.gamedeveloper.com/design/level-design-patterns-in-2d-games#branching) and became interested in the idea of guidance and safe zones. That concept felt suitable for my game, because the bouncing mechanic already creates tension. If I could give the player brief safe moments, the rhythm would feel more intentional instead of constantly chaotic.
 
 ### Design thinking before implementation
 
-After clarifying the core bouncing ball + laser survival structure, I began listing different gameplay tasks that could appear in the game. These ideas were not random additions. They were inspired by my early sketches and by the article [Level Design Patterns in 2D Games](https://www.gamedeveloper.com/design/level-design-patterns-in-2d-games#branching), especially the ideas of "Guidance" and "Safe Zones". From that reading, I understood that difficulty should not only increase by adding more hazards, but by controlling player movement, visual direction, and moments of relief.
+After clarifying the core bouncing ball with laser survival structure, I began listing different gameplay tasks that could appear in the game. 
 
 For the laser tag variations, I explored multiple movement and pattern possibilities:
 
