@@ -567,7 +567,7 @@ Beyond lasers, I explored additional features that expand interaction without ch
     Inspired directly by the article, I imagined a long protected block area where, if the player chooses correctly, they can briefly rest from danger. 
 
  <p align="left">
- <img src="Media/Week5DifferentLevel.jpeg" alt="Week5DifferentLevel.jpeg" width="500" height="400">
+ <img src="Media/Week5DifferentLevel.jpeg" alt="Week5DifferentLevel.jpeg" width="400" height="300">
 </p>
 
 ![Week5Idea.gif](Media/Week5Idea.gif)
@@ -588,6 +588,11 @@ To support the visual direction (as wrote in my previous week future scope), I d
 - Blocks
 
 For the ball, flying elements, and hearts, I used existing templates from asset libraries and slightly modified them to maintain visual consistency. 
+
+Here are my rough drawing and below are the pixel arts:
+ <p align="left">
+ <img src="Media/Week5DesignComponent.jpeg" alt="Week5DesignComponent.jpeg" width="300" height="200">
+</p>
 
 ## What Was Successful
 
@@ -612,9 +617,13 @@ I added a HoleLevelGate script. Each hole can detect ball level. For example:
 
 This connects nicely to the ball size system from last week. It makes ball level more meaningful beyond just size.
 
+![Week5Movetheball.gif](Media/Week5Movetheball.gif)
+
 #### 3. Safe Zone
 
 I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
+
+![Week5withSafeZonemp4.gif](Media/Week5withSafeZonemp4.gif)
 
 #### 4. Heart Life System
 
@@ -648,7 +657,11 @@ As my bounce identity limits certain obstacle types. If I want strong directiona
 
 Another struggle was rotating blocks together with the laser. At first, I wrote an additional script to make blocks rotate with the same speed and angle. But they rotated around their own centers instead of around the laser pivot.
 
+![Week5blockrotateNon-sense.gif](Media/Week5blockrotateNon-sense.gif)
+
 After searching online and finding a [tutorial](https://www.youtube.com/watch?v=x7BWNooNAGM&t=62s), I fixed the issue by debugging and properly adjusting the Transform hierarchy. The block now rotates correctly as a child object with the proper pivot behavior.
+
+![Week5withSafeZonemp4.gif](Media/Week5withSafeZonemp4.gif)
 
 This debugging took a long time, but it was a valuable learning experience.
 
