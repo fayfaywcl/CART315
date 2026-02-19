@@ -595,7 +595,7 @@ Here are my rough drawing and the pixel arts:
    <img src="Media/Week5Pixel art.png" alt="Week5Pixelart.png" width="300" height="300">
 </p>
 
-## What Was Successful
+### What Was Successful
 
 This week, several systems worked successfully, and I am genuinely happy about them.
 
@@ -636,7 +636,7 @@ This small UI change makes the game feel much more complete. I was honestly very
 
 The game is no longer an infinite loop. It now has an ending condition. This changes the structure completely. Instead of “how long can you survive,” it becomes “can you survive until the end?”
 
-## Design Struggles (Deeper Reflection)
+### Design Struggles (Deeper Reflection)
 
 This week was much harder than last week, mainly because I was building on top of an existing prototype. Every new feature interacts with old logic.
 
@@ -672,7 +672,7 @@ The square pattern laser (1→2→3→4 lighting sequence) conflicted with my or
 
 While I attempted to debug the issue, I realized that simply adding more code was not enough. The system likely requires refactoring at a foundational level, which I plan to address in the future.
 
-## Notes of Unity Control / Script (Important Reminders)
+### Notes of Unity Control / Script (Important Reminders)
 
 I also to document these main notes during implementation for future reference:
 
@@ -688,7 +688,7 @@ I also to document these main notes during implementation for future reference:
     
     Otherwise, they remain static on screen (this happened to my hole object).
 
-## Future Plan
+### Future Plan
 
 Due to the time spent debugging, I was not able to implement several features that I had originally planned. I also did not gather peer feedback this week, as most of my time was dedicated to redesigning and fixing internal logic.
 
@@ -706,7 +706,7 @@ The final goal is to integrate all difficulty mechanics into a cohesive scrollin
 
 I also plan to ask friends to playtest the game and provide feedback on their experience.
 
-## Final Reflection
+### Final Reflection
 
 This week’s exploration is much harder than the previous one. Building on top of another prototype requires more awareness of system interaction. Many bugs were not just coding errors but logic design problems.
 
