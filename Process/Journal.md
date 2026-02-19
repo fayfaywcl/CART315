@@ -608,7 +608,7 @@ I created a RotatingLaser script attached to my Laser Container prefab. With som
 
 This improvement made level design much easier. Instead of rewriting logic each time, I can now adjust rotation speed and angle directly in the UI. It feels more like designing rather than coding every variation manually.
 
-##### 2. Hole Level Detection
+#### 2. Hole Level Detection
 
 I added a HoleLevelGate script. Each hole can detect ball level. For example:
 
@@ -680,9 +680,9 @@ I also to document these main notes during implementation for future reference:
     - Go to image settings → edit Max Size & Pixels Per Unit
     - Pixel Per Unit 10 → bigger
     - Pixel Per Unit 500 → smaller
-<p align="left">
- <img src="Media/Week5Note1.png" alt="Week5Note1.png" width="300" height="200">
-</p>
+    <p align="left">
+     <img src="Media/Week5Note1.png" alt="Week5Note1.png" width="400" height="400">
+    </p>
 
 - Always attach scrolling script to objects that need to move.
     
