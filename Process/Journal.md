@@ -508,6 +508,8 @@ Notes inspired by the Log Riders game:
     - Center positioned in the middle (forming a full circular rotation)
 - One-sided force movement (pushing the player toward one direction)
 
+![LogRider.gif](Media/LogRider.gif)
+
 
 ### Clarifying This Week’s Direction
 
@@ -563,9 +565,12 @@ Beyond lasers, I explored additional features that expand interaction without ch
 - **Safe Zone areas**
     
     Inspired directly by the article, I imagined a long protected block area where, if the player chooses correctly, they can briefly rest from danger. 
-    
 
-[Image] 
+ <p align="left">
+ <img src="Media/Week5DifferentLevel.jpeg" alt="Week5DifferentLevel.jpeg" width="500" height="400">
+</p>
+
+![Week5Idea.gif](Media/Week5Idea.gif)
 
 When I mapped out these level designs, I realized that implementing a big boss would be difficult. My game currently has no attack mechanic, which the player only survives. Adding a boss would require redesigning the entire interaction system. Instead of forcing that idea, I explored alternatives:
 
