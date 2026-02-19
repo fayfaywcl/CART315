@@ -622,7 +622,7 @@ This connects nicely to the ball size system from last week. It makes ball level
 
 I implemented Safe Zone using a trigger block connected to the scrolling system. If the player moves correctly, they can stay briefly in safety. 
 
-![Week5LoseHeart.gif](Media/Week5LoseHeart.gif)
+![Week5withSafeZone.gif](Media/Week5withSafeZone.gif)
 
 #### 4. Heart Life System
 
@@ -630,7 +630,7 @@ Instead of showing life as numbers, I switched to heart icons using Canvas UI. I
 
 This small UI change makes the game feel much more complete. I was honestly very excited when it worked.
 
-![Week5withSafeZone.gif](Media/Week5withSafeZone.gif)
+![Week5LoseHeart2.gif](Media/Week5LoseHeart2.gif)
 
 #### 5. Game Ending
 
