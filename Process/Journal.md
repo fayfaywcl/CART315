@@ -595,7 +595,12 @@ Here are my rough drawing and below are the pixel arts:
 </p>
 
  <p align="left">
- <img src="Media/Week5Lazer.png" alt="Week5Lazer.png" width="300" height="300">
+ <img src="Media/Week5Lazer.png" alt="Week5Lazer.png" width="200" height="200">
+  <img src="Media/Week5LazerShootrt.png" alt="Week5LazerShootrt.png" width="200" height="200">
+  <img src="Media/Week5Blocks.png" alt="Week5Blocks.png" width="200" height="200">
+  <img src="Media/Week5FireBall.png" alt="Week5FireBall.png" width="200" height="200">
+  <img src="Media/Week5FullHeart.png" alt="Week5FullHeart.png" width="200" height="200">
+  <img src="Media/Week5EmptyHeart.png" alt="Week5EmptyHeart.png" width="200" height="200">
 </p>
 
 ## What Was Successful
