@@ -494,9 +494,8 @@ I remembered the video I watched for the upcoming class: [How Cuphead’s Bosses
 
 Here are my notes:
 
-focused on ideas such as tricky attack variation, non-straight movement, changes in speed and size, and especially telegraphing.
-
-What stood out most was the idea that players learn through memory, reaction, and skill. A good challenge is not purely random. It may feel overwhelming at first, but there is always a readable pattern behind it. The player might get hit the first time, but after observing, they understand the structure. They improve because they remember.
+- Tricky attack variation, non-straight movement, changes in speed and size, and especially telegraphing.
+- Key idea: players learn through memory, reaction, and skill. A good challenge is not purely random. It may feel overwhelming at first, but there is always a readable pattern behind it. The player might get hit the first time, but after observing, they understand the structure. They improve because they remember.
 
 When I compared this concept to my bouncing ball and laser system, I realized something important. My game already requires the player to think about multiple elements at once , paddle control, bounce physics, and scrolling obstacles. However, the difficulty progression was not strong enough. It needed clearer pattern learning and more structured unpredictability.
 
