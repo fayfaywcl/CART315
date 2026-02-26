@@ -716,6 +716,10 @@ I realize now that maybe each new feature should be tested as a smaller isolated
 
 Even though I felt overwhelmed at times, I am still happy with the progress. The rotating difficulty patterns work. The hole system works. The safe zone works. The heart UI works. The game now has an ending.
 
+Most importantly, the system is slowly moving toward the pattern-learning idea inspired by Game Maker's Toolki , memory, reaction, and skill. Which’s Gooddd!
+
+After taking a short break, I believe I can return with clearer thinking and better balance between player control and difficulty progression. Even though this week was much harder, it also felt like a more serious step forward in understanding system design.
+
 
 ## **Week6** (20.2.2026 to 26.2.2026) – Iterative Prototyping 1 (Family Photo Game)
 
@@ -776,9 +780,9 @@ The player role is like a guardian. The player need to remove the NPC, block the
 
 I think to do a prototype of the family one, looks fun and not such hard to implement for test (hope so….).
 
-After choosing this idea, I did some research. I search in the internet and found that some related concept games. I find Take Photo on CrazyGames, that required the player to take a camera photo to accurate the guide photo showing. The game system is 3D and the player can move according to the landscape while wearing the camera. Then I though I maybe can use the camera capture idea with the photo match with the setted photo idea, to make the rules that I originally thought about, like using count whether the player head / hands are capture in the screen or not.
+After choosing this idea, I did some research. I search in the internet and found that some related concept games. I find [Take Photo on CrazyGames](https://www.crazygames.com/game/take-photo), that required the player to take a camera photo to accurate the guide photo showing. The game system is 3D and the player can move according to the landscape while wearing the camera. Then I though I maybe can use the camera capture idea with the photo match with the setted photo idea, to make the rules that I originally thought about, like using count whether the player head / hands are capture in the screen or not.
 
-I also found Totally Secure Airport on Steam. I found that its laser screen luggage idea maybe could benefit to my game setting, as the player scroll into the camera frame is two angle. So the player could have first-person scene, and after the “3,2,1” then show the camera side photo.
+I also found [Totally Secure Airport on Steam](https://store.steampowered.com/app/4348760/Totally_Secure_Airport/). I found that its laser screen luggage idea maybe could benefit to my game setting, as the player scroll into the camera frame is two angle. So the player could have first-person scene, and after the “3,2,1” then show the camera side photo.
 
 After I did the research, I use my draft to list out all the related features and idea by drawing. I also draw the possible scene flow of how the family photo game could be.
 
@@ -790,7 +794,7 @@ Also, while I think of different level or possible enhance possible, I think bet
 
 I think that this game should be 3D version. 2D is ok, but the player scene and camera scene should have different. The player should be first person angle, as same as the camera first person angle too, also with a top view / bird’s eye view.
 
-I also suddenly think about my high school game Stumble Guys, that its rule is massive multiplayer party knockout game with up to 32 players online. Each round it cut off half the player, 32→16→8→1, then the player need to rush to final area as soon as possible. The game rules seems like my obstacles idea and also the rush to the camera zone idea. So I think that will be a great direction.
+I also suddenly think about the game I played during in my high school time [Stumble Guys](https://www.stumbleguys.com/), that its rule is massive multiplayer party knockout game with up to 32 players online. Each round it cut off half the player, 32→16→8→1, then the player need to rush to final area as soon as possible. The game rules seems like my obstacles idea and also the rush to the camera zone idea. So I think that will be a great direction.
 
 
 #### Prototype Testing
@@ -840,14 +844,10 @@ I also document these notes during this implementation for future reference.
     
 ### Future Plan
 
-During implementation I think about is there are any 3D objects can paste in Unity, like assets from Blender. I search through internet and found Unity ProBuilder tutorial, that I could use 3D object with texture on it, also additional features like lights, splines or lightmaps. This time I don’t have enough time to try it, but I think it is a good tutorial to try later in my project. 
+During implementation I think about is there are any 3D objects can paste in Unity, like assets from Blender. I search through internet and found [Unity ProBuilder tutorial](https://www.youtube.com/watch?v=4Am9E36-7HM&embeds_referring_euri=https%3A%2F%2Fwww.bing.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.bing.com&source_ve_path=Mjg2NjY), that I could use 3D object with texture on it, also additional features like lights, splines or lightmaps. This time I don’t have enough time to try it, but I think it is a good tutorial to try later in my project. 
 
 Also, since now I am using week2 UFO object as assistance for testing, it is better to create the character later and implement them for testing later.
 
 The future plan will also include that ideas I made but not testing this time, like different level obstacles, adding more obstacles, and explore how can let the game could play by multiplayer.
 
 Overall, I think it is a good iterative prototyping. I come up the idea from my daily struggles, research similar games, do drawing prototype and core idea implementation for test. So , I quite happy of it!!! 😊
-
-Most importantly, the system is slowly moving toward the pattern-learning idea inspired by Game Maker's Toolki ,  memory, reaction, and skill. Which’s Gooddd!
-
-After taking a short break, I believe I can return with clearer thinking and better balance between player control and difficulty progression. Even though this week was much harder, it also felt like a more serious step forward in understanding system design.
