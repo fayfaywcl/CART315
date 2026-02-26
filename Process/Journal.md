@@ -716,6 +716,130 @@ I realize now that maybe each new feature should be tested as a smaller isolated
 
 Even though I felt overwhelmed at times, I am still happy with the progress. The rotating difficulty patterns work. The hole system works. The safe zone works. The heart UI works. The game now has an ending.
 
+
+## **Week6** (20.2.2026 to 26.2.2026) – Iterative Prototyping 1 (Family Photo Game)
+
+When I thinking of the ideas, I took a look to my notes that I wrote from last lecture, the speed dating of the ideaization. I found that I really like 2 of them, while I want to enhanced them and maybe well organized those small point as better game design for 1 game idea only. Overall, the design core idea is I want to turn my daily struggles and normal life experience into game systems, and create tension by time pressure and chaos, but still with structure. I want the game feel relatable, but also playful and competitive.
+
+
+### Idea 1 – Day/Night Cycle, Invisible Marker (Maker & Area)
+
+The first one, Day/Night Cycle, idea come from “Maker & Area”.
+
+Invisible Marker
+
+- Day/Night cycle
+- Invisible marker at night
+- Idea can be in 10 mins games, day and night time take turns (2.5mins day and 0.5mins night)
+- Idea: Spy game, spy only see at night, or shot game, shot the one is not your team
+- Money / weight (who got the heaviest at the end)
+- Zone can be claimed (10 zones)
+
+The idea come from the UV marker, only appear in UV light, so ppl need to turn the room dark and see use the UV light. The idea also come from a movie scene, that the last victim die and stamp a UV only stamp to murderer during the train is running. After the train arrived to the platform, the police got the tips and check ppl body to found who has the stamp mark. Hence, I want to know how I made a game feel like the spy game while found by UV lights.
+
+#### Main Game Concept
+
+Having 2 team, team “red” & team “blue”. During the day time they are all white team. The time of each round will change the background scene to be day / dark mode, and the dark mode will be shorter period time as the day one.
+
+The whole idea is there is a game zone like maze. The maze idea was come from Physical 100 season2 (Things get a-MAZE-ingly physical)**[**https://www.youtube.com/watch?v=TnLKz1smewc] games. Two end of the maze will be the main zone as the 2 team. After the start announce, player can grab the items that found in the maze or from other team zone. There are some protect equipment that player can grab, tool features could enhance the player speed.
+
+If the player is moving the heavier item, their moving speed will become slower, as to create a real world sense. Also more ppl to move a heavier object, faster the speed. There could have tool features, like use less timer to move a big object, the object x2 for the weight count, and the map showing the shortest way from where you grab the object to your team zone. Player should not know the teammate until the game mode is in dark zone.
+
+### Idea 2 – The Family Photo
+
+Idea come from normal life. Usually when we have family photo, we hurry up to be in the photo. During taking photo, there are always someone be covered, someone missed, someone just go to washroom. More, maybe ppl are not yet ready for the photo, someone close the eye, someone not look at the camera, someone messy in hair, etc. I want to make that chaos feeling into a game.
+
+#### Main Game Concept
+
+In the middle of the screen have a camera. Ppl can walking around the section, but cannot go in the camera photo section. When the screen show “3,2,1”, player need to run to the camera zone and with jump feature / run to get the frontest spot to take the picture that you won’t be covered (like life experience). Then after it, the screenshot of the result will be taken.
+
+It will be multiple player game (not just 4 players, but can be more, however this still need to test). More advanced level: required specific part of the body must show in the screen, like left hand, right arm angle, two eyes. The reduced counting timer can be more like around 30 seconds, while there are many obstacles that they need to pass through and run to the taking zone.
+
+
+### Idea 3 – Protect Computer Prevent
+
+This idea come from my computer battery die. If it is not plugged in and someone move the plug, it will power off the computer and all the material that not save will lose. During class or home, I am asking everyone not touching my computer, don’t move my plug in, don’t be so excited and hit my desk. Therefore, I think it can be a game idea. As what I did is having issue, I am protecting the computer, so how about turn this idea to be a protect game.
+
+#### Main Game Concept
+
+Player protect computer charger that no other object can disturb the link of it and the computer. Many small npc appear and walk around the laptop, and if they touch the wire several time, the computer screen will turn off. Depend on the level of the npc, some may use 5 seconds to break the link of the battery, higher level npc break faster. Player need to remove the npc and protect the link.
+
+### After Choosing 1 of 3 – Family Photo
+
+I think to do a prototype of the family one, looks fun and not such hard to implement for test (hope so….).
+
+After choosing this idea, I did some research. I search in the internet and found that some related concept games. I find Take Photo on CrazyGames, that required the player to take a camera photo to accurate the guide photo showing. The game system is 3D and the player can move according to the landscape while wearing the camera. Then I though I maybe can use the camera capture idea with the photo match with the setted photo idea, to make the rules that I originally thought about, like using count whether the player head / hands are capture in the screen or not.
+
+I also found Totally Secure Airport on Steam. I found that its laser screen luggage idea maybe could benefit to my game setting, as the player scroll into the camera frame is two angle. So the player could have first-person scene, and after the “3,2,1” then show the camera side photo.
+
+After I did the research, I use my draft to list out all the related features and idea by drawing. I also draw the possible scene flow of how the family photo game could be.
+
+[Image] 
+
+For the character, I think player could choose their prefer object (e.g. UFO, luggage, toy car) or build a human like player character but use simple shapes, like square / sphere. While I think that, I found that how about keep the human-look character design and having a store before each round start features, that player can add accessories on their character and add bonus point / match the photo requirement.
+
+Also, while I think of different level or possible enhance possible, I think between the photo zone could have obstacle to block the road, like obstacle race game. The time could be now like count down 20, while player not only rush to the photo zone, but need to pass all the obstacle like wall, swing ball, rotate obstacle, need swing yourself to pass the platform (money bar / still rings), and one way narrow road between platform.
+
+I think that this game should be 3D version. 2D is ok, but the player scene and camera scene should have different. The player should be first person angle, as same as the camera first person angle too, also with a top view / bird’s eye view.
+
+I also suddenly think about my high school game Stumble Guys, that its rule is massive multiplayer party knockout game with up to 32 players online. Each round it cut off half the player, 32→16→8→1, then the player need to rush to final area as soon as possible. The game rules seems like my obstacles idea and also the rush to the camera zone idea. So I think that will be a great direction.
+
+
+#### Prototype Testing
+
+For testing, I want to test whether I could create the player first-person scene with WASD movement and jump section. Also test the camera “3,2,1” capture and show the picture at the end.
+
+For obstacles I may just implement basic features like wall and one narrow way road, but these are additional testing. The main point is test whether the main game idea could work in the whole world scene or not. Accessories are add on, so not testing this time.
+
+During start the implement, I think of Week 2 I explore the 3D objects, that I could use those features as basic and continue build on top of it.
+
+Also, this time I also create a 3D video prototype about how I think about it would be in testing prototype.
+
+[Video]
+
+### What Success
+
+The core loop works. A 10-second countdown starts (I changed from 5 seconds to 10 seconds for implementation testing). The player moves to the photo zone, and at 0 the game captures a photo, checks whether the player is inside the zone, freezes movement, and shows the result UI.
+
+I added restart flow (press R) and world-space UI that follows the player. The screenshot system uses a dedicated result camera and shows the captured image together with result and restart text. I debugged camera visibility and trigger detection with logs.
+
+Overall, the basic round system, capture, UI, and reset all function as my original idea.
+
+### Notes That I Facing This Time (Important Reminders)
+
+I also document these notes during this implementation for future reference.
+
+1. If have 2 camera, ensure the nonused Camera is disabled by default in the Inspector in Unity. Otherwise, the cameras will conflict and not show the correct result.
+2. As I assign the text in the world for the countdown, it was not showing while the player was playing. After that I found that it is because it is not link to the player object. Hence, I add a Canvas with the Countdown text and make the Player object the parent of it.
+    
+    Even if the Render Mode is set to “Screen Space - Camera”, it is not work. When set to “World Space”, the text seems very far from the screen. After exploring a bit, I found that the issue is about the Canvas scale. After I set the Scale to 0.0005 and move the position of Z to 1.5, the result looks better. The text could show properly while the player is moving.
+    
+3. In the last scene UI, I couldn’t see the success or “press restart” text. Later I figure out that TextTMP need to be below the screenImage in the Hierarchy, then it can show on top of the image in the player scene. Remember : Lower position in the same Hierarchy will show on top of the upper features.
+4. The logic and time flow always be messy. Hence, I set the end moment code flow clearly to ensure all the features work as what I expected in my mind:
+    - Countdown ends
+    - Player freezes
+    - Screenshot captured
+    - Player teleports to start
+    - UI shows
+    
+    However, I still face the issue that when the player object is back to the original position, the screen capture camera could not take the object appear or not. Hence, I create a shorter and clearer flow to ensure everything work step by step from the countdown reach 0 to restart the game:
+    
+    - Countdown reaches 0 → player frozen
+    - Result camera captures (end of frame)
+    - After 1 second → player teleports back to start
+    
+    So as a remember, in 1 second many things will happen. It is better to set how the flow works first before implement.
+    
+### Future Plan
+
+During implementation I think about is there are any 3D objects can paste in Unity, like assets from Blender. I search through internet and found Unity ProBuilder tutorial, that I could use 3D object with texture on it, also additional features like lights, splines or lightmaps. This time I don’t have enough time to try it, but I think it is a good tutorial to try later in my project. 
+
+Also, since now I am using week2 UFO object as assistance for testing, it is better to create the character later and implement them for testing later.
+
+The future plan will also include that ideas I made but not testing this time, like different level obstacles, adding more obstacles, and explore how can let the game could play by multiplayer.
+
+Overall, I think it is a good iterative prototyping. I come up the idea from my daily struggles, research similar games, do drawing prototype and core idea implementation for test. So , I quite happy of it!!! 😊
+
 Most importantly, the system is slowly moving toward the pattern-learning idea inspired by Game Maker's Toolki ,  memory, reaction, and skill. Which’s Gooddd!
 
 After taking a short break, I believe I can return with clearer thinking and better balance between player control and difficulty progression. Even though this week was much harder, it also felt like a more serious step forward in understanding system design.
