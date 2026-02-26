@@ -866,6 +866,6 @@ During implementation I think about is there are any 3D objects can paste in Uni
 
 Also, since now I am using week2 UFO object as assistance for testing, it is better to create the character later and implement them for testing later.
 
-The future plan will also include that ideas I made but not testing this time, like different level obstacles, adding more obstacles, and explore how can let the game could play by multiplayer.
+The future plan will also include that ideas I made but not testing this time, like different level obstacles, adding more obstacles, and explore how can let the game could play by multiplayer. Seeking feedback from others will also be part of the future plan.
 
 Overall, I think it is a good iterative prototyping. I come up the idea from my daily struggles, research similar games, do drawing prototype and core idea implementation for test. So , I quite happy of it!!! 😊
