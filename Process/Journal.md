@@ -803,7 +803,7 @@ I also suddenly think about the game I played during in my high school time [Stu
  ![Week6StumbleGuy.gif](Media/Week6StumbleGuy.gif)
 
 
-#### Prototype Testing
+### Prototype Testing
 
 For testing, I want to test whether I could create the player first-person scene with WASD movement and jump section. Also test the camera “3,2,1” capture and show the picture at the end.
 
