@@ -726,7 +726,7 @@ After taking a short break, I believe I can return with clearer thinking and bet
 When I thinking of the ideas, I took a look to my notes that I wrote from last lecture, the speed dating of the ideaization. I found that I really like 2 of them, while I want to enhanced them and maybe well organized those small point as better game design for 1 game idea only. Overall, the design core idea is I want to turn my daily struggles and normal life experience into game systems, and create tension by time pressure and chaos, but still with structure. I want the game feel relatable, but also playful and competitive.
 
 
-### Idea 1 – Day/Night Cycle, Invisible Marker (Maker & Area)
+### Idea 1 – Day/Night Cycle, Invisible Marker
 
 The first one, Day/Night Cycle, idea come from “Maker & Area”.
 
@@ -750,7 +750,7 @@ If the player is moving the heavier item, their moving speed will become slower,
 
 ### Idea 2 – The Family Photo
 
-Idea come from normal life. Usually when we have family photo, we hurry up to be in the photo. During taking photo, there are always someone be covered, someone missed, someone just go to washroom. More, maybe ppl are not yet ready for the photo, someone close the eye, someone not look at the camera, someone messy in hair, etc. I want to make that chaos feeling into a game.
+Idea come from keywords "Unpredictable, family , stop-motion" and also normal life. Usually when we have family photo, we hurry up to be in the photo. During taking photo, there are always someone be covered, someone missed, someone just go to washroom. More, maybe ppl are not yet ready for the photo, someone close the eye, someone not look at the camera, someone messy in hair, etc. I want to make that chaos feeling into a game.
 
 #### Main Game Concept
 
