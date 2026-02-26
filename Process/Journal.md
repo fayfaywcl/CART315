@@ -821,7 +821,7 @@ The core loop works. A 10-second countdown starts (I changed from 5 seconds to 1
 
 I added restart flow (press R) and world-space UI that follows the player. The screenshot system uses a dedicated result camera and shows the captured image together with result and restart text. I debugged camera visibility and trigger detection with logs.
 
-Overall, the basic round system, capture, UI, and reset all function as my original idea.
+Overall, the basic round system, screenshot capture, UI display, and game reset all work as I imagined.
 
  ![Week6FamilyGameResult](Media/Week6FamilyGameResult.gif)
 
