@@ -741,7 +741,7 @@ The idea come from the UV marker, only appear in UV light, so ppl need to turn t
 
 Having 2 team, team “red” & team “blue”. During the day time they are all white team. The time of each round will change the background scene to be day / dark mode, and the dark mode will be shorter period time as the day one.
 
-The whole idea is there is a game zone like maze. The maze idea was come from Physical 100 season2 (Things get a-MAZE-ingly physical)**[**https://www.youtube.com/watch?v=TnLKz1smewc] games. Two end of the maze will be the main zone as the 2 team. After the start announce, player can grab the items that found in the maze or from other team zone. There are some protect equipment that player can grab, tool features could enhance the player speed.
+The whole idea is there is a game zone like maze. The maze idea was come from Physical 100[Netflix show] season2 [Things get a-MAZE-ingly physical game](https://www.youtube.com/watch?v=TnLKz1smewc). Two end of the maze will be the main zone as the 2 team. After the start announce, player can grab the items that found in the maze or from other team zone. There are some protect equipment that player can grab, tool features could enhance the player speed.
 
 If the player is moving the heavier item, their moving speed will become slower, as to create a real world sense. Also more ppl to move a heavier object, faster the speed. There could have tool features, like use less timer to move a big object, the object x2 for the weight count, and the map showing the shortest way from where you grab the object to your team zone. Player should not know the teammate until the game mode is in dark zone.
 
@@ -751,9 +751,13 @@ Idea come from normal life. Usually when we have family photo, we hurry up to be
 
 #### Main Game Concept
 
-In the middle of the screen have a camera. Ppl can walking around the section, but cannot go in the camera photo section. When the screen show “3,2,1”, player need to run to the camera zone and with jump feature / run to get the frontest spot to take the picture that you won’t be covered (like life experience). Then after it, the screenshot of the result will be taken.
+In the middle of the screen have a camera. Players can walking around the section freely, but cannot go into the camera photo section before the countdown. When the screen show “3,2,1”, all players need to rush to the camera zone. They can run and jump to get the frontest spot, trying not to be covered by others, just like real life experience.
 
-It will be multiple player game (not just 4 players, but can be more, however this still need to test). More advanced level: required specific part of the body must show in the screen, like left hand, right arm angle, two eyes. The reduced counting timer can be more like around 30 seconds, while there are many obstacles that they need to pass through and run to the taking zone.
+At the moment the countdown reach 0, the game capture a screenshot. The system then check whether the player is inside the photo zone and whether their body is clearly visible. 
+
+In my idea , it will be multiplayer game, not just 4 players but can be more, however this still need to test. 
+
+For advanced level, the game can require specific part of the body must show in the screen, like left hand, right arm angle, two eyes. This make the player not only rush, but also control their body position carefully. The reduced counting timer can be around 30 seconds, while there are many obstacles between spawn area and photo zone. Players need to pass through obstacles and still reach the photo zone before countdown end.
 
 
 ### Idea 3 – Protect Computer Prevent
@@ -762,7 +766,11 @@ This idea come from my computer battery die. If it is not plugged in and someone
 
 #### Main Game Concept
 
-Player protect computer charger that no other object can disturb the link of it and the computer. Many small npc appear and walk around the laptop, and if they touch the wire several time, the computer screen will turn off. Depend on the level of the npc, some may use 5 seconds to break the link of the battery, higher level npc break faster. Player need to remove the npc and protect the link.
+Player protect the computer charger that no other object can disturb the link between it and the computer. The computer is placed in the center as the main object to defend.
+
+Many small NPC appear and walk around the laptop randomly. If they touch the wire several times, the connection will weaken. After enough disturbance, the computer screen will turn off, which means game over. Depend on the level of the NPC, some may use around 5 seconds to break the link of the battery, higher level NPC break faster and are harder to stop.
+
+The player role is like a guardian. The player need to remove the NPC, block them, or push them away from the wire. The challenge increase when more NPC appear or when stronger NPC appear.
 
 ### After Choosing 1 of 3 – Family Photo
 
