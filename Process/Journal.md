@@ -730,14 +730,13 @@ When I thinking of the ideas, I took a look to my notes that I wrote from last l
 
 The first one, Day/Night Cycle, idea come from “Maker & Area”.
 
-Invisible Marker
-
+Core Elements
 - Day/Night cycle
 - Invisible marker at night
 - Idea can be in 10 mins games, day and night time take turns (2.5mins day and 0.5mins night)
-- Idea: Spy game, spy only see at night, or shot game, shot the one is not your team
+- Idea: Spy game, spy only see at night or team identification could see at night
 - Money / weight (who got the heaviest at the end)
-- Zone can be claimed (10 zones)
+- Zone can be claimed (could be 2or even 10 zones)
 
 The idea come from the UV marker, only appear in UV light, so ppl need to turn the room dark and see use the UV light. The idea also come from a movie scene, that the last victim die and stamp a UV only stamp to murderer during the train is running. After the train arrived to the platform, the police got the tips and check ppl body to found who has the stamp mark. Hence, I want to know how I made a game feel like the spy game while found by UV lights.
 
@@ -782,19 +781,26 @@ I think to do a prototype of the family one, looks fun and not such hard to impl
 
 After choosing this idea, I did some research. I search in the internet and found that some related concept games. I find [Take Photo on CrazyGames](https://www.crazygames.com/game/take-photo), that required the player to take a camera photo to accurate the guide photo showing. The game system is 3D and the player can move according to the landscape while wearing the camera. Then I though I maybe can use the camera capture idea with the photo match with the setted photo idea, to make the rules that I originally thought about, like using count whether the player head / hands are capture in the screen or not.
 
+ ![Week6TakephotoCamera.gif](Media/Week6TakephotoCamera.gif)
+
 I also found [Totally Secure Airport on Steam](https://store.steampowered.com/app/4348760/Totally_Secure_Airport/). I found that its laser screen luggage idea maybe could benefit to my game setting, as the player scroll into the camera frame is two angle. So the player could have first-person scene, and after the “3,2,1” then show the camera side photo.
+ ![Week6AirportScreen.gif](Week6AirportScreen.gif)
 
 After I did the research, I use my draft to list out all the related features and idea by drawing. I also draw the possible scene flow of how the family photo game could be.
 
-[Image] 
+<p align="left">
+     <img src="Media/Week6DrawIdeas.jpeg" alt="Week6DrawIdeas.jpeg" width="500" height="500">
+</p>
 
 For the character, I think player could choose their prefer object (e.g. UFO, luggage, toy car) or build a human like player character but use simple shapes, like square / sphere. While I think that, I found that how about keep the human-look character design and having a store before each round start features, that player can add accessories on their character and add bonus point / match the photo requirement.
 
 Also, while I think of different level or possible enhance possible, I think between the photo zone could have obstacle to block the road, like obstacle race game. The time could be now like count down 20, while player not only rush to the photo zone, but need to pass all the obstacle like wall, swing ball, rotate obstacle, need swing yourself to pass the platform (money bar / still rings), and one way narrow road between platform.
 
-I think that this game should be 3D version. 2D is ok, but the player scene and camera scene should have different. The player should be first person angle, as same as the camera first person angle too, also with a top view / bird’s eye view.
+So after combine all the idea, I think that this game should be 3D version. 2D is ok, but the player scene and camera scene should have different. The player should be first person angle, as same as the camera first person angle too, also with a top view / bird’s eye view.So it is better to use 3D game to display.
 
 I also suddenly think about the game I played during in my high school time [Stumble Guys](https://www.stumbleguys.com/), that its rule is massive multiplayer party knockout game with up to 32 players online. Each round it cut off half the player, 32→16→8→1, then the player need to rush to final area as soon as possible. The game rules seems like my obstacles idea and also the rush to the camera zone idea. So I think that will be a great direction.
+
+ ![Week6StumbleGuy.gif](Media/Week6StumbleGuy.gif)
 
 
 #### Prototype Testing
@@ -803,11 +809,11 @@ For testing, I want to test whether I could create the player first-person scene
 
 For obstacles I may just implement basic features like wall and one narrow way road, but these are additional testing. The main point is test whether the main game idea could work in the whole world scene or not. Accessories are add on, so not testing this time.
 
-During start the implement, I think of Week 2 I explore the 3D objects, that I could use those features as basic and continue build on top of it.
+During start the implement, I think of Week 2 I explore the 3D objects, that I could use those features as basic and continue build on top of it.So , the object will be the UFO objects that I used in Week2 , while for the future plan the object would change to the designed character.
 
 Also, this time I also create a 3D video prototype about how I think about it would be in testing prototype.
 
-[Video]
+ ![Week6FamilyGame.gif](Media/Week6FamilyGame.gif)
 
 ### What Success
 
@@ -817,16 +823,28 @@ I added restart flow (press R) and world-space UI that follows the player. The s
 
 Overall, the basic round system, capture, UI, and reset all function as my original idea.
 
+ ![Week6FamilyGameResult](Media/Week6FamilyGameResult.gif)
+
 ### Notes That I Facing This Time (Important Reminders)
 
 I also document these notes during this implementation for future reference.
 
 1. If have 2 camera, ensure the nonused Camera is disabled by default in the Inspector in Unity. Otherwise, the cameras will conflict and not show the correct result.
+   
 2. As I assign the text in the world for the countdown, it was not showing while the player was playing. After that I found that it is because it is not link to the player object. Hence, I add a Canvas with the Countdown text and make the Player object the parent of it.
     
     Even if the Render Mode is set to “Screen Space - Camera”, it is not work. When set to “World Space”, the text seems very far from the screen. After exploring a bit, I found that the issue is about the Canvas scale. After I set the Scale to 0.0005 and move the position of Z to 1.5, the result looks better. The text could show properly while the player is moving.
+
+<p align="left">
+     <img src="Media/Week6LinkedImageSetting.png" alt="Week6LinkedImageSetting.png" width="200" height="400">
+</p>
     
 3. In the last scene UI, I couldn’t see the success or “press restart” text. Later I figure out that TextTMP need to be below the screenImage in the Hierarchy, then it can show on top of the image in the player scene. Remember : Lower position in the same Hierarchy will show on top of the upper features.
+
+ <p align="left">
+     <img src="Media/Week6HireachyinCanvas.png" alt="Week6HireachyinCanvas.png" width="400" height="200">
+</p>
+
 4. The logic and time flow always be messy. Hence, I set the end moment code flow clearly to ensure all the features work as what I expected in my mind:
     - Countdown ends
     - Player freezes
