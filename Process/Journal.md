@@ -784,7 +784,8 @@ After choosing this idea, I did some research. I search in the internet and foun
  ![Week6TakephotoCamera.gif](Media/Week6TakephotoCamera.gif)
 
 I also found [Totally Secure Airport on Steam](https://store.steampowered.com/app/4348760/Totally_Secure_Airport/). I found that its laser screen luggage idea maybe could benefit to my game setting, as the player scroll into the camera frame is two angle. So the player could have first-person scene, and after the “3,2,1” then show the camera side photo.
- ![Week6AirportScreen.gif](Week6AirportScreen.gif)
+
+ ![Week6AirportScreen.gif](Media/Week6AirportScreen.gif)
 
 After I did the research, I use my draft to list out all the related features and idea by drawing. I also draw the possible scene flow of how the family photo game could be.
 
@@ -869,3 +870,155 @@ Also, since now I am using week2 UFO object as assistance for testing, it is bet
 The future plan will also include that ideas I made but not testing this time, like different level obstacles, adding more obstacles, and explore how can let the game could play by multiplayer. Seeking feedback from others will also be part of the future plan.
 
 Overall, I think it is a good iterative prototyping. I come up the idea from my daily struggles, research similar games, do drawing prototype and core idea implementation for test. So , I quite happy of it!!! 😊
+
+## Extra Credit: Design Journal - Game Analysis(Overcooked)
+#### Why I Chose This Game:
+
+For the game analysis, I choose Overcooked as it is the game that I mentioned in the first lecture. I think I know the game well because I play it during every family gathering or when my friends come to my home. At the same time, I think it is a very good multiplayer and family game. I usually play it on Nintendo Switch, so my analysis is based on playing with the Switch controller.
+
+#### Background and Basic Information
+
+After choosing the game , I did a reasearch of the game.Overcooked is a 2016 cooking simulation game developed by Ghost Town Games and published by Team17. It is a local cooperative experience where players control chefs in kitchens filled with obstacles and hazards to rapidly prepare meals according to specific orders under a time limit. The game was first released on PlayStation 4, Windows, and Xbox One in 2016, and later on Nintendo Switch in 2017. After that, Overcooked 2 was released in 2018.
+
+### What Makes the Game Interesting
+
+#### 1. Everyday Chaos as a Core System
+
+From my own experience, I think the game is interesting because it is related to daily life struggle. Recently, I heard the idiom “Too many cooks in the kitchen,” which means that too many people involved in a task can result in confusion and chaos. I think that is exactly how the idea of the game feels. In Overcooked, the designers created a scene that represents the struggle in the kitchen. They use the restaurant backend scenario to create pressure, limited space, and shared responsibility. Mechanically, the game forces multiplayer cooperation.
+
+- Limited space
+- Time pressure
+- Shared resources
+- Task dependency
+
+Players cannot efficiently complete dishes alone. One person chops, another cooks, another plates, another washes dishes. Communication becomes part of the gameplay system. In this way, the chaos becomes the core experience.
+
+#### 2. Easy to learn
+
+Another important decision is how simple the controls are. The game is very easy to learn. On Switch, players mainly:
+
+- Move
+- Pick up / put down
+- Chop
+- Interact
+
+For all the cooking methods, such as boiling, steaming, pan-frying, and deep-frying, the game limits the real-life complications of how they actually work. Instead of simulating temperature control and timing precision, the mechanic is simplified into: put the food in the pan or pot, wait until it finishes, then pick it up and place it on a plate. The game reduces cooking into a few clear, repeatable interactions.
+
+By simplifying all the steps, the system assumes that everyone theoretically knows how cooking works at a basic level. Whether it is kids or elderly players, most people have at least a slight idea of what a cooking experience looks like. This shared real-world understanding lowers the learning barrier of the game.
+
+Also, before each round, the system teaches how a dish is assembled and what ingredients require which methods. For example, in a hamburger order, the meat, tomato, and lettuce need to be chopped, and the chopped meat needs to be pan-fried. At the end, everything is combined into a finished burger: sesame seed bun + fried meat + tomato + lettuce.
+
+With this kind of guidance, players can understand the recipe almost like a simple math equation. The game removes real-life cooking complexity such as exact measurements, seasoning, or portion control. Players do not need to think about how many grams of meat or how many slices of tomato are required. The system reduces cooking into clear, visible steps.
+
+If players forget how to prepare a dish, the visual pending orders at the top of the screen continue to guide them. The orders pile up, showing the required ingredients and their icons. This constantly reminds players what to focus on next and helps them plan ahead. The design ensures that players always know what they should be doing in the moment and what they need to prepare for upcoming orders.
+
+Because of this easy-to-learn structure, the game successfully reaches a wide range of players across different ages and gaming experiences. Beginners, kids, and elderly players can all participate. From my personal experience, I usually play with my family members, including my mum who does not normally play games, she still enjoys Overcooked. This shows that the simplified mechanical structure and clear guidance system effectively enlarge the target audience and make the game accessible without lowering its cooperative challenge.
+
+#### 3.  Foreshadowing and Guidance Technique
+
+Third, I found the foreshadowing and guidance technique in the game is very successful. Each world introduces new dishes and equipment step by step. Early levels teach simple recipes, like sashimi or sushi. These recipes usually require only one or two steps, which allow players to first understand the basic loop: pick up ingredient → prepare → plate → serve. There are fewer obstacles and more open space, so players can focus on understanding the system.
+
+Later levels mix multiple recipes together, like baking a cake, that require 4-5 steps for 1 dish. This increases cognitive load because players must manage different preparation methods at the same time due to the limited time. They are no longer just repeating one action. They must prioritize tasks, divide roles, and communicate more clearly.
+
+At the same time, the kitchen layout becomes more complex with moving platforms, separated islands, ice floors, and conveyor belts. 
+
+These spatial changes force players to rethink their workflow. They cannot rely on the same positioning strategy from earlier levels.
+
+The difficulty increases in two directions:
+
+- Recipe complexity
+- Spatial disruption
+
+Recipe complexity increases mental pressure, while spatial disruption increases physical coordination difficulty. By combining both, the game challenges both planning and execution.
+
+By the final level of each world, all previous mechanics are combined. Players must manage multiple recipes while adapting to unstable environments. However, because the game introduced these mechanics gradually, so players do not feel completely overwhelmed. 
+
+Instead of using long tutorials or heavy text instructions, the game teaches through repetition and escalation. Players fail, adjust, and improve naturally. This scaffolding design creates a strong sense of progression. Players feel that their improvement comes from experience, which makes the learning process more satisfying and engaging.
+
+#### 4. Clear Goals and Visible Feedback
+
+The game has a very clear mission structure. Before the level starts, it shows how many points (coins) are required to achieve 1, 2, or 3 stars. One star is enough to pass the level, but higher scores are needed to unlock later stages. For example, in higher levels such as 4-4, players need a total of 48 stars to unlock it. 
+
+This system creates layered goals:
+
+- 1 star → minimum success
+- 2–3 stars → better performance
+
+It first asks the player to simply pass the level. The requirement for 1 star is usually achievable, so players are not blocked too early. This lowers frustration and allows them to move forward in the game.
+
+However, when players replay the level to aim for 2 or 3 stars, the experience changes. They are no longer just trying to survive , but they are trying to optimize workflow, divide roles more efficiently, reduce mistakes, and communicate better. In this way, the system encourages players to learn from their previous attempt, like the third point I said previously. 
+
+The timer of the order is represented by a bar instead of exact numbers. When time is nearly up, it turns red. This creates urgency without forcing players to calculate time. The order list also shows a time bar for each dish. All the important systems are visible, so players understand what is happening.
+
+#### 5. Environmental Storytelling and Obstacles
+
+the game creates a detailed storyboard for every obstacle and each level. For example, when preparing dishes from different countries, the game designs matching backgrounds, music, and visual themes. This helps players feel the mood and atmosphere of the specific environment, making each level more engaging.
+
+The kitchens also include unusual mechanical obstacles, such as wind, ice, flowing islands, moving cars, conveyor belts, and even cooking on a hot air balloon. These are impossible scenarios in real-life kitchens, but they are carefully designed to create fun and challenge in the game.
+
+Rather than adding obstacles randomly, each one has a purpose. They force players to adapt their workflow, coordinate more carefully with teammates, and react to dynamic changes in the environment. This combination of storytelling, visual design, and mechanical challenge prevents the core loop from feeling too static and enhances both the aesthetic experience and the cooperative gameplay.
+
+### Where have they failed? → Where have they changed?
+
+To think about where Overcooked has failed is difficult, because as a fan, I think it is a very successful and complete game. Also, The [Steam](https://store.steampowered.com/app/448510/Overcooked/#app_reviews_hash) and [Best Buy Switch](https://www.bestbuy.com/site/reviews/overcooked-2-nintendo-switch/6261023) ratings also show very positive feedback from players.
+
+However, from my personal experience, I noticed something interesting. I purchased a Switch card that included both Season 1 and Season 2 of Overcooked. Whenever my family or friends come over, we almost always choose to play Season 2. This made me curious about analysis what changed between the first and second game. Studying these changes may help understand how the developers addressed minor shortcomings or expanded the game.
+
+#### 1. Adding Throw Features
+
+One major change is the addition of the throw mechanic in Overcooked 2. Players can now throw ingredients to teammates. From my experience, this greatly improves efficiency and reduces the need to walk through obstacles. 
+
+It also balances skill differences. In my family, my cousin and I are more familiar with the controls, while my mum and uncle are not. By throwing ingredients to them, we can reduce their difficulty and allow everyone to participate. 
+
+This feature increases the skill ceiling for advanced players, because throwing ingredients accurately and timing them correctly requires coordination and planning. At the same time, it does not add mechanical complexity for beginners, since they can still play using the basic pick-up and drop controls. This makes the game more inclusive and enjoyable for a wider audience while still rewarding mastery and strategic play.
+
+#### 2. UI Clarity and Player Feedback Improvements
+
+The UI feedback in Overcooked 2 is also clearer. Timing bars are more visually distinct by using three sections in the progress bar instead of just one. The green, yellow, and red sections make it easier for players to see when a dish is almost due, without needing exact numbers. Before going into a level, it also shows a line bar about the system process. The game even uses something like a “spin wheel,” where transparent objects go from small to big or from big to small to show the scene transition. This way, the player knows what the system is doing instead of just waiting. It reminds me of the website design I learned for user design.
+
+These changes make the game easier to follow and more understandable. Players can see the progress and timing better.
+
+#### 3. Player Roles and Engagement
+
+Switching positions allows players to choose their personal character, which also adds a small level of variety. From my personal experience, although Overcooked is beginner-friendly and focused on cooperation, there are not many controls for players to use. Because of this, the gameplay can feel repetitive after a while — only receive orders, grab ingredients, chop them, cook, combine, serve, and then loop again. It can start to feel tiring.
+
+Having more character options could make the game feel fresher and give players more ways to engage with the mechanics. Personally, I would also like to see more cooking methods included in the future to create variety in the game. In the current game, there are about 10 methods, but if there were more and players were encouraged to learn and use them, it could make the gameplay more interesting and engaging.
+
+### What I Would Borrow for Future Projects
+
+One of the most important things I learned from Overcooked and would like to borrow for future projects is its idea generation process. Personally, I really like how the game concept comes from daily life experiences. I found a document [Game Design Deep Dive: Building truly cooperative play in Overcooked](https://www.gamedeveloper.com/design/game-design-deep-dive-building-truly-cooperative-play-in-i-overcooked-i-) that explained how the team came up with the idea . Originally, the team didn’t start with the concept of a kitchen or cooking—they just knew they wanted the game to be about cooperation. They noticed that many modern games allow players to work as a team, but the focus is often on individual skills rather than how well the team communicates and coordinates. One team member, who had worked in restaurants for years, mentioned that kitchens are a perfect analogy for cooperative play, since teamwork, time management, spatial awareness, and even shouting are all important. From this, I realized how valuable it is to grab personal experiences and explore different disciplines when designing a game. It can widen my perspective and inspire more creative ideas.
+
+The team also approached development through design risks and prototyping, which reminds me of what we learned in class. They asked questions like:
+
+- How do you encourage players to work together?
+- How do you make that a fun experience?
+
+Their prototypes focused on the basics: players would pick up an ingredient, take it to a chopping board, add it to a plate, and then serve it. This simple process highlighted how sharing the workload in a team reduces time and makes achieving goals easier than doing everything alone. Testing these basic mechanics first taught them what was essential and what could wait, which I think is an important lesson for any project. It reminded me that when working with a team, I should first focus on the core features, identify the biggest uncertainties, and test them before building everything at once. This approach helps prioritize the features and avoid unnecessary complexity, especially when considering the target audience and game context.
+
+I also found their iterative approach with player feedback very insightful. In originally design , players were given three lives and would lose one for each failed order, and they had no indication of what was in a pot. While with their testing , this often caused frustration, so they adjusted it to make the game less punishing. From this, I learned to accept that ideas that sound good may fail, observe players instead of defending an idea, and adjust difficulty based on the players’ emotional responses. Balancing difficulty is about understanding the difference between unfair punishment and focused challenge, and testing is the only way to find that line. Watching how players behave and noticing when frustration turns into anger or when challenge becomes fun tension is key.
+
+Here are the notes that I markdown after reading their game prototype documentation about how to balance difficulty and player feelings:
+
+- Watch how players behave.
+- Notice when frustration becomes anger.
+- Notice when challenge becomes fun tension.
+- Understand the difference between confusion/unfair punishment and focused pressure/chaos.
+
+Also, testing is the only reliable way to find this balance.
+
+Another lesson comes from their use of a central design pillar. One sentence from the document really stuck with me: “Having a central pillar to always look to was extremely useful on the project, it was a filter through which we could run any new idea and against which we could measure any feature.” I think this is a very smart way to start a design project. Having a core idea helps guide every decision and ensures that features, mechanics, and risks are aligned with the central goal of the game. For future projects, I would write down the design risks first, prototype to test them, and always measure new ideas against the main concept instead of trying to implement everything at once.
+
+Finally, I really admire how Overcooked teaches players through play rather than long tutorials. The game provides clear but minimal instructions and boundaries, so players can learn by doing. All the features are visible on the screen, such as timers, performance thresholds, and coordination windows, so players do not need to constantly focus on them. This invisible but clear UI design helps players stay engaged and understand the game systems naturally. 
+
+Overall, these are the key lessons I would borrow from Overcooked for future projects:
+
+- Make systems visible.
+- Keep instructions minimal.
+- Let players learn by doing.
+- Clear core pillars.
+- Focused prototyping.
+- Risk testing.
+- Emotional balance.
+- System clarity.
+
+This design process shows that good games are not only about creative ideas, but also about careful testing, iteration, and understanding player experience. Remember repeated testing and repeated improve , just like the prototype loop. 😉
