@@ -121,7 +121,7 @@ The visuals are very basic, but all systems work together, which confirmed that 
 
 During this process, I noted several common issues and technical reminders that will be useful for future prototypes:
 
-- Remember to set colliders to "Is Trigger" if want the player object to pass through an object while still detecting interactions
+- Remember to set colliders to "Is Trigger" if want the player object to pass through an object while still detecting ions
 
 - Assign the correct "Tag" to an object if code uses tags for comparison [Common Error that I faced]
 
@@ -878,7 +878,7 @@ For the game analysis, I choose Overcooked as it is the game that I mentioned in
 
 #### Background and Basic Information
 
-After choosing the game , I did a reasearch of the game.Overcooked is a 2016 cooking simulation game developed by Ghost Town Games and published by Team17. It is a local cooperative experience where players control chefs in kitchens filled with obstacles and hazards to rapidly prepare meals according to specific orders under a time limit. The game was first released on PlayStation 4, Windows, and Xbox One in 2016, and later on Nintendo Switch in 2017. After that, Overcooked 2 was released in 2018.
+After choosing the game , I did a reasearch of the game. Overcooked is a 2016 cooking simulation game developed by Ghost Town Games and published by Team17. It is a local cooperative experience where players control chefs in kitchens filled with obstacles and hazards to rapidly prepare meals according to specific orders under a time limit. The game was first released on PlayStation 4, Windows, and Xbox One in 2016, and later on Nintendo Switch in 2017. After that, Overcooked 2 was released in 2018. After the research, I played the game one more time and recorded some notes.
 
 ### What Makes the Game Interesting
 
@@ -902,15 +902,30 @@ Another important decision is how simple the controls are. The game is very easy
 - Chop
 - Interact
 
+<p align="left">
+     <img src="Media/Overcooked2_control instruction.png" alt="Overcooked2_control instruction.png" width="400" height="500">
+</p>
+
+(Since the game card I brought is in chinese version , I used google translate to translate the text of the game screenshot)
+
+
 For all the cooking methods, such as boiling, steaming, pan-frying, and deep-frying, the game limits the real-life complications of how they actually work. Instead of simulating temperature control and timing precision, the mechanic is simplified into: put the food in the pan or pot, wait until it finishes, then pick it up and place it on a plate. The game reduces cooking into a few clear, repeatable interactions.
 
 By simplifying all the steps, the system assumes that everyone theoretically knows how cooking works at a basic level. Whether it is kids or elderly players, most people have at least a slight idea of what a cooking experience looks like. This shared real-world understanding lowers the learning barrier of the game.
 
 Also, before each round, the system teaches how a dish is assembled and what ingredients require which methods. For example, in a hamburger order, the meat, tomato, and lettuce need to be chopped, and the chopped meat needs to be pan-fried. At the end, everything is combined into a finished burger: sesame seed bun + fried meat + tomato + lettuce.
 
+<p align="left">
+     <img src="Media/Overcooked_explainRecipes.jpg" alt="Overcooked_explainRecipes.jpg" width="300" height="500">
+</p>
+
 With this kind of guidance, players can understand the recipe almost like a simple math equation. The game removes real-life cooking complexity such as exact measurements, seasoning, or portion control. Players do not need to think about how many grams of meat or how many slices of tomato are required. The system reduces cooking into clear, visible steps.
 
 If players forget how to prepare a dish, the visual pending orders at the top of the screen continue to guide them. The orders pile up, showing the required ingredients and their icons. This constantly reminds players what to focus on next and helps them plan ahead. The design ensures that players always know what they should be doing in the moment and what they need to prepare for upcoming orders.
+
+<p align="left">
+     <img src="Media/Overcooked_guide.png" alt="Overcooked_guide.png" width="300" height="500">
+</p>
 
 Because of this easy-to-learn structure, the game successfully reaches a wide range of players across different ages and gaming experiences. Beginners, kids, and elderly players can all participate. From my personal experience, I usually play with my family members, including my mum who does not normally play games, she still enjoys Overcooked. This shows that the simplified mechanical structure and clear guidance system effectively enlarge the target audience and make the game accessible without lowering its cooperative challenge.
 
@@ -921,6 +936,12 @@ Third, I found the foreshadowing and guidance technique in the game is very succ
 Later levels mix multiple recipes together, like baking a cake, that require 4-5 steps for 1 dish. This increases cognitive load because players must manage different preparation methods at the same time due to the limited time. They are no longer just repeating one action. They must prioritize tasks, divide roles, and communicate more clearly.
 
 At the same time, the kitchen layout becomes more complex with moving platforms, separated islands, ice floors, and conveyor belts. 
+
+<p align="left">
+     <img src="Media/Overcooked_wallBlock.jpeg" alt="Overcooked_wallBlock.jpeg" width="300" height="500">
+     <img src="Media/Overcooked_moving ingredient.jpeg" alt="Overcooked_moving ingredient.jpeg" width="300" height="500">
+</p>
+[Difficulties: from static wall (simple) to moving ingredient tracks (complicated)]
 
 These spatial changes force players to rethink their workflow. They cannot rely on the same positioning strategy from earlier levels.
 
@@ -937,7 +958,11 @@ Instead of using long tutorials or heavy text instructions, the game teaches thr
 
 #### 4. Clear Goals and Visible Feedback
 
-The game has a very clear mission structure. Before the level starts, it shows how many points (coins) are required to achieve 1, 2, or 3 stars. One star is enough to pass the level, but higher scores are needed to unlock later stages. For example, in higher levels such as 4-4, players need a total of 48 stars to unlock it. 
+The game has a very clear mission structure. Before the level starts, it shows how many points (coins) are required to achieve 1, 2, or 3 stars. One star is enough to pass the level, but higher scores are needed to unlock later stages. For example, in higher levels such as 4-4, players need a total of 42 stars to unlock it. 
+
+<p align="left">
+     <img src="Media/Overcooked1_4_4.jpeg" alt="Overcooked1_4_4.jpeg" width="300" height="500">
+</p>
 
 This system creates layered goals:
 
@@ -948,13 +973,35 @@ It first asks the player to simply pass the level. The requirement for 1 star is
 
 However, when players replay the level to aim for 2 or 3 stars, the experience changes. They are no longer just trying to survive , but they are trying to optimize workflow, divide roles more efficiently, reduce mistakes, and communicate better. In this way, the system encourages players to learn from their previous attempt, like the third point I said previously. 
 
-The timer of the order is represented by a bar instead of exact numbers. When time is nearly up, it turns red. This creates urgency without forcing players to calculate time. The order list also shows a time bar for each dish. All the important systems are visible, so players understand what is happening.
+<p align="left">
+     <img src="Media/Overcooked_star.jpeg" alt="Overcooked_star.jpeg" width="300" height="500">
+</p>
+
+The game also provides strong visual feedback for time pressure. The timer of each order is represented by a progress bar instead of exact numbers. When the order is close to expiring, the bar turns red. This creates urgency without forcing players to calculate time precisely. Players can quickly glance at the color change and understand that the order needs immediate attention.
+
+<p align="left">
+     <img src="Media/Overcooked1_timeRemian.png" alt="Overcooked1_timeRemian.png" width="300" height="500">
+</p>
+
+Another example of clear feedback is the cooking system itself. After players place ingredients into a pot or pan, the food cooks automatically. However, if players ignore the cooking station after the food is finished, the dish will begin to burn and eventually catch fire. When this happens, players must use a fire extinguisher to put out the flames before they can continue cooking.
+
+<p align="left">
+     <img src="Media/Overcooked_fire.jpeg" alt="Overcooked_fire.jpeg" width="300" height="500">
+</p>
+
+This mechanic adds another layer of pressure to the gameplay. Players must not only complete dishes quickly but also monitor cooking stations carefully. The game communicates this problem clearly through smoke, fire effects, and warning sounds, so players immediately recognize that something is going wrong. Because of this, players often need to divide responsibilities, with one person watching the cooking stations while others prepare ingredients or serve dishes.
 
 #### 5. Environmental Storytelling and Obstacles
 
 the game creates a detailed storyboard for every obstacle and each level. For example, when preparing dishes from different countries, the game designs matching backgrounds, music, and visual themes. This helps players feel the mood and atmosphere of the specific environment, making each level more engaging.
 
 The kitchens also include unusual mechanical obstacles, such as wind, ice, flowing islands, moving cars, conveyor belts, and even cooking on a hot air balloon. These are impossible scenarios in real-life kitchens, but they are carefully designed to create fun and challenge in the game.
+
+<p align="left">
+     <img src="Media/Overcooked1_iceberg.jpeg" alt="Overcooked1_iceberg.jpeg" width="300" height="500">
+     <img src="Media/Overcooked_windObstacles.jpeg" alt="Overcooked_windObstacles.jpeg" width="300" height="500">
+     <img src="Media/Overcooked1_movingCar.jpeg" alt="Overcooked1_movingCar.jpeg" width="300" height="500">
+</p>
 
 Rather than adding obstacles randomly, each one has a purpose. They force players to adapt their workflow, coordinate more carefully with teammates, and react to dynamic changes in the environment. This combination of storytelling, visual design, and mechanical challenge prevents the core loop from feeling too static and enhances both the aesthetic experience and the cooperative gameplay.
 
@@ -964,23 +1011,45 @@ To think about where Overcooked has failed is difficult, because as a fan, I thi
 
 However, from my personal experience, I noticed something interesting. I purchased a Switch card that included both Season 1 and Season 2 of Overcooked. Whenever my family or friends come over, we almost always choose to play Season 2. This made me curious about analysis what changed between the first and second game. Studying these changes may help understand how the developers addressed minor shortcomings or expanded the game.
 
+<p align="left">
+     <img src="Media/Overcoooked2_end.jpeg" alt="Overcoooked2_end.jpeg" width="300" height="500">
+     <img src="Media/Overcooked1_4_4.jpeg" alt="Overcooked1_4_4.jpeg" width="300" height="500">
+</p>
+(On my account, I completed all the levels in Overcooked 2, but I’m stuck on level 4-4 in Overcooked 1)
+
 #### 1. Adding Throw Features
 
 One major change is the addition of the throw mechanic in Overcooked 2. Players can now throw ingredients to teammates. From my experience, this greatly improves efficiency and reduces the need to walk through obstacles. 
 
+ ![Overcooked2_throw](Media/Overcooked2_throw.gif)
+ 
 It also balances skill differences. In my family, my cousin and I are more familiar with the controls, while my mum and uncle are not. By throwing ingredients to them, we can reduce their difficulty and allow everyone to participate. 
 
 This feature increases the skill ceiling for advanced players, because throwing ingredients accurately and timing them correctly requires coordination and planning. At the same time, it does not add mechanical complexity for beginners, since they can still play using the basic pick-up and drop controls. This makes the game more inclusive and enjoyable for a wider audience while still rewarding mastery and strategic play.
 
 #### 2. UI Clarity and Player Feedback Improvements
 
-The UI feedback in Overcooked 2 is also clearer. Timing bars are more visually distinct by using three sections in the progress bar instead of just one. The green, yellow, and red sections make it easier for players to see when a dish is almost due, without needing exact numbers. Before going into a level, it also shows a line bar about the system process. The game even uses something like a “spin wheel,” where transparent objects go from small to big or from big to small to show the scene transition. This way, the player knows what the system is doing instead of just waiting. It reminds me of the website design I learned for user design.
+The UI feedback in Overcooked 2 is also clearer. Timing bars are more visually distinct by using three sections in the progress bar instead of just one. The green, yellow, and red sections make it easier for players to see when a dish is almost due, without needing exact numbers. 
+
+<p align="left">
+     <img src="Media/Overcooked2_timeRemian.png" alt="Overcooked2_timeRemian.png" width="300" height="500">
+     <img src="Media/Overcooked1_timeRemian.png" alt="Overcooked1_timeRemian.png" width="300" height="500">
+</p>
+( Left: Overcooked2 version , Right: Overcooked1 version(previously shown in Part 4:Visible Feedback))
+
+Before going into a level, it also shows a line bar about the system process. The game even uses something like a “spin wheel,” where transparent objects go from small to big or from big to small to show the scene transition. This way, the player knows what the system is doing instead of just waiting. It reminds me of the website design I learned for user design.
+
+ ![Overcooked2_transaction.gif](Media/Overcooked2_transaction.gif)
 
 These changes make the game easier to follow and more understandable. Players can see the progress and timing better.
 
 #### 3. Player Roles and Engagement
 
 Switching positions allows players to choose their personal character, which also adds a small level of variety. From my personal experience, although Overcooked is beginner-friendly and focused on cooperation, there are not many controls for players to use. Because of this, the gameplay can feel repetitive after a while — only receive orders, grab ingredients, chop them, cook, combine, serve, and then loop again. It can start to feel tiring.
+
+<p align="left">
+     <img src="Media/Overcooked2_choosingCh.jpeg" alt="Overcooked2_choosingCh.jpeg" width="300" height="500">
+</p>
 
 Having more character options could make the game feel fresher and give players more ways to engage with the mechanics. Personally, I would also like to see more cooking methods included in the future to create variety in the game. In the current game, there are about 10 methods, but if there were more and players were encouraged to learn and use them, it could make the gameplay more interesting and engaging.
 
