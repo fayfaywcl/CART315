@@ -1091,3 +1091,203 @@ Overall, these are the key lessons I would borrow from Overcooked for future pro
 - System clarity.
 
 This design process shows that good games are not only about creative ideas, but also about careful testing, iteration, and understanding player experience. Remember repeated testing and repeated improve , just like the prototype loop. 😉
+
+## **Week7** (26.2.2026 to 12.3.2026) – Iterative Prototyping 2 (War + Storytelling Game)
+
+So this week start with a long discussion first, as I want the project to be a 3D world. No matter whether to put it in my portfolio or even apply to the game industry later, it would be a bonus point. Many industries nowadays are looking for skills in 3D development, so I think it is worth trying.
+
+While I was asking others about their ideas, I also wanted to see whether we could match our ideas together to build a more well-organized game. I asked Banacia what they think, and they said 3D is good, so we matched on that direction.
+
+From the start, all of us brought out a bunch of ideas, such as RPG or mission-based games. However, after discussing for a while, we found that many of these ideas focus heavily on storytelling, while in the real implementation it would depend a lot on the artist workload, especially when building a 3D world.
+
+Since we only have four people in the group, and we already separated our roles into two artists and two programmers, we realized that many of our ideas were not balanced. They depended too much on the artists’ work. Because of that, we decided to clean up the ideas and go back to the speed-ideation process from last week, listing out the core things we really want in the game.
+
+Banacia and Shawn mentioned that they want to implement companion AI, as they want to experiment with AI features and see how they could collaborate on that part. On the other hand, I really want to build a 3D game environment. Because of that, we summarized our main direction as:
+
+- 3D world
+- Companion AI
+
+After that, we started thinking about the possible combinations between these two ideas, like what we did in the speed-idealization that we did previously. We listed out several possible game types that might work with them:
+
+- survive game
+- exploring world game
+- communication game
+- puzzle game
+
+At the same time, we also listed some synonyms or related concepts for companion AI, such as:
+
+- personal assistant
+- partner
+- friends
+
+During the discussion, Banacia raised an interesting idea. They suggested that when the player walks through a building, the game could show the history of that place. Another example was that when the player walks past a ghost, the game could reveal the background story or history related to it.
+
+After hearing that idea, I thought about using a “War” theme. In this idea, when the player passes through certain locations, they could read about the history of soldiers who fought there. Most of the team members agreed with this direction.
+
+We also discussed that if the game includes actions like battle, hitting, or carrying someone, then it makes sense to have two programmers in the project, because the system would become more complex.
+
+At that point, we had a rough idea of the concept. Our main theme is related to a war environment, where the player can discover and read the stories of offensive soldiers. However, we also think that later on our teammates might come up with better ideas about the game background. For this week, our goal is mainly to separate the work first, and test whether the core features can actually be implemented.
+
+So our main design question becomes:
+
+- How might we create a game in a war environment where players can explore and view the stories of offensive soldiers?
+
+### Work Distribution
+
+After deciding the direction, we started distributing our tasks for this week.
+
+Me: building the 3D environment
+
+Banicia: character design
+
+Alex: testing the feature of carrying the soldier to the room
+
+Shawn: checking whether the AI component could be implement in the game
+
+# Risks Exploration
+
+This week I mainly focused on testing **two risks**.
+
+### Risk 1: Is this game idea unique?
+
+One concern I had was that this idea might not feel innovative enough. Because of that, I started researching existing games with war storytelling themes.
+
+I first looked at War Stories – Firelock Games, and I also searched on itch.io for games with historical and war tags. I found that many of those games focus on major historical events, such as World War II or the Civil War. Most of them are more related to global historical history, and around 70% of them use maps as the main gameplay interface.
+
+I also searched using the keyword “game in war background with storytelling”, and found many examples. However, most war games in the market still focus mainly on combat gameplay, such as Call of Duty or Tom Clancy’s The Division. These games are mainly centered around battle mechanics.
+
+Because of that, I realized that although the war genre has already been explored a lot, combining 3D exploration, companion AI, and historical storytelling could still provide a different perspective.
+
+One possible way to make our game stand out would be through the execution, such as how the AI interacts with the player, how the history is presented, and how the world reveals stories through exploration.
+
+## Risk 2: How should the war environment look?
+
+Another risk I wanted to test was the environment design. During our discussion, we mentioned that the environment could be indoor, because we should at least have one room in the game.
+
+Another possibility is to use different buildings to represent different rooms or functions. However, I also started thinking that the game should not only be indoor environments. After thinking about it for a day, I realized it could also be an outdoor environment, such as a campus-like zone or special area, where different locations represent different stories.
+
+During class discussion, my teammates also suggested environments like an old church or a castle. However, in my mind I was imagining something more like broken buildings surrounded by sand, which could create a stronger war atmosphere. While I think both ideas could work, I felt like I needed to start searching online for reference buildings and environments that match the idea I have in my head and see whether it is possible to implement in my level. So I looked up a bunch of images and references that I thought fit the vibe.
+Here are the reference images I search through online:
+
+I also draw some of the elements I think would be useful in environment creation:
+
+# 3D Environment Exploration
+
+Since this is the first time I use Unity to create a 3D environment, I searched for tutorials on YouTube. I found a tutorial called Destroyed Building Kit – Unity Tutorial, which seemed relevant to the environment I had in mind.
+
+I also searched the Unity Asset Store for possible assets that could help with building destroyed environments. However, I quickly realized that most of the assets cost money, and many of them are at least $50. As a beginner exploring 3D environment creation, I kept trying to find free , so I could try how the assets could work first .
+
+At that moment, I suddenly remembered that my original idea to build a 3D game came from a tutorial I saw before about ProBuilder. So I went back and searched for more tutorials about ProBuilder.
+
+Although I could not find a tutorial specifically about war environments, I did find a Unity official tutorial on Unity Learn. It mentioned that ProBuilder has limited functionality compared to professional 3D tools, but it is still useful for quickly creating simple 3D objects inside Unity without opening another modeling software.
+
+Since I had a good experience with Unity’s official tutorials before, I decided to start by learning the tools first, before building the environment.
+
+## Asset and Material Setup
+
+I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include ground textures, pavement textures, and other realistic materials that could help create a war-damaged environment.
+
+### ProBuilder Issues
+
+While following the tutorials, I discovered that I could not open the ProBuilder Window. After searching online, I found that in Unity 6.0, the ProBuilder interface has changed, and the old “ProBuilder Window” no longer appears.
+
+Many users online were also facing the same issue and complaining about the new UX design.
+
+Because of this change, editing objects became more difficult. I tried to search specifically for “ProBuilder 2026” tutorials, since many older tutorials use the previous version with better UI.
+
+### Prototype Building
+
+Since the editing tools were a bit difficult to use, I decided to simplify my plan. Instead of trying to build a full environment right away, I focused on creating one building structure first.
+
+I used simple shape elements from ProBuilder and tried to implement the idea I had sketched earlier. In the end, I managed to build a four-level building structure to show the interior layout.
+
+At this stage, I mainly focused on creating the floor structure, while leaving the external walls for later. I think this is better for the prototype because I think the building structure is more important at the prototype stage.
+
+I also created floors for the corridors, although I have not implemented the full corridor design yet. One issue I encountered was that the door shape element is very thin, which does not look good visually. For now, I just used walls to represent the doors so the space feels correct.
+
+For the top floor, I changed the roof idea. I left the room walls partially open and resized them so the building looks damaged or broken. 
+
+## Asset Integration
+
+Later, I also tried using the Cathedral and Cemetery Kit assets that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
+
+After importing the asset into Unity, I started exploring the prefab objects inside the package. When I looked through them, I realized that this type of modular asset could actually be very useful, because it allows us to build a large environment faster, instead of creating every building from scratch.
+
+Another reason I wanted to test these assets is because I wanted to compare two different approaches for building the environment. One approach is to build the whole structure by using ProBuilder, which gives more control for designing the layout. The other approach is using pre-made modular assets, which can help speed up the development process but might limit some customization. By trying the asset early in the prototype stage, I want to see whether this could help reduce the workload, especially since we only have two people working on the art side.
+
+At this moment, I am thinking that maybe the best approach is to combine both methods. For example, I could use the main structure or frame from the asset pack, such as the walls or pillars, and then design the interior layout ourselves using simple shapes or ProBuilder objects. In that way I keep some flexibility in the design, but also save time when building the environment.
+
+## Technical Issue and Adjustment
+
+During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
+
+1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first I was confused, because the models were there but none of the textures were showing. Then I searched online, and the AI solution recommended the following steps:
+    
+    Go to the top menu:
+    
+    ```
+    Edit → Render Pipeline → Universal Render Pipeline
+    ```
+    
+    Then look for the option:
+    
+    ```
+    Upgrade Project Materials to UniversalRP Materials
+    ```
+    
+    However, when I tried this in Unity, I could not find these options. I think maybe it is because the Unity version I am using is different ( I use the , so the location of the button is not the same as what the solution mentioned.
+    
+    Because of that, I continued searching for other tutorials with the search in specific for Unity 2026 version. I found a YouTube tutorial explaining how to convert standard materials to URP materials, which helped me understand the issue better.
+    
+    From that tutorial and other searches, I realized that in my Unity version the process is slightly different. Instead of going through the Edit menu, the conversion tool is located in another place.
+    
+    So the actual path I used in Unity is:
+    
+    Window → Rendering → Render Pipeline Converter → Material Upgrade
+    
+    After opening the Render Pipeline Converter, I first clicked Detect, which scans the project to find materials that need to be upgraded. Then I ran the Material Upgrade process, which converts the materials so they are compatible with Universal Render Pipeline (URP).
+    
+    After running the process, Unity updated most of the materials automatically, and the assets started displaying their textures correctly.
+    
+2. Another issue I encountered was related to ProBuilder. Many tutorials online show a ProBuilder Window where users can easily access tools like Extrude, Bevel, Bridge, and Pivot editing. However, in Unity 6, this window no longer appears in the same way, because the interface has changed. Because of this change, it became harder to follow many of the tutorials that were created for earlier Unity versions.
+    
+    This difference in the interface made the workflow a bit confusing, especially since I am still learning the tool. I also noticed that many other users online were facing the same problem and discussing it in Unity forums.
+    
+3. Another technical issue was related to the Scene View camera controls. Normally in Unity I can move around the scene using right mouse button + WASD keys, which allows I to navigate the 3D environment more easily. However, in my project this control sometimes stopped working. When this happens, it becomes difficult to move around the scene while building the environment. While at the same time all the texture is not showing in the Probuilder elements. 
+    
+    I search through the tutorials , some of them mention options like “Built-in Material in URP” inside the rendering settings could solve it, but I could not find the same option in my Unity version( the version I used is the newest). 
+    
+
+Because of these issues, I had to spend some time searching online, reading forum discussions, and trying different solutions. It did slow down the development progress a lot. Therefore, during these two weeks I did not manage to progress as much as I originally expected.
+
+## Possible War Atmosphere Features
+
+To make the environment feel more like a war zone, I started listing out several possible elements that could help create that atmosphere when they came to my mind during researching. I realized that the environment itself plays a very important role in storytelling, especially since our game idea is related to exploring soldiers’ stories in a war environment. 
+
+Because of that, I started listing several possible features that could help strengthen the war atmosphere in the environment:
+
+- bomb damage effects
+- sand and dust in the environment
+- destroyed buildings and ruins
+- explosion effects
+- war sound effects
+
+Although I may not implement all of these features soon, listing them out helps me think about the direction of the environment design. These ideas could be added later when we start improving the environment details and overall atmosphere of the game.
+
+## What I Learned
+
+Setting up a 3D environment in Unity is much harder than I expected. Such like,  I learned that ProBuilder is useful for quickly building shapes, but it has a lot of limitations, like with doors and some editing tools. It is also really hard to learn this year because the User Interface changed this year and as a beginner it is not easy to find YouTube tutorials that actually help. On top of that, I found that many assets do not work perfectly at first, which took a lot of time to figure out. The environment setting spend much more than I expected. 
+
+From this stage, I realized it is better to focus on layout and structure first, like floors, walls, and corridors, before spending too much time on details. Even with simple shapes, the space can already show how the player might move through the building.
+
+Overall, this stage taught me a lot about technical side of Unity,  which will help guide the next steps for the prototype.
+
+## Future Plan
+
+In the next step, I plan to ask my teammates for their opinions about the environment design. I want to show them both the assets I found and the building structure I created, and ask which approach they prefer.
+
+I will also share some reference images that I found online so they can understand where my environment ideas come from. In addition, I will ask for feedback about the environment features I listed earlier, such as destruction effects or war sounds.
+
+At the same time, I also found some additional tutorials that might help the project later. One tutorial explains the Unity Stats Window, which can be useful for monitoring game performance and player settings. Another tutorial explains Unity Terrain, which could help us build a larger environment.
+
+Hope that in the next weeks I can solve these problems and have a clearer way to improve the game environment. 🥹
