@@ -1253,12 +1253,11 @@ During the process of setting up the environment, I also faced several technical
     
     This difference in the interface made the workflow a bit confusing, especially since I am still learning the tool. I also noticed that many other users online were facing the same problem and discussing it in Unity forums.
     
-3. Another technical issue was related to the Scene View camera controls. Normally in Unity I can move around the scene using right mouse button + WASD keys, which allows I to navigate the 3D environment more easily. However, in my project this control sometimes stopped working. When this happens, it becomes difficult to move around the scene while building the environment. While at the same time all the texture is not showing in the Probuilder elements. 
+3. Another technical issue was related to the Scene View camera controls. Normally in Unity I can move around the scene using right mouse button + WASD keys, which allows I to navigate the 3D environment more easily. However, in my project this control sometimes stopped working. When this happens, it becomes difficult to move around the scene while building the environment. 
     
-    I search through the tutorials , some of them mention options like “Built-in Material in URP” inside the rendering settings could solve it, but I could not find the same option in my Unity version( the version I used is the newest). 
+    At the same time, I also noticed that all the textures were not showing in the ProBuilder elements, even though it worked before I upgraded the Project Materials.
     
-
-Because of these issues, I had to spend some time searching online, reading forum discussions, and trying different solutions. It did slow down the development progress a lot. Therefore, during these two weeks I did not manage to progress as much as I originally expected.
+    I searched through tutorials online, and some of them mentioned options like “Built-in Material in URP” inside the rendering settings that could solve this issue. However, I could not find the same option in my Unity version (the version I am using is the newest). These issues may be due to the same reason, because they happened at the same time. So they are still something I need to figure out and solve later.
 
 ### Possible War Atmosphere Features
 
