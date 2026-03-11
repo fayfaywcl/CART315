@@ -1221,7 +1221,7 @@ At this moment, I am thinking that maybe the best approach is to combine both me
 
 During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
 
-1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first I was confused, because the models were there but none of the textures were showing. Then I searched online, and the AI solution recommended the following steps:
+1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline/Lit. The problem is, I had to do this one by one, which was really time-consuming. Then I searched online, and the AI solution recommended the following steps:
     
     Go to the top menu:
     
