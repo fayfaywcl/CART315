@@ -1132,7 +1132,7 @@ So our main design question becomes:
 
 - How might we create a game in a war environment where players can explore and view the stories of offensive soldiers?
 
-### Work Distribution
+#### Work Distribution
 
 After deciding the direction, we started distributing our tasks for this week.
 
@@ -1144,11 +1144,11 @@ Alex: testing the feature of carrying the soldier to the room
 
 Shawn: checking whether the AI component could be implement in the game
 
-# Risks Exploration
+### Risks Exploration
 
 This week I mainly focused on testing **two risks**.
 
-### Risk 1: Is this game idea unique?
+#### Risk 1: Is this game idea unique?
 
 One concern I had was that this idea might not feel innovative enough. Because of that, I started researching existing games with war storytelling themes.
 
@@ -1160,7 +1160,7 @@ Because of that, I realized that although the war genre has already been explore
 
 One possible way to make our game stand out would be through the execution, such as how the AI interacts with the player, how the history is presented, and how the world reveals stories through exploration.
 
-## Risk 2: How should the war environment look?
+#### Risk 2: How should the war environment look?
 
 Another risk I wanted to test was the environment design. During our discussion, we mentioned that the environment could be indoor, because we should at least have one room in the game.
 
@@ -1171,7 +1171,7 @@ Here are the reference images I search through online:
 
 I also draw some of the elements I think would be useful in environment creation:
 
-# 3D Environment Exploration
+### 3D Environment Exploration
 
 Since this is the first time I use Unity to create a 3D environment, I searched for tutorials on YouTube. I found a tutorial called Destroyed Building Kit – Unity Tutorial, which seemed relevant to the environment I had in mind.
 
@@ -1183,11 +1183,11 @@ Although I could not find a tutorial specifically about war environments, I did 
 
 Since I had a good experience with Unity’s official tutorials before, I decided to start by learning the tools first, before building the environment.
 
-## Asset and Material Setup
+#### Asset and Material Setup
 
 I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include ground textures, pavement textures, and other realistic materials that could help create a war-damaged environment.
 
-### ProBuilder Issues
+##### ProBuilder Issues
 
 While following the tutorials, I discovered that I could not open the ProBuilder Window. After searching online, I found that in Unity 6.0, the ProBuilder interface has changed, and the old “ProBuilder Window” no longer appears.
 
@@ -1195,7 +1195,7 @@ Many users online were also facing the same issue and complaining about the new 
 
 Because of this change, editing objects became more difficult. I tried to search specifically for “ProBuilder 2026” tutorials, since many older tutorials use the previous version with better UI.
 
-### Prototype Building
+#### Prototype Building
 
 Since the editing tools were a bit difficult to use, I decided to simplify my plan. Instead of trying to build a full environment right away, I focused on creating one building structure first.
 
@@ -1207,7 +1207,7 @@ I also created floors for the corridors, although I have not implemented the ful
 
 For the top floor, I changed the roof idea. I left the room walls partially open and resized them so the building looks damaged or broken. 
 
-## Asset Integration
+### Asset Integration
 
 Later, I also tried using the Cathedral and Cemetery Kit assets that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
 
@@ -1217,7 +1217,7 @@ Another reason I wanted to test these assets is because I wanted to compare two 
 
 At this moment, I am thinking that maybe the best approach is to combine both methods. For example, I could use the main structure or frame from the asset pack, such as the walls or pillars, and then design the interior layout ourselves using simple shapes or ProBuilder objects. In that way I keep some flexibility in the design, but also save time when building the environment.
 
-## Technical Issue and Adjustment
+### Technical Issue and Adjustment
 
 During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
 
@@ -1260,7 +1260,7 @@ During the process of setting up the environment, I also faced several technical
 
 Because of these issues, I had to spend some time searching online, reading forum discussions, and trying different solutions. It did slow down the development progress a lot. Therefore, during these two weeks I did not manage to progress as much as I originally expected.
 
-## Possible War Atmosphere Features
+### Possible War Atmosphere Features
 
 To make the environment feel more like a war zone, I started listing out several possible elements that could help create that atmosphere when they came to my mind during researching. I realized that the environment itself plays a very important role in storytelling, especially since our game idea is related to exploring soldiers’ stories in a war environment. 
 
@@ -1274,7 +1274,7 @@ Because of that, I started listing several possible features that could help str
 
 Although I may not implement all of these features soon, listing them out helps me think about the direction of the environment design. These ideas could be added later when we start improving the environment details and overall atmosphere of the game.
 
-## What I Learned
+### What I Learned
 
 Setting up a 3D environment in Unity is much harder than I expected. Such like,  I learned that ProBuilder is useful for quickly building shapes, but it has a lot of limitations, like with doors and some editing tools. It is also really hard to learn this year because the User Interface changed this year and as a beginner it is not easy to find YouTube tutorials that actually help. On top of that, I found that many assets do not work perfectly at first, which took a lot of time to figure out. The environment setting spend much more than I expected. 
 
@@ -1282,7 +1282,7 @@ From this stage, I realized it is better to focus on layout and structure first,
 
 Overall, this stage taught me a lot about technical side of Unity,  which will help guide the next steps for the prototype.
 
-## Future Plan
+### Future Plan
 
 In the next step, I plan to ask my teammates for their opinions about the environment design. I want to show them both the assets I found and the building structure I created, and ask which approach they prefer.
 
