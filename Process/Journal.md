@@ -638,7 +638,7 @@ This small UI change makes the game feel much more complete. I was honestly very
 
 The game is no longer an infinite loop. It now has an ending condition. This changes the structure completely. Instead of “how long can you survive,” it becomes “can you survive until the end?”
 
-### Design Struggles (Deeper Reflection)
+### Design Struggles 
 
 This week was much harder than last week, mainly because I was building on top of an existing prototype. Every new feature interacts with old logic.
 
