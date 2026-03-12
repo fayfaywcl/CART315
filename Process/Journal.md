@@ -1245,18 +1245,19 @@ At this moment, I am thinking that maybe the best approach is to combine both me
 During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
 
 1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene.
-<p align="left">
-     <img src="Media/Week7_pinkissue.png" alt="Week7_pinkissue.png" width="500" height="300">
-     <img src="Media/Week7_pinkissueBuildings.png" alt="Week7_pinkissueBuildings.png" width="300" height="500">
-</p>
-At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline. The problem is, I had to do this one by one, which was really time-consuming. 
-
-<p align="left">
-     <img src="Media/Week7_URP_Lit.png" alt="Week7_pinkissue.png" width="300" height="600">
-</p>
-
-
-Then I searched online, and the AI solution recommended the following steps:
+    <p align="left">
+         <img src="Media/Week7_pinkissue.png" alt="Week7_pinkissue.png" width="500" height="300">
+         <img src="Media/Week7_pinkissueBuildings.png" alt="Week7_pinkissueBuildings.png" width="300" height="500">
+    </p>
+    
+    At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline. The problem is, I had to do this one by one, which was really time-consuming. 
+    
+    <p align="left">
+         <img src="Media/Week7_URP_Lit.png" alt="Week7_pinkissue.png" width="300" height="600">
+    </p>
+    
+    
+    Then I searched online, and the AI solution recommended the following steps:
     
     Go to the top menu:
     
@@ -1278,8 +1279,10 @@ Then I searched online, and the AI solution recommended the following steps:
     
     So the actual path I used in Unity is:
     
+    ```
     Window → Rendering → Render Pipeline Converter → Material Upgrade
-
+    ```
+    
     <p align="left">
      <img src="Media/Week7_UpdateRender.png" alt="Week7_UpdateRender.png" width="300" height="500">
     </p>
