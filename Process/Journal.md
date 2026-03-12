@@ -1232,7 +1232,7 @@ For the top floor, I changed the roof idea. I left the room walls partially open
 
 Later, I also tried using the [Cathedral and Cemetery Kit assets](https://assetstore.unity.com/packages/3d/environments/dungeons/cathedral-and-cemetery-kit-29240) that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
 
- ![Week7_Church.gif](Media/Week7_Church.gif)
+ ![Week7_Church1.gif](Media/Week7_Church1.gif)
 
 After importing the asset into Unity, I started exploring the prefab objects inside the package. When I looked through them, I realized that this type of modular asset could actually be very useful, because it allows us to build a large environment faster, instead of creating every building from scratch.
 
