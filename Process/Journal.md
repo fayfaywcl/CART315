@@ -1198,6 +1198,10 @@ Since I had a good experience with Unity’s official tutorials before, I decide
 
 I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include [ground textures](https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001), [pavement textures](https://assetstore.unity.com/packages/2d/textures-materials/roads/yughues-free-pavement-materials-12952), [architectural textures](https://assetstore.unity.com/packages/2d/textures-materials/yughues-free-architectural-materials-13234),and other realistic materials that could help create a war-damaged environment.
 
+<p align="left">
+          <img src="Media/Week7_materials.png" alt="Week7_materials.png" width="300" height="500">
+     </p>
+
 ##### ProBuilder Issues
 
 While following [the tutorials](https://www.youtube.com/watch?v=Ta3HkV_qHTc), I discovered that I could not open the ProBuilder Window. After searching online, I found that in Unity 6.0, the ProBuilder interface has changed, and the old “ProBuilder Window” no longer appears.
@@ -1222,11 +1226,13 @@ I also created floors for the corridors, although I have not implemented the ful
 
 For the top floor, I changed the roof idea. I left the room walls partially open and resized them so the building looks damaged or broken. 
 
- ![Week7_BuildingPrototype.mp4](Media/Week7_BuildingPrototype.mp4)
+ ![Week7_BuildingPrototype.gif](Media/Week7_BuildingPrototype.gif)
 
 ### Asset Integration
 
 Later, I also tried using the [Cathedral and Cemetery Kit assets](https://assetstore.unity.com/packages/3d/environments/dungeons/cathedral-and-cemetery-kit-29240) that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
+
+ ![Week7_Church.gif](Media/Week7_Church.gif)
 
 After importing the asset into Unity, I started exploring the prefab objects inside the package. When I looked through them, I realized that this type of modular asset could actually be very useful, because it allows us to build a large environment faster, instead of creating every building from scratch.
 
@@ -1238,7 +1244,19 @@ At this moment, I am thinking that maybe the best approach is to combine both me
 
 During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
 
-1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline/. The problem is, I had to do this one by one, which was really time-consuming. Then I searched online, and the AI solution recommended the following steps:
+1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene.
+<p align="left">
+     <img src="Media/Week7_pinkissue.png" alt="Week7_pinkissue.png" width="500" height="300">
+     <img src="Media/Week7_pinkissueBuildings.png" alt="Week7_pinkissueBuildings.png" width="300" height="500">
+</p>
+At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline. The problem is, I had to do this one by one, which was really time-consuming. 
+
+<p align="left">
+     <img src="Media/Week7_URP_Lit.png" alt="Week7_pinkissue.png" width="300" height="600">
+</p>
+
+
+Then I searched online, and the AI solution recommended the following steps:
     
     Go to the top menu:
     
@@ -1252,7 +1270,7 @@ During the process of setting up the environment, I also faced several technical
     Upgrade Project Materials to UniversalRP Materials
     ```
     
-    However, when I tried this in Unity, I could not find these options. I think maybe it is because the Unity version I am using is different ( I use the , so the location of the button is not the same as what the solution mentioned.
+    However, when I tried this in Unity, I could not find these options. I think maybe it is because the Unity version I am using is different ( I use the newest verion 6.3), so the location of the button is not the same as what the solution mentioned.
     
     Because of that, I continued searching for other tutorials with the search in specific for Unity 2026 version. I found a [YouTube tutorial](https://www.youtube.com/watch?v=016E8Ld6uto&t=167s) explaining how to convert standard materials to URP materials, which helped me understand the issue better.
     
@@ -1261,14 +1279,29 @@ During the process of setting up the environment, I also faced several technical
     So the actual path I used in Unity is:
     
     Window → Rendering → Render Pipeline Converter → Material Upgrade
+
+    <p align="left">
+     <img src="Media/Week7_UpdateRender.png" alt="Week7_UpdateRender.png" width="300" height="500">
+    </p>
     
     After opening the Render Pipeline Converter, I first clicked Detect, which scans the project to find materials that need to be upgraded. Then I ran the Material Upgrade process, which converts the materials so they are compatible with Universal Render Pipeline (URP).
     
     After running the process, Unity updated most of the materials automatically, and the assets started displaying their textures correctly.
+
+    <p align="left">
+        <img src="Media/Week7_solvepinkissueBuildings.png" alt="Week7_solvepinkissueBuildings.png" width="500" height="300">
+        <img src="Media/Week7_solvepinkissue.png" alt="Week7_solvepinkissue.png" width="300" height="500">
+   </p>
     
 2. Another issue I encountered was related to ProBuilder. Many tutorials online show a ProBuilder Window where users can easily access tools like Extrude, Bevel, Bridge, and Pivot editing. However, in Unity 6, this window no longer appears in the same way, because the interface has changed. Because of this change, it became harder to follow many of the tutorials that were created for earlier Unity versions.
     
     This difference in the interface made the workflow a bit confusing, especially since I am still learning the tool. I also noticed that many other users online were facing the same problem and discussing it in Unity forums.
+
+    <p align="left">
+          <img src="Media/Week7_noProBuilderWindow.png" alt="Week7_noProBuilderWindow.png" width="300" height="500">
+          <img src="Media/Week7_withProBuilderWindow.png" alt="Week7_withProBuilderWindow.png" width="300" height="500">
+     </p>
+     (Left:  shows that there is no ProBuilder Window in the ProBuilder Editor in my Unity version. Right: shows how ProBuilder normally looks and how it helps when editing objects.)
     
 3. Another technical issue was related to the Scene View camera controls. Normally in Unity I can move around the scene using right mouse button + WASD keys, which allows I to navigate the 3D environment more easily. However, in my project this control sometimes stopped working. When this happens, it becomes difficult to move around the scene while building the environment. 
     
