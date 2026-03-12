@@ -1146,7 +1146,7 @@ Shawn: checking whether the AI component could be implement in the game
 
 ### Risks Exploration
 
-This week I mainly focused on testing **two risks**.
+This week I mainly focused on testing two risks.
 
 #### Risk 1: Is this game idea unique?
 
@@ -1168,8 +1168,19 @@ Another possibility is to use different buildings to represent different rooms o
 
 During class discussion, my teammates also suggested environments like an old church or a castle. However, in my mind I was imagining something more like broken buildings surrounded by sand, which could create a stronger war atmosphere. While I think both ideas could work, I felt like I needed to start searching online for reference buildings and environments that match the idea I have in my head and see whether it is possible to implement in my level. So I looked up a bunch of images and references that I thought fit the vibe.
 Here are the reference images I search through online:
+<p align="left">
+     <img src="Media/Week7_BrokenBuilding_1.jpeg" alt="Week7_BrokenBuilding_1.jpeg" width="300" height="500">
+     <img src="Media/Week7_War building.jpg" alt="Week7_War building.jpg" width="300" height="500">
+     <img src="Media/Week7_WarBuildingDoor.jpg" alt="Week7_WarBuildingDoor.jpg" width="300" height="500">
+     <img src="Media/Week7OutsideroofDesign.jpg" alt="Week7OutsideroofDesign.jpg" width="300" height="500">
+     <img src="Media/Week7_Warchurch.jpg" alt="Week7_Warchurch.jpg" width="300" height="500">
+     <img src="Media/Week7_warchurch1.jpg" alt="Week7_warchurch1.jpg" width="300" height="500">
+</p>
 
 I also draw some of the elements I think would be useful in environment creation:
+<p align="left">
+     <img src="Media/Week7DrawingNotes.jpeg" alt="Week7DrawingNotes.jpeg" width="300" height="500">
+</p>
 
 ### 3D Environment Exploration
 
@@ -1201,11 +1212,17 @@ Since the editing tools were a bit difficult to use, I decided to simplify my pl
 
 I used simple shape elements from ProBuilder and tried to implement the idea I had sketched earlier. In the end, I managed to build a four-level building structure to show the interior layout.
 
+<p align="left">
+     <img src="Media/Week7PlatformDraw.jpeg" alt="Week7PlatformDraw.jpeg" width="300" height="500">
+</p>
+
 At this stage, I mainly focused on creating the floor structure, while leaving the external walls for later. I think this is better for the prototype because I think the building structure is more important at the prototype stage.
 
 I also created floors for the corridors, although I have not implemented the full corridor design yet. One issue I encountered was that the door shape element is very thin, which does not look good visually. For now, I just used walls to represent the doors so the space feels correct.
 
 For the top floor, I changed the roof idea. I left the room walls partially open and resized them so the building looks damaged or broken. 
+
+ ![Week7_BuildingPrototype.mp4](Media/Week7_BuildingPrototype.mp4)
 
 ### Asset Integration
 
@@ -1221,7 +1238,7 @@ At this moment, I am thinking that maybe the best approach is to combine both me
 
 During the process of setting up the environment, I also faced several technical issues, especially related to materials, rendering pipelines, and Unity tools. Some of these problems slowed down the progress of this two week. 
 
-1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline/Lit. The problem is, I had to do this one by one, which was really time-consuming. Then I searched online, and the AI solution recommended the following steps:
+1. One major issue happened when I imported some assets into the project. All the objects appeared pink in the scene. At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline/. The problem is, I had to do this one by one, which was really time-consuming. Then I searched online, and the AI solution recommended the following steps:
     
     Go to the top menu:
     
