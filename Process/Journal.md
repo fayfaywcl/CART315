@@ -1132,11 +1132,11 @@ So our main design question becomes:
 
 - How might we create a game in a war environment where players can explore and view the stories of offensive soldiers?
 
-#### Work Distribution
+### Work Distribution
 
 After deciding the direction, we started distributing our tasks for this week.
 
-Me: building the 3D environment
+Me: 3D environment
 
 Banicia: character design
 
@@ -1179,7 +1179,7 @@ Here are the reference images I search through online:
 
 I also draw some of the elements I think would be useful in environment creation:
 <p align="left">
-     <img src="Media/Week7DrawingNotes.jpeg" alt="Week7DrawingNotes.jpeg" width="300" height="500">
+     <img src="Media/Week7DrawingNotes.jpeg" alt="Week7DrawingNotes.jpeg" width="500" height="500">
 </p>
 
 ### 3D Environment Exploration
@@ -1199,7 +1199,7 @@ Since I had a good experience with Unity’s official tutorials before, I decide
 I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include [ground textures](https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001), [pavement textures](https://assetstore.unity.com/packages/2d/textures-materials/roads/yughues-free-pavement-materials-12952), [architectural textures](https://assetstore.unity.com/packages/2d/textures-materials/yughues-free-architectural-materials-13234),and other realistic materials that could help create a war-damaged environment.
 
 <p align="left">
-          <img src="Media/Week7_materials.png" alt="Week7_materials.png" width="300" height="500">
+          <img src="Media/Week7_materials.png" alt="Week7_materials.png" width="400" height="500">
      </p>
 
 ##### ProBuilder Issues
@@ -1217,7 +1217,7 @@ Since the editing tools were a bit difficult to use, I decided to simplify my pl
 I used simple shape elements from ProBuilder and tried to implement the idea I had sketched earlier. In the end, I managed to build a four-level building structure to show the interior layout.
 
 <p align="left">
-     <img src="Media/Week7PlatformDraw.jpeg" alt="Week7PlatformDraw.jpeg" width="300" height="500">
+     <img src="Media/Week7PlatformDraw.jpeg" alt="Week7PlatformDraw.jpeg" width="500" height="500">
 </p>
 
 At this stage, I mainly focused on creating the floor structure, while leaving the external walls for later. I think this is better for the prototype because I think the building structure is more important at the prototype stage.
@@ -1253,7 +1253,7 @@ During the process of setting up the environment, I also faced several technical
     At first, I was confused because the models were there, but none of the textures were showing. I managed to solve the issue by selecting each material and, in the Inspector, changing the shader from Standard to Universal Render Pipeline. The problem is, I had to do this one by one, which was really time-consuming. 
     
     <p align="left">
-         <img src="Media/Week7_URP_Lit.png" alt="Week7_pinkissue.png" width="300" height="600">
+         <img src="Media/Week7_URP_Lit.png" alt="Week7_pinkissue.png" width="300" height="400">
     </p>
     
     
