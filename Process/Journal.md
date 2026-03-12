@@ -1152,9 +1152,9 @@ This week I mainly focused on testing **two risks**.
 
 One concern I had was that this idea might not feel innovative enough. Because of that, I started researching existing games with war storytelling themes.
 
-I first looked at War Stories – Firelock Games, and I also searched on itch.io for games with historical and war tags. I found that many of those games focus on major historical events, such as World War II or the Civil War. Most of them are more related to global historical history, and around 70% of them use maps as the main gameplay interface.
+I first looked at [War Stories – Firelock Games](https://firelockgames.com/pages/war-stories) that I search through online, and I also searched on [itch.io for games with historical and war tags](https://itch.io/games/free/tag-historical/tag-war). I found that many of those games focus on major historical events, such as World War II or the Civil War. Most of them are more related to global historical history, and around 70% of them use maps as the main gameplay interface.
 
-I also searched using the keyword “game in war background with storytelling”, and found many examples. However, most war games in the market still focus mainly on combat gameplay, such as Call of Duty or Tom Clancy’s The Division. These games are mainly centered around battle mechanics.
+I also searched using the keyword [“game in war background”](https://www.ranker.com/list/best-war-games-on-steam/bobby-bernstein), and found many examples. However, most war games in the market still focus mainly on combat gameplay, such as [Call of Duty](https://www.callofduty.com/ca/en/) or [Tom Clancy’s The Division](https://store.steampowered.com/agecheck/app/2221490/). These games are mainly centered around battle mechanics.
 
 Because of that, I realized that although the war genre has already been explored a lot, combining 3D exploration, companion AI, and historical storytelling could still provide a different perspective.
 
@@ -1173,9 +1173,9 @@ I also draw some of the elements I think would be useful in environment creation
 
 ### 3D Environment Exploration
 
-Since this is the first time I use Unity to create a 3D environment, I searched for tutorials on YouTube. I found a tutorial called Destroyed Building Kit – Unity Tutorial, which seemed relevant to the environment I had in mind.
+Since this is the first time I use Unity to create a 3D environment, I searched for tutorials on YouTube. I found a tutorial called [Destroyed Building Kit – Unity Tutorial](https://www.youtube.com/watch?v=zQRe2dX9B6M), which seemed relevant to the environment I had in mind.
 
-I also searched the Unity Asset Store for possible assets that could help with building destroyed environments. However, I quickly realized that most of the assets cost money, and many of them are at least $50. As a beginner exploring 3D environment creation, I kept trying to find free , so I could try how the assets could work first .
+I also searched the Unity Asset Store for possible assets that could help with building destroyed environments. However, I quickly realized that most of the assets cost money, and many of them are around $40, for example [Destroyed Buildings and Debris Pack](https://assetstore.unity.com/packages/3d/environments/urban/destroyed-buildings-and-debris-pack-223947). As a beginner exploring 3D environment creation, I kept trying to find free , so I could try how the assets could work first.
 
 At that moment, I suddenly remembered that my original idea to build a 3D game came from a tutorial I saw before about ProBuilder. So I went back and searched for more tutorials about ProBuilder.
 
@@ -1185,15 +1185,15 @@ Since I had a good experience with Unity’s official tutorials before, I decide
 
 #### Asset and Material Setup
 
-I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include ground textures, pavement textures, and other realistic materials that could help create a war-damaged environment.
+I downloaded several free materials that could be useful for environment building by using ProBuilder, such as ground and architectural materials. These include [ground textures](https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001), [pavement textures](https://assetstore.unity.com/packages/2d/textures-materials/roads/yughues-free-pavement-materials-12952), [architectural textures](https://assetstore.unity.com/packages/2d/textures-materials/yughues-free-architectural-materials-13234),and other realistic materials that could help create a war-damaged environment.
 
 ##### ProBuilder Issues
 
-While following the tutorials, I discovered that I could not open the ProBuilder Window. After searching online, I found that in Unity 6.0, the ProBuilder interface has changed, and the old “ProBuilder Window” no longer appears.
+While following [the tutorials](https://www.youtube.com/watch?v=Ta3HkV_qHTc), I discovered that I could not open the ProBuilder Window. After searching online, I found that in Unity 6.0, the ProBuilder interface has changed, and the old “ProBuilder Window” no longer appears.
 
-Many users online were also facing the same issue and complaining about the new UX design.
+Many users online were also facing the same issue and complaining about the new UX design in [Unity Discussion](https://discussions.unity.com/t/probuilder-window-missing-in-unity-6/944138/4).
 
-Because of this change, editing objects became more difficult. I tried to search specifically for “ProBuilder 2026” tutorials, since many older tutorials use the previous version with better UI.
+Because of this change, editing objects became more difficult. I tried to search specifically for “ProBuilder 2026” tutorials, since many older tutorials use the previous version with better UI.However, I could not even find a good one.
 
 #### Prototype Building
 
@@ -1209,7 +1209,7 @@ For the top floor, I changed the roof idea. I left the room walls partially open
 
 ### Asset Integration
 
-Later, I also tried using the Cathedral and Cemetery Kit assets that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
+Later, I also tried using the [Cathedral and Cemetery Kit assets](https://assetstore.unity.com/packages/3d/environments/dungeons/cathedral-and-cemetery-kit-29240) that I found by accident in the Unity Asset Store. During the earlier discussion with my teammates, someone mentioned that maybe the environment could also include places like an old church or cathedral, so I thought this asset might be a good example to test.
 
 After importing the asset into Unity, I started exploring the prefab objects inside the package. When I looked through them, I realized that this type of modular asset could actually be very useful, because it allows us to build a large environment faster, instead of creating every building from scratch.
 
@@ -1237,7 +1237,7 @@ During the process of setting up the environment, I also faced several technical
     
     However, when I tried this in Unity, I could not find these options. I think maybe it is because the Unity version I am using is different ( I use the , so the location of the button is not the same as what the solution mentioned.
     
-    Because of that, I continued searching for other tutorials with the search in specific for Unity 2026 version. I found a YouTube tutorial explaining how to convert standard materials to URP materials, which helped me understand the issue better.
+    Because of that, I continued searching for other tutorials with the search in specific for Unity 2026 version. I found a [YouTube tutorial](https://www.youtube.com/watch?v=016E8Ld6uto&t=167s) explaining how to convert standard materials to URP materials, which helped me understand the issue better.
     
     From that tutorial and other searches, I realized that in my Unity version the process is slightly different. Instead of going through the Edit menu, the conversion tool is located in another place.
     
@@ -1287,6 +1287,6 @@ In the next step, I plan to ask my teammates for their opinions about the enviro
 
 I will also share some reference images that I found online so they can understand where my environment ideas come from. In addition, I will ask for feedback about the environment features I listed earlier, such as destruction effects or war sounds.
 
-At the same time, I also found some additional tutorials that might help the project later. One tutorial explains the Unity Stats Window, which can be useful for monitoring game performance and player settings. Another tutorial explains Unity Terrain, which could help us build a larger environment.
+At the same time, I also found some additional tutorials that might help the project later. One tutorial explains the [Unity Stats Window](https://learn.unity.com/course/vr-curricular-framework-resources/tutorial/working-with-the-stats-window-2019-3), which can be useful for monitoring game performance and player settings. Another tutorial explains [Unity Terrain](https://www.youtube.com/watch?v=46Mc0gORwg8&t=134s), which could help us build a larger environment.
 
 Hope that in the next weeks I can solve these problems and have a clearer way to improve the game environment. 🥹
