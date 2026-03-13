@@ -1210,11 +1210,11 @@ Many users online were also facing the same issue and complaining about the new 
 
 Because of this change, editing objects became more difficult. I tried to search specifically for “ProBuilder 2026” tutorials, since many older tutorials use the previous version with better UI.However, I could not even find a good one.
 
-#### Prototype Building
+### Prototype Building
 
 Since the editing tools were a bit difficult to use, I decided to simplify my plan. Instead of trying to build a full environment right away, I focused on creating one building structure first.
 
-I used simple shape elements from ProBuilder and tried to implement the idea I had sketched earlier. In the end, I managed to build a four-level building structure to show the interior layout.
+I used simple shape elements from ProBuilder and tried to implement the low prototype building structure that I had sketched earlier. In the end, I managed to build a four-level building structure to show the interior layout.
 
 <p align="left">
      <img src="Media/Week7PlatformDraw.jpeg" alt="Week7PlatformDraw.jpeg" width="500" height="500">
