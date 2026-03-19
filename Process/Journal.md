@@ -1464,6 +1464,7 @@ For the environment, I created the 3D environment by duplicating many blocks and
 <p align="left">
           <img src="Media/Week8_flyingbolcks.jpg" alt="Week8_flyingbolcks.jpg" width="400" height="500">
 </p>
+
 [Picture: Minecraft floating block reference used for designing the therapy room environment.]
 
 ![Week8_Leftsignroad.gif](Media/Week8_flyingblocks.gif)
@@ -1482,6 +1483,7 @@ While working on the prototype based on Alex’s luring features ( we shared the
 <p align="left">
           <img src="Media/Week8_promptwithEkey.png" alt="Week8_promptwithEkey.png" width="300" height="500">
 </p>
+
 [The result after adding a guiding text prompt “(click key E)” to clearly indicate how to interact.]
 
 I think this also helps when working with a team and shared code. It makes it easier for the next person to understand previous features, follow up, and refine them if any issues come up during gameplay.
@@ -1502,9 +1504,11 @@ The therapy room system works well overall. Most of the core features functioned
 
 
 ![Week8_WholeworkFlow_Fail.gif](Media/Week8_WholeworkFlow_Fail.gif)
+
 [The upper GIF records the whole game flow, from luring the NPC and entering the therapy room, to passing through the 3D maze, selecting the wrong answer, and returning to the main scene with the NPC death message.]
 
 ![Week8_Successtemplate.gif](Media/Week8_Successtemplate.gif)
+
 [This GIF shows the player passing through the 3D maze, selecting the correct answer, and returning to the main scene with the NPC saved message.]
 
 
