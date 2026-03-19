@@ -1439,8 +1439,14 @@ I then drew the game flow on paper as a low prototype to better imagine how it w
 6. Then player is sent back to the main scene and sees the result
     - Correct → NPC saved
     - Wrong → NPC dies
+      
+<p align="left">
+          <img src="Media/Week8_DrawGameFlow_TR.jpeg" alt="Week8_DrawGameFlow_TR.jpeg" width="500" height="500">
+</p>
 
 I also created a video prototype to demonstrate the features that may appear in the therapy room scene.
+![Week8_TRvideoprototype.gif](Media/Week8_TRvideoprototype.gif)
+
 
 ### **Implementation Process**
 
@@ -1449,6 +1455,10 @@ For the implementation, I reused features from earlier prototypes. During my Wee
 Then, I try to implement all the features I designed for the therapy room.
 
 For the environment, I created the 3D environment by duplicating many blocks and building a floating maze-like space. While doing this, I realized I could create something similar to a Minecraft-like floating structure, which fits well with the idea of a mental space.
+
+<p align="left">
+          <img src="Media/Week8_flyingbolcks.jpg" alt="Week8_flyingbolcks.jpg" width="500" height="500">
+</p>
 
 I also resized the player object to be smaller, so when walking through the maze, the blocks feel very large and overwhelming. This creates an “ant view” feeling, where the player is small inside a massive environment. This helps represent the idea that the therapy space is part of a mindset, which is abstract and larger than expected.
 
@@ -1488,6 +1498,8 @@ Some notes I recorded during the process are important for future work and debug
 2. For the button OnClick setup, remember need to assign the GameObject, not just the script, while the GameObject must contains the script functions for onclick.
 3. I also faced an issue with SceneManager.LoadScene, where I could not add the scene into the list. I remembered that we learned to solve it using the “+” button, but it did not work. After searching online and watching [a tutorial](https://www.youtube.com/watch?v=5HgVnu2LGfI&t=100s), I found that in Unity 6, I found that I need to drag the scene into the Scene List instead. So, I recorded this process in case I face the same issue again.
 
+![Week8_addScene.gif](Media/Week8_addScene.gif)
+
 ### **Future Plan**
 
 For the future plan, I think there are many things that I need to continue improving, both technically and in design. 
@@ -1495,6 +1507,9 @@ For the future plan, I think there are many things that I need to continue impro
 1. I need to fix the UI issues, especially the canvas problem that affects the A, B, C, and D labels, since this directly affects how the player understands the choices. 
 2. I also need to adjust the scene transition, because currently the player is sent back to the starting location. I need to discuss with my teammates whether the player should return to the therapy room or the main scene spawn point, as this will affect the overall gameplay flow.
 3. Another important focus for the future plan  is adding a fall reset system. Right now, if the player falls off the maze, they will fall infinitely, which breaks the experience. I am thinking of implementing a system where if the player falls for around 3 to 5 seconds, they will be reset back to a safe position. I also need to think more carefully about whether this reset should return the player to the therapy maze or completely back to the main scene, depending on what makes more sense for the design.
+   
+   ![Week8_infiniteFall.gif](Week8_infiniteFall.gif)
+   
 4. For the therapy room itself, I think the environment is currently too bright, and it does not match the emotional tone that I want. I want to make it darker and more atmospheric, so it better represents memory, confusion, and trauma. I may also refine the maze design further so that it is not just functional, but also more meaningful as a metaphor.
 
 I also plan to conduct playtesting, both with teammates and with other people. This will help me understand if the gameplay flow is clear, if the emotional impact is working, and if the difficulty level is appropriate. Based on feedback, I can continue refining both the mechanics and the experience.
