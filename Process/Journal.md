@@ -1344,7 +1344,7 @@ At the same time, I also found some additional tutorials that might help the pro
 
 Hope that in the next weeks I can solve these problems and have a clearer way to improve the game environment. 🥹
 
-## **Week8** (13.3.2026 to 19.3.2026) – Iterative Prototyping 3 (Therapy Room Feature)
+## **Week8** (13.3.2026 to 19.3.2026) – Iterative Prototyping 3 (Design Value + Therapy Room Prototype)
 
 At the start of this week, I started from looking through the instructions on GitHub again. I saw the question asking: *what is my (our) core design value of our final projects?* Then I started thinking about what is the design value for our game, and how to make it more clear to understand the design value. I also read through the reading again.
 
@@ -1385,7 +1385,11 @@ The goal is not just to show war, but to let the player feel and reflect on its 
 
 ### Technical Exploration — Unity Terrain
 
-At the beginning part of the week, I wanted to follow up on the previous week where I found a [Unity tutorial](https://learn.unity.com/tutorial/working-with-the-terrain-editor-1) for terrain, so I continued exploring what is design in the 3D world. However, I faced the material assets issue again. Some of the terrain textures worked, but for the tree assets, which are mandatory for the tree brush, they appeared all purple.
+At the beginning part of the week, I wanted to follow up on the previous week where I found a [Unity tutorial](https://learn.unity.com/tutorial/working-with-the-terrain-editor-1) for terrain, so I continued exploring what is design in the 3D world. However, I faced the material assets issue again. Some of the terrain textures worked, but for the tree assets, which are mandatory for the tree brush, they appeared all pink.
+
+<p align="left">
+          <img src="Media/Week8_terrainTextureIssue.png" alt="Week8_terrainTextureIssue.png" width="300" height="500">
+</p>
 
 Even after upgrading the rendering settings in Unity, it still did not work. Because of this, I decided to leave the 3D environment for now, and maybe come back later after more exploration. I also asked friends who have more experience in 3D building, like using Blender, and waited for their reply on how to handle these issues.
 
@@ -1440,20 +1444,22 @@ I then drew the game flow on paper as a low prototype to better imagine how it w
     - Correct → NPC saved
     - Wrong → NPC dies
       
-<p align="left">
-          <img src="Media/Week8_DrawGameFlow_TR.jpeg" alt="Week8_DrawGameFlow_TR.jpeg" width="500" height="500">
-</p>
+    <p align="left">
+              <img src="Media/Week8_DrawGameFlow_TR.jpeg" alt="Week8_DrawGameFlow_TR.jpeg" width="500" height="500">
+    </p>
 
 I also created a video prototype to demonstrate the features that may appear in the therapy room scene.
-![Week8_TRvideoprototype.gif](Media/Week8_TRvideoprototype.gif)
+
+   ![Week8_TRvideoprototype.gif](Media/Week8_TRvideoprototype.gif)
 
 
 ### **Implementation Process**
 
 For the implementation, I reused features from earlier prototypes. During my Week 2 exploration prototype, I had already developed two relevant systems: duplicating collectible objects and a door-opening mechanism. I revisited that tutorial to review how these features were built. After that, I exported the door system and its associated assets, then imported them into the final project. Using these elements, I created a rough block-out of the therapy room area to represent the scene and integrate the door functionality.
 
-<p align="left">
-          <img src="Media/Week8_exportbedroomAssets.png" alt="Week8_exportbedroomAssets.png" width="300" height="500">
+   <p align="left">
+             <img src="Media/Week8_exportbedroomAssets.png" alt="Week8_exportbedroomAssets.png" width="500" height="500">
+   </p>
 
 Then, I try to implement all the features I designed for the therapy room. I also create a left-side road so for prototype testing I can walk through it without crossing the 3D pixel maze every time, while the bridge (long platform) will be reduced in width in the official gameplay so that players can only pass through the 3D pixel maze to reach the choice zone.
 
@@ -1461,22 +1467,23 @@ Then, I try to implement all the features I designed for the therapy room. I als
 
 For the environment, I created the 3D environment by duplicating many blocks and building a floating maze-like space. While doing this, I realized I could create something similar to a Minecraft-like floating structure, which fits well with the idea of a mental space.
 
-<p align="left">
-          <img src="Media/Week8_flyingbolcks.jpg" alt="Week8_flyingbolcks.jpg" width="400" height="500">
-</p>
+   <p align="left">
+             <img src="Media/Week8_flyingbolcks.jpg" alt="Week8_flyingbolcks.jpg" width="400" height="500">
+   </p>
 
-[Picture: Minecraft floating block reference used for designing the therapy room environment.]
+   [Picture: Minecraft floating block reference used for designing the therapy room environment.]
 
-![Week8_Leftsignroad.gif](Media/Week8_flyingblocks.gif)
+   ![Week8_Leftsignroad.gif](Media/Week8_flyingblocks.gif)
 
-[Therapy room GIF: 3D therapy room environment with floating blocks]
+   [Therapy room GIF: 3D therapy room environment with floating blocks]
 
 I also resized the player object to be smaller, so when walking through the maze, the blocks feel very large and overwhelming. This creates an “ant view” feeling, where the player is small inside a massive environment. This helps represent the idea that the therapy space is part of a mindset, which is abstract and larger than expected.
 
 ### Refined features based on previous prototype:
 
-![Week8_Refine_talkwithuser.gif](Media/Week8_Refine_talkwithuser.gif)
-[Recording based on confusion I faced when the player meets the NPC and doesn’t know how to trigger interaction.]
+   ![Week8_Refine_talkwithuser.gif](Media/Week8_Refine_talkwithuser.gif)
+
+[Recording based on confusion I faced when the player meets the NPC and does not know how to trigger interaction.]
 
 While working on the prototype based on Alex’s luring features ( we shared the code through GitHub) , I realized I did not know how to trigger the “Talk to User” feature. Looking through the code, I found that the player needs to press the E key to start it. So, I rewrote the “Talk to User” feature and added “(click key E)” as a clear guideline for the player.
 
@@ -1484,7 +1491,7 @@ While working on the prototype based on Alex’s luring features ( we shared the
           <img src="Media/Week8_promptwithEkey.png" alt="Week8_promptwithEkey.png" width="300" height="500">
 </p>
 
-[The result after adding a guiding text prompt “(click key E)” to clearly indicate how to interact.]
+   [The result after adding a guiding text prompt “(click key E)” to clearly indicate how to interact.]
 
 I think this also helps when working with a team and shared code. It makes it easier for the next person to understand previous features, follow up, and refine them if any issues come up during gameplay.
 
@@ -1503,13 +1510,13 @@ The therapy room system works well overall. Most of the core features functioned
 - System records the zone the player stands in, transfers them to the main scene, and shows the result based on their choice.
 
 
-![Week8_WholeworkFlow_Fail.gif](Media/Week8_WholeworkFlow_Fail.gif)
+    ![Week8_WholeworkFlow_Fail.gif](Media/Week8_WholeworkFlow_Fail.gif)
 
-[The upper GIF records the whole game flow, from luring the NPC and entering the therapy room, to passing through the 3D maze, selecting the wrong answer, and returning to the main scene with the NPC death message.]
+    [The upper GIF records the whole game flow, from luring the NPC and entering the therapy room, to passing through the 3D maze, selecting the wrong answer, and returning to the main scene with the NPC death message.]
 
-![Week8_Successtemplate.gif](Media/Week8_Successtemplate.gif)
+   ![Week8_Successtemplate.gif](Media/Week8_Successtemplate.gif)
 
-[This GIF shows the player passing through the 3D maze, selecting the correct answer, and returning to the main scene with the NPC saved message.]
+   [This GIF shows the player passing through the 3D maze, selecting the correct answer, and returning to the main scene with the NPC saved message.]
 
 
 I also showcased the environment, including the 3D maze and ABCD zones, to my friends. They said they loved the design and were excited to try it. I think this is a good success, as it shows the idea was well-received and accepted.
@@ -1532,7 +1539,7 @@ Some notes I recorded during the process are important for future work and debug
 2. For the button OnClick setup, remember need to assign the GameObject, not just the script, while the GameObject must contains the script functions for onclick.
 3. I also faced an issue with SceneManager.LoadScene, where I could not add the scene into the list. I remembered that we learned to solve it using the “+” button, but it did not work. After searching online and watching [a tutorial](https://www.youtube.com/watch?v=5HgVnu2LGfI&t=100s), I found that in Unity 6, I found that I need to drag the scene into the Scene List instead. So, I recorded this process in case I face the same issue again.
 
-![Week8_addScene.gif](Media/Week8_addScene.gif)
+    ![Week8_addScene.gif](Media/Week8_addScene.gif)
 
 ### **Future Plan**
 
@@ -1542,7 +1549,7 @@ For the future plan, I think there are many things that I need to continue impro
 2. I also need to adjust the scene transition, because currently the player is sent back to the starting location. I need to discuss with my teammates whether the player should return to the therapy room or the main scene spawn point, as this will affect the overall gameplay flow.
 3. Another important focus for the future plan  is adding a fall reset system. Right now, if the player falls off the maze, they will fall infinitely, which breaks the experience. I am thinking of implementing a system where if the player falls for around 3 to 5 seconds, they will be reset back to a safe position. I also need to think more carefully about whether this reset should return the player to the therapy maze or completely back to the main scene, depending on what makes more sense for the design.
    
-![Week8_infiniteFall.gif](Media/Week8_infiniteFall.gif)
+    ![Week8_infiniteFall.gif](Media/Week8_infiniteFall.gif)
    
 4. For the therapy room itself, I think the environment is currently too bright, and it does not match the emotional tone that I want. I want to make it darker and more atmospheric, so it better represents memory, confusion, and trauma. I may also refine the maze design further so that it is not just functional, but also more meaningful as a metaphor.
 
