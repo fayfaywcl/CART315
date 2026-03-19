@@ -1102,7 +1102,7 @@ From the start, all of us brought out a bunch of ideas, such as RPG or mission-b
 
 Since we only have four people in the group, and we already separated our roles into two artists and two programmers, we realized that many of our ideas were not balanced. They depended too much on the artists’ work. Because of that, we decided to clean up the ideas and go back to the speed-ideation process from last week, listing out the core things we really want in the game.
 
-Banacia and Shawn mentioned that they want to implement companion AI, as they want to experiment with AI features and see how they could collaborate on that part. On the other hand, I really want to build a 3D game environment. Because of that, we summarized our main direction as:
+Banacia and Sean mentioned that they want to implement companion AI, as they want to experiment with AI features and see how they could collaborate on that part. On the other hand, I really want to build a 3D game environment. Because of that, we summarized our main direction as:
 
 - 3D world
 - Companion AI
@@ -1142,7 +1142,7 @@ Banicia: character design
 
 Alex: testing the feature of carrying the soldier to the room
 
-Shawn: checking whether the AI component could be implement in the game
+Sean: checking whether the AI component could be implement in the game
 
 ### Risks Exploration
 
@@ -1395,7 +1395,7 @@ Even after upgrading the rendering settings in Unity, it still did not work. Bec
 
 ### Prototype Direction — Therapy Room Mechanic
 
-After discussing with the group last week, I started thinking about contributing to the mechanic prototype of the game. Shawn suggested that I could take part in the therapy room feature.
+After discussing with the group last week, I started thinking about contributing to the mechanic prototype of the game. Sean suggested that I could take part in the therapy room feature.
 
 The idea of this feature is based on a rehumanization process, where the player helps NPCs through their struggles and finds fallacies in what they say in order to assist them properly. This connects strongly to the emotional and social design value of the game.
 
