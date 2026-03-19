@@ -1343,3 +1343,162 @@ I will also share some reference images that I found online so they can understa
 At the same time, I also found some additional tutorials that might help the project later. One tutorial explains the [Unity Stats Window](https://learn.unity.com/course/vr-curricular-framework-resources/tutorial/working-with-the-stats-window-2019-3), which can be useful for monitoring game performance and player settings. Another tutorial explains [Unity Terrain](https://www.youtube.com/watch?v=46Mc0gORwg8&t=134s), which could help us build a larger environment.
 
 Hope that in the next weeks I can solve these problems and have a clearer way to improve the game environment. 🥹
+
+## **Week8** (13.3.2026 to 19.3.2026) – Iterative Prototyping 3 (Therapy Room Feature)
+
+At the start of this week, I started from looking through the instructions on GitHub again. I saw the question asking: *what is my (our) core design value of our final projects?* Then I started thinking about what is the design value for our game, and how to make it more clear to understand the design value. I also read through the reading again.
+
+For the broadest design, which are the five key approaches that Holm identifies (aesthetic, social, environmental, traditional, and gender-based), I think our project game meets the social one. This is because the game focuses on war issues happening in the world, no matter past or present, and also focuses on soldiers or citizens who suffer from PTSD after being in war zones. It is not only about gameplay, but also about reflecting real-world issues and emotional impact.
+
+Then I move on to answer the general questions to discuss while
+establishing the design values for a game
+
+- **Experience**: What does the player do when playing? As game designer and educator Tracy Fullerton puts it, what does the player get to do? And how does this make the player feel physically and emotionally?
+    - The player attacks enemy soldiers or protects themselves, and lures NPCs and saves them through answering questions. The player uses a first-person experience view and experiences the gameplay directly.
+    - Physically, the player is moving, aiming, shooting, and reacting. Emotionally, the player may feel excitement and tension during combat, but this shifts when entering the therapy room, where the player becomes more focused and reflective.
+- **Theme:** What is the game about? How does it present this to players? What concepts, perspectives, or experiences might the player encounter during play? How are these delivered? Through story? Systems modeling? Metaphor?
+    - I think the game will metaphor the effect when people get PTSD after experiencing war. Instead of directly explaining PTSD, the game presents it through systems, environment, and interaction. The therapy room, the NPC dialogue, and the maze all work together as a metaphor for memory, trauma, and recovery.
+- **Point of view:** What does the player see, hear, or feel? From what cultural reference point? How are the game and the information within it represented? Simple graphics? Stylized geometric shapes? Highly detailed models?
+    - The player sees enemy soldiers and shoots back when attacked, and the whole game is in first-person view.
+    - For the war experience and memory metaphor, the environment should be dark, messy, and a bit blurred, which may be caused by dust or sand.
+- **Challenge:** What kind of challenges does the game present? Mental challenge? Physical challenge? Or is it more a question of a challenging perspective, subject or theme?
+    - The game includes multiple types of challenges
+        - Physical challenge: Player needs to move around, shoot, and lure NPCs.
+        - Mental challenge : player needs to handle the saving questions and find fallacies in what NPCs say to assist them (in therapy room)
+        - At the same time, I think the theme itself creates a challenge, since the war and PTSD metaphor may raise strong emotions during gameplay.
+- **Decision-making:** How and where do players make decisions? How are decisions presented?
+    - The player makes decisions in both the shooting system and the therapy system. The shooting decisions are made in real time, while the therapy decisions require more thinking, as the player needs to choose answers carefully during the interaction.
+- **Skill, strategy, chance, and uncertainty:** What skills does the game ask of the player? Is the development of strategy important to a fulfilling play experience? Does chance factor into the game? From what sources does uncertainty develop?
+    - The player needs basic skills such as movement, jumping, and shooting, using WASD, space, and shooting controls. These skills are important for the overall experience, because if the player does not understand them, they may feel confused or frustrated and may even give up the game. Strategy is also important for understanding how to interact with NPCs and progress.
+    - I do not think chance plays a big role in the game, since most outcomes depend on skill and decisions. However, uncertainty still exists, especially from NPC behavior, where they may react unexpected ways due to different player approaches.
+- **Context:** Who is the player? Where are they encountering the game? How did they find out about it? When are they playing it? Why are they playing it
+    - The player is controlling the character in first-person view and experiences the game through exploring and interacting. The player encounters the game by progressing through the environment, and we provide panel hints to guide them during important steps so they do not feel lost.
+- **Emotions:** What emotions might the game create in players?
+    - The game should generate a strong sense of focus. It may feel exciting during combat, but during therapy interactions, the mood should become heavier and more serious.
+    - Also , it is not a chill game. The player may feel responsibility, sadness, helplessness, or worry, and may also connect the experience to real-world war issues and their own feelings.
+
+So overall answering all the questions , I think the core design value of the game is 
+
+- create an experience that generates a feeling similar to PTSD, especially in war or post-war situations, through gameplay and metaphor.
+
+The goal is not just to show war, but to let the player feel and reflect on its psychological impact.
+
+### Technical Exploration — Unity Terrain
+
+At the beginning part of the week, I wanted to follow up on the previous week where I found a Unity tutorial for terrain, so I continued exploring what is design in the 3D world. However, I faced the material assets issue again. Some of the terrain textures worked, but for the tree assets, which are mandatory for the tree brush, they appeared all purple.
+
+Even after upgrading the rendering settings in Unity, it still did not work. Because of this, I decided to leave the 3D environment for now, and maybe come back later after more exploration. I also asked friends who have more experience in 3D building, like using Blender, and waited for their reply on how to handle these issues.
+
+### Prototype Direction — Therapy Room Mechanic
+
+After discussing with the group last week, I started thinking about contributing to the mechanic prototype of the game. Shawn suggested that I could take part in the therapy room feature.
+
+The idea of this feature is based on a rehumanization process, where the player helps NPCs through their struggles and finds fallacies in what they say in order to assist them properly. This connects strongly to the emotional and social design value of the game.
+
+Then, i started the therapy room prototype. For the prototype, I wanted to implement the flow of what happens when the player lures a soldier into the therapy room and what happens afterward. At the beginning, I started by questioning how the system would detect whether the player is entering the correct therapy room, and what the player should actually do once inside.
+
+I then started thinking about the player’s actions in the therapy room and how the system should respond.
+
+### Initial Flow Idea
+
+I first imagined a simple flow:
+
+1. Load the room
+2. A screen opens
+3. The player goes into a minigame or story-based interaction
+    - Answer correct / success → save the soldier
+    - Answer wrong / fail → the soldier dies
+4. Back to the room
+
+At this stage, I kept the success and failure simple, because it helps me imagine how the mechanic works first before refining it.
+
+### Therapy room functions idealization
+
+Previously, one of us mentioned that the therapy room could use a system like having a clipboard and drag-and-paste terms into a paragraph. Because of this, I started thinking about different possible minigames.
+
+I searched online for ideation, including Roblox and other platforms, and found ideas such as choosing doors, jumping on rocks, spotlight catching, jumping bridges that fall based on luck, and obstacle jumping. However, I realized that many of these are competitive-based or infinite-based games. The competitive environment already exists in the main shooting gameplay, while infinite games may take too long and distract the player from the main experience. Because of this, I did not choose these types of minigames.
+
+While finishing another class assignment, I explored the Figma community and found a 3D pixel world game projects. I thought this could be a great idea for the therapy room feature. The pixel blocks can represent memory, similar to how some films use blocks or objects to represent brain functions, such as Inside Out.
+
+The 3D aspect also suggests that people can see the same story from different angles, which connects to bias and misunderstanding. Based on this, I thought that using a 3D pixel maze would be a good metaphor. The maze represents how people with PTSD may feel trapped in their memories, and how they need to move forward instead of staying stuck in past traumatic experiences.
+
+### **Low Prototype**
+
+I then drew the game flow on paper as a low prototype to better imagine how it works in Unity. The flow is:
+
+1. When the player is close to the door, the door automatically opens
+    - If only the player enters, nothing happens
+    - If the player brings an NPC, a panel appears
+2. Then player clicks “next” to enter the NPC mindset
+3. After that, the player sees a panel with background information and a question
+4. The player click “next”  to close the panel and enters the 3D maze , while at the same time player needs to remember the answer
+5. After pass through the 3D maze, the player chooses a zone (A, B, C, D)
+    - When entering a zone, a 3-second timer starts
+    - The player can leave and choose another zone, which resets the timer
+    - If the player stays until the timer reaches 0, the answer is locked
+6. Then player is sent back to the main scene and sees the result
+    - Correct → NPC saved
+    - Wrong → NPC dies
+
+I also created a video prototype to demonstrate the features that may appear in the therapy room scene.
+
+### **Implementation Process**
+
+For the implementation, I reused features from earlier prototypes. During my Week 2 exploration prototype, I had already developed two relevant systems: duplicating collectible objects and a door-opening mechanism. I revisited that tutorial to review how these features were built. After that, I exported the door system and its associated assets, then imported them into the final project. Using these elements, I created a rough block-out of the therapy room area to represent the scene and integrate the door functionality.
+
+Then, I try to implement all the features I designed for the therapy room.
+
+For the environment, I created the 3D environment by duplicating many blocks and building a floating maze-like space. While doing this, I realized I could create something similar to a Minecraft-like floating structure, which fits well with the idea of a mental space.
+
+I also resized the player object to be smaller, so when walking through the maze, the blocks feel very large and overwhelming. This creates an “ant view” feeling, where the player is small inside a massive environment. This helps represent the idea that the therapy space is part of a mindset, which is abstract and larger than expected.
+
+### Refined features based on previous prototype:
+
+While working on the prototype based on Alex’s luring features ( we shared the code through GitHub) , I realized I did not know how to trigger the “Talk to User” feature. Looking through the code, I found that the player needs to press the E key to start it. So, I rewrote the “Talk to User” feature and added “(click key E)” as a clear guideline for the player.
+
+I think this also helps when working with a team and shared code. It makes it easier for the next person to understand previous features, follow up, and refine them if any issues come up during gameplay.
+
+### **What Worked**
+
+The therapy room system works well overall. Most of the core features functioned as intended. 
+
+**Key Features Implemented:**
+
+- Door opens automatically when the player enters.
+- Box colliders detect whether only the player or the player + NPC enters the therapy room.
+- Panels guide the player through the game flow.
+- 3D floating maze environment created with flowing blocks.
+- Long platform with 3D maze and zones for choices A, B, C, D.
+- 3-second timer in each zone, which resets if the player leaves.
+- System records the zone the player stands in, transfers them to the main scene, and shows the result based on their choice.
+
+I also showcased the environment, including the 3D maze and ABCD zones, to my friends. They said they loved the design and were excited to try it. I think this is a good success, as it shows the idea was well-received and accepted.
+
+### **What Did Not Work**
+
+I originally implemented the big “A”, “B”, “C”, “D” letters to represent each zone, but now they all appear as tiny text on the player’s screen all the time. I already moved all four letters out of the Question Panel (which appears at the first scene in the therapy room world), so they should not be affected by the panel showing or not.
+
+I think it might be a canvas-related issue, and I will try to solve it later by asking others or researching online later.
+
+### **Notes**
+
+Some notes I recorded during the process are important for future work and debugging. 
+
+1. When duplicating objects, remember I could use shortcut **Ctrl + D** and also needed to pay attention to the axis when duplicating. 
+2. For the button OnClick setup, remember need to assign the GameObject, not just the script, while the GameObject must contains the script functions for onclick.
+3. I also faced an issue with SceneManager.LoadScene, where I could not add the scene into the list. I remembered that we learned to solve it using the “+” button, but it did not work. After searching online and watching a tutorial, I found that in Unity 6, I found that I need to drag the scene into the Scene List instead. So, I recorded this process in case I face the same issue again.
+
+### **Future Plan**
+
+For the future plan, I think there are many things that I need to continue improving, both technically and in design. 
+
+1. I need to fix the UI issues, especially the canvas problem that affects the A, B, C, and D labels, since this directly affects how the player understands the choices. 
+2. I also need to adjust the scene transition, because currently the player is sent back to the starting location. I need to discuss with my teammates whether the player should return to the therapy room or the main scene spawn point, as this will affect the overall gameplay flow.
+3. Another important focus for the future plan  is adding a fall reset system. Right now, if the player falls off the maze, they will fall infinitely, which breaks the experience. I am thinking of implementing a system where if the player falls for around 3 to 5 seconds, they will be reset back to a safe position. I also need to think more carefully about whether this reset should return the player to the therapy maze or completely back to the main scene, depending on what makes more sense for the design.
+4. For the therapy room itself, I think the environment is currently too bright, and it does not match the emotional tone that I want. I want to make it darker and more atmospheric, so it better represents memory, confusion, and trauma. I may also refine the maze design further so that it is not just functional, but also more meaningful as a metaphor.
+
+I also plan to conduct playtesting, both with teammates and with other people. This will help me understand if the gameplay flow is clear, if the emotional impact is working, and if the difficulty level is appropriate. Based on feedback, I can continue refining both the mechanics and the experience.
+
+Finally, I also want to return to the terrain issue and try to solve the purple material problem. I may explore Unity settings more deeply or get help from others who have more experience. This is important because the environment design will also affect the overall experience of the game.
+
+Overall, I think the therapy room feature is working well and looks cool now. The system successfully connects gameplay with emotional meaning, which supports our core design value. I am looking forward to the next steps to improve it, especially by refining both the technical implementation and the emotional experience after more testing and feedback. 😄
