@@ -1190,7 +1190,7 @@ I also searched the Unity Asset Store for possible assets that could help with b
 
 At that moment, I suddenly remembered that my original idea to build a 3D game came from a tutorial I saw before about ProBuilder. So I went back and searched for more tutorials about ProBuilder.
 
-Although I could not find a tutorial specifically about war environments, I did find a Unity official tutorial on Unity Learn. It mentioned that ProBuilder has limited functionality compared to professional 3D tools, but it is still useful for quickly creating simple 3D objects inside Unity without opening another modeling software.
+Although I could not find a tutorial specifically about war environments, I did find a [Unity official tutorial on Unity Learn](https://learn.unity.com/tutorial/working-with-shapes-in-probuilder). It mentioned that ProBuilder has limited functionality compared to professional 3D tools, but it is still useful for quickly creating simple 3D objects inside Unity without opening another modeling software.
 
 Since I had a good experience with Unity’s official tutorials before, I decided to start by learning the tools first, before building the environment.
 
@@ -1385,7 +1385,7 @@ The goal is not just to show war, but to let the player feel and reflect on its 
 
 ### Technical Exploration — Unity Terrain
 
-At the beginning part of the week, I wanted to follow up on the previous week where I found a Unity tutorial for terrain, so I continued exploring what is design in the 3D world. However, I faced the material assets issue again. Some of the terrain textures worked, but for the tree assets, which are mandatory for the tree brush, they appeared all purple.
+At the beginning part of the week, I wanted to follow up on the previous week where I found a [Unity tutorial](https://learn.unity.com/tutorial/working-with-the-terrain-editor-1) for terrain, so I continued exploring what is design in the 3D world. However, I faced the material assets issue again. Some of the terrain textures worked, but for the tree assets, which are mandatory for the tree brush, they appeared all purple.
 
 Even after upgrading the rendering settings in Unity, it still did not work. Because of this, I decided to leave the 3D environment for now, and maybe come back later after more exploration. I also asked friends who have more experience in 3D building, like using Blender, and waited for their reply on how to handle these issues.
 
@@ -1416,7 +1416,7 @@ At this stage, I kept the success and failure simple, because it helps me imagin
 
 Previously, one of us mentioned that the therapy room could use a system like having a clipboard and drag-and-paste terms into a paragraph. Because of this, I started thinking about different possible minigames.
 
-I searched online for ideation, including Roblox and other platforms, and found ideas such as choosing doors, jumping on rocks, spotlight catching, jumping bridges that fall based on luck, and obstacle jumping. However, I realized that many of these are competitive-based or infinite-based games. The competitive environment already exists in the main shooting gameplay, while infinite games may take too long and distract the player from the main experience. Because of this, I did not choose these types of minigames.
+I searched online for ideation, including [Roblox](https://www.roblox.com/games/101623798877678/100-Minigames) and [CrazyGames](https://www.crazygames.com/t/mini), and found ideas such as choosing doors, jumping on rocks, spotlight catching, jumping bridges that fall based on luck, and obstacle jumping. However, I realized that many of these are competitive-based or infinite-based games. The competitive environment already exists in the main shooting gameplay, while infinite games may take too long and distract the player from the main experience. Because of this, I did not choose these types of minigames.
 
 While finishing another class assignment, I explored the Figma community and found a 3D pixel world game projects. I thought this could be a great idea for the therapy room feature. The pixel blocks can represent memory, similar to how some films use blocks or objects to represent brain functions, such as Inside Out.
 
@@ -1486,7 +1486,7 @@ Some notes I recorded during the process are important for future work and debug
 
 1. When duplicating objects, remember I could use shortcut **Ctrl + D** and also needed to pay attention to the axis when duplicating. 
 2. For the button OnClick setup, remember need to assign the GameObject, not just the script, while the GameObject must contains the script functions for onclick.
-3. I also faced an issue with SceneManager.LoadScene, where I could not add the scene into the list. I remembered that we learned to solve it using the “+” button, but it did not work. After searching online and watching a tutorial, I found that in Unity 6, I found that I need to drag the scene into the Scene List instead. So, I recorded this process in case I face the same issue again.
+3. I also faced an issue with SceneManager.LoadScene, where I could not add the scene into the list. I remembered that we learned to solve it using the “+” button, but it did not work. After searching online and watching [a tutorial](https://www.youtube.com/watch?v=5HgVnu2LGfI&t=100s), I found that in Unity 6, I found that I need to drag the scene into the Scene List instead. So, I recorded this process in case I face the same issue again.
 
 ### **Future Plan**
 
