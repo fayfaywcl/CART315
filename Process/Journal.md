@@ -1591,13 +1591,13 @@ Hence, I also search through the internet that see if any interesting idea will 
 
 So I again search through internet to find any [journal game/communication game in itch.io](https://itch.io/games/genre-visual-novel/made-with-unity). During this process, I found the “Bloom” which the cover pictures is catching my eyes.
 
-After I clicking it, I found the “Bloom” game is based on The Wretched by Chris Bissette and was created for Wretched Jam. I watch the introduction/template video that explain how the The Wretched journal features look, I think is quite a cool idea and could be put into our communication part too. As, the journaling system feels very immersive and personal, and I think it could match well with our project theme, especially related to memory and emotion.
+After I clicking it, I found the “Bloom” game is based on [The Wretched](https://loottheroom.itch.io/wretched) by Chris Bissette and was created for [Wretched Jam](https://itch.io/jam/wretched-jam). I watch the [introduction/template videoof The Wretched](https://www.youtube.com/watch?v=_V-wQtZamzA&t=88s) that explain how the The Wretched journal features look, I think is quite a cool idea and could be put into our communication part too. As, the journaling system feels very immersive and personal, and I think it could match well with our project theme, especially related to memory and emotion.
 
 #### **Combining Journal + Dialogue Features**
 
-While when I start thinking how to combine the journal features and the dialogue features (visual novel features) together, I first start searching how can I implement the making a visual novel in Unity. I then found that I could try to implement the dialogue system in Unity by a YouTube tutorial.
+While when I start thinking how to combine the journal features and the dialogue features (visual novel features) together, I first start searching how can I implement the making a visual novel in Unity. I then found that I could try to implement the dialogue system in Unity by a [YouTube tutorial](https://www.youtube.com/watch?v=8oTYabhj248&t=287s).
 
-Then, I start to form an idea on how this could work. I also take reference from *Danganronpa*, where the player chooses objects, and each object has explanation that player can refer to. This makes me think about how information can be interactively explored instead of only reading dialogue.
+Then, I start to form an idea on how this could work. I also take reference from Danganronpa, where the player chooses objects, and each object has explanation that player can refer to. This makes me think about how information can be interactively explored instead of only reading dialogue.
 
 Also through many similar games searching, I think the best to implement the game mechanic is through asking and choosing through from the choice. This is a more possible way to implement, and also allow more variety. Then , the features of journal are not showcase as dialogue, while is as a supporting features. The main interaction still comes from dialogue and choices, while the journal supports the player to find information.
 
@@ -1686,7 +1686,7 @@ Following up from last week’s environment concerns, I tried to make the enviro
 
 However, when I tried to change the Directional Light, it only affected the light on the bridge (turning it orange, blue, or dark), and it did not change the overall environment lighting.
 
-Then I searched online and found [Unity - Manual: Add ambient light from the environment](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html). I learned that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
+Then I searched online and found [an Unity Document- Manual: Add ambient light from the environment](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html) that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
 
 ### **Notes**
 
