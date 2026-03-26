@@ -1593,6 +1593,8 @@ So I again search through internet to find any [journal game/communication game 
 
 After I clicking it, I found the “Bloom” game is based on [The Wretched](https://loottheroom.itch.io/wretched) by Chris Bissette and was created for [Wretched Jam](https://itch.io/jam/wretched-jam). I watch the [introduction/template videoof The Wretched](https://www.youtube.com/watch?v=_V-wQtZamzA&t=88s) that explain how the The Wretched journal features look, I think is quite a cool idea and could be put into our communication part too. As, the journaling system feels very immersive and personal, and I think it could match well with our project theme, especially related to memory and emotion.
 
+![Week9_WretchedGame.gif](Media/Week9_WretchedGame.gif)
+
 #### **Combining Journal + Dialogue Features**
 
 While when I start thinking how to combine the journal features and the dialogue features (visual novel features) together, I first start searching how can I implement the making a visual novel in Unity. I then found that I could try to implement the dialogue system in Unity by a [YouTube tutorial](https://www.youtube.com/watch?v=8oTYabhj248&t=287s).
@@ -1624,6 +1626,8 @@ So now, the player can clearly know if they chose the correct answer or not, but
 
 I also made a video prototype of how this will work smoothly. 
 
+![Week9_VideoPropotype_1.gif](Media/Week9_VideoPropotype_1.gif)
+
 ### **Implementation Process**
 
 In the implementation process, I first implemented the dialogue box feature and tested whether the typing animation works smoothly. I experimented with several speed values and found that 0.03 gives the most smooth experience.
@@ -1645,21 +1649,28 @@ During implementation, I found several issues and improved parts of the system.
 1. First, sometimes text overflowed outside the box. I tried to solve this using maxCharactersPerPage (default 180). But this did not really work. Some of the text is over 180 words, which splits the text, but because they are in paragraphs, they do not overflow the text box, so they should not split. However, if the text includes 2 new lines, it will overflow the text box, but it does not split through this solution.
     
     Then I updated `DialogueBox_TR.cs` so the page splitting would check the actual `TextMeshProUGUI` box height and line layout, not just the number of characters. But even after that, it still didn’t work.
-    
-2. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
 
-3. After clicking the wrong choice button, the system shows the wrong follow-up text. However, during testing, I noticed that an extra “N” key press was needed before a choice could be selected again. The reason could be that the wrong follow-up text is using the dialogue box features, and every next step in the dialogue feature requires clicking the “N” key to move on. As a result, all the buttons became available, and the player could click them, but there was no response when clicking the right or wrong choice.
+   ![Week9_NonOverTextbox.gif](Media/Week9_NonOverTextbox.gif)  
+    
+3. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
+
+4. After clicking the wrong choice button, the system shows the wrong follow-up text. However, during testing, I noticed that an extra “N” key press was needed before a choice could be selected again. The reason could be that the wrong follow-up text is using the dialogue box features, and every next step in the dialogue feature requires clicking the “N” key to move on. As a result, all the buttons became available, and the player could click them, but there was no response when clicking the right or wrong choice.
     
     To fix this, I made all the buttons block input and turn grey when the wrong prompt text is showing. This also creates a visual cue that the “N” key must be pressed before the player can choose a new option.
-    
+
+![Week9_FixWrongAns.gif](Media/Week9_FixWrongAns.gif)    
 
 ### **Refined Features**
 
 Following up from last week, I improved the falling system. Previously, the player would fall infinitely. Now I added UpdateFallTimer() and RespawnAtSpawnPoint() functions in PlayerMotor. If the player falls for more than 5 seconds, they will respawn at the original spawn point of the scene.
 
+![Week9_FallingReset.gif](Media/Week9_FallingReset.gif)
+
 ### **What Success**
 
 The dialogue features work well. The dialogue text shows properly in the panel box, the buttons to switch between different journal content work smoothly, and the flow of the gameplay features works exactly as I originally imagined. The normal dialogue, question dialogue, correct/wrong follow-up text, re-choosing options, and smoothly ending this section all work perfectly!
+
+![Week9_GameFlow.gif](Media/Week9_GameFlow.gif)
 
 Here are some key highlights that I consider real successes:
 
