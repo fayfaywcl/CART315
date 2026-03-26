@@ -1571,9 +1571,7 @@ Then, for my side I take care of the communication mechanic, thinking about how 
 
 So my this week prototype is to build the game that works with the AI communication and with playful features.
 
-The question that I am focusing this week is: 
-
-    **How might the dialogue features work and could also be playful?**
+The question that I am focusing this week is: **How might the dialogue features work and could also be playful?**
 
 ### **Reference Games & Research**
 
@@ -1611,6 +1609,10 @@ If it is correct answer, the NPC will have corresponding feedback, while if it i
 
 After I had the idea, I drew the low prototype of the game flow of the dialogue features. 
 
+   <p align="left">
+          <img src="Media/Week9_LowPropotype.jpeg" alt="Week9_LowPropotype.jpeg" width="500" height="500">
+     </p> 
+
 So the Flow will be: 
 
 1. After the player lures the NPC to the therapy room, and the player transfers into the NPC mind (brain). Then a dialogue box shows up with typing animation, which represents the speech that the NPC (dead soldier) wants to say. Since it is inside the NPC mind, the player cannot see the NPC object, which works as a metaphor of entering the NPC brain.
@@ -1647,14 +1649,20 @@ After the last question, the journal and the dialogue box will close, and a big 
 During implementation, I found several issues and improved parts of the system.
 
 1. First, sometimes text overflowed outside the box. I tried to solve this using maxCharactersPerPage (default 180). But this did not really work. Some of the text is over 180 words, which splits the text, but because they are in paragraphs, they do not overflow the text box, so they should not split. However, if the text includes 2 new lines, it will overflow the text box, but it does not split through this solution.
-    
-    Then I updated `DialogueBox_TR.cs` so the page splitting would check the actual `TextMeshProUGUI` box height and line layout, not just the number of characters. But even after that, it still didn’t work.
 
-   ![Week9_NonOverTextbox.gif](Media/Week9_NonOverTextbox.gif)  
+    <p align="left">
+          <img src="Media/Week9_OverTextboxwithNewLine.png" alt="Week9_OverTextboxwithNewLine.png" width="400" height="500">
+     </p> 
     
-3. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
+    Then I updated DialogueBox_TR.cs so the page splitting would check the actual TextMeshProUGUI box height and line layout, not just the number of characters. But even after that, it still did not work.
+    
+2. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
 
-4. After clicking the wrong choice button, the system shows the wrong follow-up text. However, during testing, I noticed that an extra “N” key press was needed before a choice could be selected again. The reason could be that the wrong follow-up text is using the dialogue box features, and every next step in the dialogue feature requires clicking the “N” key to move on. As a result, all the buttons became available, and the player could click them, but there was no response when clicking the right or wrong choice.
+    <p align="left">
+          <img src="Media/Week9_InfluencePhoenixWright.png" alt="Week9_InfluencePhoenixWright.png" width="400" height="500">
+     </p> 
+
+3. After clicking the wrong choice button, the system shows the wrong follow-up text. However, during testing, I noticed that an extra “N” key press was needed before a choice could be selected again. The reason could be that the wrong follow-up text is using the dialogue box features, and every next step in the dialogue feature requires clicking the “N” key to move on. As a result, all the buttons became available, and the player could click them, but there was no response when clicking the right or wrong choice.
     
     To fix this, I made all the buttons block input and turn grey when the wrong prompt text is showing. This also creates a visual cue that the “N” key must be pressed before the player can choose a new option.
 
@@ -1689,6 +1697,10 @@ Here are some key highlights that I consider real successes:
     I made the buttons linked to the option features, and the questions can now be edited directly through the Unity Inspector. This makes it much easier and more convenient to control, instead of editing code every time. Also, the number of questions is no longer limited to 3, they can be increased or reduced as needed.
     
     At the same time, all correct follow-up texts and wrong-answer texts can be edited according to each question. Now, each response can feel more connected to the story, and it is easy to change them whenever needed.
+
+   <p align="left">
+          <img src="Media/Week9_EditableQ.png" alt="Week9_EditableQ.png" width="400" height="500">
+     </p>
     
 
 ### **What Not Works**
@@ -1697,7 +1709,11 @@ Following up from last week’s environment concerns, I tried to make the enviro
 
 However, when I tried to change the Directional Light, it only affected the light on the bridge (turning it orange, blue, or dark), and it did not change the overall environment lighting.
 
-Then I searched online and found [an Unity Document- Manual: Add ambient light from the environment](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html) that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
+Then I searched online and found [an Unity Document](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html) that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
+
+   <p align="left">
+          <img src="Media/Week9_EnvironmentLightingIssue.png" alt="Week9_EnvironmentLightingIssue.png" width="400" height="500">
+     </p>
 
 ### **Notes**
 
@@ -1712,6 +1728,10 @@ I also want to document some important notes from this week’s process for futu
     [TextArea(3, 8)]
     [SerializeField] private string promptQuestion = "";
 ```
+
+<p align="left">
+          <img src="Media/Week9_HaveTextLines.png" alt="Week9_HaveTextLines.png" width="400" height="500">
+     </p>
 
 ### **What I Learned**
 
@@ -1730,6 +1750,10 @@ Overall, I am quite happy that the prototype actually works as I originally imag
 I also gave the prototype I built to my friends to play and test. They liked the journal idea and many of them said it was interesting and really fits the theme of dead soldiers and PTSD. They also gave some feedback that I think is useful for future improvements:
 
 1. The text in the journal is hard to read. This might be because I set the font size below 20, and they were testing it in the small Unity Scene view (not sure if I am naming it correctly). I need to double-check whether the unclear text issue only happens in the small view or if it will also appear in the full scene.
+
+   <p align="left">
+          <img src="Media/Week9_IssueTextShow.png" alt="Week9_IssueTextShow.png" width="400" height="500">
+     </p> 
 2. The second issue is that while in the therapy room, even during the dialogue and journal questions, the player can still move using WASD. In the future, I need to force the player to stay in place during dialogue and questioning periods.
 3. Lastly, for the skybox material issue, I will keep looking for assets or other possible solutions to make the world environment darker. This will also be part of my future plan.
 
