@@ -1655,6 +1655,8 @@ During implementation, I found several issues and improved parts of the system.
      </p> 
     
     Then I updated DialogueBox_TR.cs so the page splitting would check the actual TextMeshProUGUI box height and line layout, not just the number of characters. But even after that, it still did not work.
+
+    ![Week9_FixOverText.gif](Media/Week9_FixOverText.gif)  
     
 2. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
 
@@ -1666,7 +1668,7 @@ During implementation, I found several issues and improved parts of the system.
     
     To fix this, I made all the buttons block input and turn grey when the wrong prompt text is showing. This also creates a visual cue that the “N” key must be pressed before the player can choose a new option.
 
-![Week9_FixWrongAns.gif](Media/Week9_FixWrongAns.gif)    
+    ![Week9_FixWrongAns.gif](Media/Week9_FixWrongAns.gif)    
 
 ### **Refined Features**
 
@@ -1699,7 +1701,7 @@ Here are some key highlights that I consider real successes:
     At the same time, all correct follow-up texts and wrong-answer texts can be edited according to each question. Now, each response can feel more connected to the story, and it is easy to change them whenever needed.
 
    <p align="left">
-          <img src="Media/Week9_EditableQ.png" alt="Week9_EditableQ.png" width="400" height="600">
+          <img src="Media/Week9_EditableQ.png" alt="Week9_EditableQ.png" width="300" height="500">
      </p>
     
 
