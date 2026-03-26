@@ -1699,7 +1699,7 @@ Here are some key highlights that I consider real successes:
     At the same time, all correct follow-up texts and wrong-answer texts can be edited according to each question. Now, each response can feel more connected to the story, and it is easy to change them whenever needed.
 
    <p align="left">
-          <img src="Media/Week9_EditableQ.png" alt="Week9_EditableQ.png" width="400" height="500">
+          <img src="Media/Week9_EditableQ.png" alt="Week9_EditableQ.png" width="400" height="600">
      </p>
     
 
@@ -1709,7 +1709,7 @@ Following up from last week’s environment concerns, I tried to make the enviro
 
 However, when I tried to change the Directional Light, it only affected the light on the bridge (turning it orange, blue, or dark), and it did not change the overall environment lighting.
 
-Then I searched online and found [an Unity Document](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html) that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
+Then I searched online and found [an Unity Document](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html) that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the Skybox Material property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
 
    <p align="left">
           <img src="Media/Week9_EnvironmentLightingIssue.png" alt="Week9_EnvironmentLightingIssue.png" width="400" height="500">
