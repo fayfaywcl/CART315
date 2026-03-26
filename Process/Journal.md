@@ -1558,3 +1558,168 @@ I also plan to conduct playtesting, both with teammates and with other people. T
 Finally, I also want to return to the terrain issue and try to solve the purple material problem. I may explore Unity settings more deeply or get help from others who have more experience. This is important because the environment design will also affect the overall experience of the game.
 
 Overall, I think the therapy room feature is working well and looks cool now. The system successfully connects gameplay with emotional meaning, which supports our core design value. I am looking forward to the next steps to improve it, especially by refining both the technical implementation and the emotional experience after more testing and feedback. 😄
+
+## **Week9** (20.3.2026 to 26.3.2026) – Iterative Prototyping 4 (Dialogue & Visual Novel Features)
+
+As last week of meeting, we showcased everything we did during the past week and listed what we should do for this week. After talking with Matthew, the main focus is still the mansion (the 3D world). This time, as Sean mentioned, he has built 3D environments with assets before, and his AI features are almost finished, so he is okay to take over the 3D assets part.
+
+So me and Sean switched positions. He will focus on the 3D assets mentioned, while I pass all the resources that I found before to him, like the asset links for buildings, textures, environments, and effects. I also followed up on the pink issue that he faced using my previous solution, and it worked. The “Material Update” solution that I learned last week actually helps to solve other issues as well.
+
+### **Focus This Week – AI Communication Mechanic**
+
+Then, for my side I take care of the communication mechanic, thinking about how healing dialogue is powered by AI and how player successfully heals them.
+
+So my this week prototype is to build the game that works with the AI communication and with playful features.
+
+The question that I am focusing this week is: 
+
+**How might the dialogue features work and could also be playful?**
+
+### **Reference Games & Research**
+
+Before I start the prototype, Bianca also showed me some reference games that I could take a reference of, so I take a note of how those games work.
+
+For Danganronpa Chapter 5 Trial, the gameplay includes exploring the school grounds, conversing with characters, and progressing the story. The player answers the questions by choosing the correct choice, while every choice has a follow-up explanation. There is also a time counter, and the communication happens through a communication bar.
+
+For Phoenix Wright: Ace Attorney Trilogy, the player takes the role of various defense attorneys and speaks in a communication bar. Similar to Danganronpa, communication is presented through a dialogue bar, but it also has an evidence system where players can collect and present evidence during interactions. The player can save evidence and choose choices by clicking buttons, which directly affect the progression of the case.
+
+So as a summary, both of these are visual novel adventure games. Based on that, I also searched through visual novel games on itch.io, especially those made with Unity. I found that most of them follow a similar structure. That, they all have a communication phase first, and then after the communication, there will be some mission that the player needs to complete. For example, answering the NPC questions through choices, or selecting objects to continue. So, all of these feature story-based progression, with player interaction (choices or actions) driving the story forward.
+
+### **Exploring Journal-Based Gameplay Inspiration**
+
+Hence, I also search through the internet that see if any interesting idea will inspire me in designing this mechanic, specifically argumented or conversational game (play type) and work with text.
+
+So I again search through internet to find any journal game / communication game in itch.io. During this process, I found the “Bloom” which the cover pictures is catching my eyes.
+
+After I clicking it, I found the “Bloom” game is based on The Wretched by Chris Bissette and was created for Wretched Jam. I watch the introduction/template video that explain how the The Wretched journal features look, I think is quite a cool idea and could be put into our communication part too. As, the journaling system feels very immersive and personal, and I think it could match well with our project theme, especially related to memory and emotion.
+
+#### **Combining Journal + Dialogue Features**
+
+While when I start thinking how to combine the journal features and the dialogue features (visual novel features) together, I first start searching how can I implement the making a visual novel in Unity. I then found that I could try to implement the dialogue system in Unity by a YouTube tutorial.
+
+Then, I start to form an idea on how this could work. I also take reference from *Danganronpa*, where the player chooses objects, and each object has explanation that player can refer to. This makes me think about how information can be interactively explored instead of only reading dialogue.
+
+Also through many similar games searching, I think the best to implement the game mechanic is through asking and choosing through from the choice. This is a more possible way to implement, and also allow more variety. Then , the features of journal are not showcase as dialogue, while is as a supporting features. The main interaction still comes from dialogue and choices, while the journal supports the player to find information.
+
+### **Core Gameplay Idea**
+
+So I think about how about having a dialogue features, that the NPC is taking what it thinking / feeling, follow up with some confusion caused by forgotten or missing memories. Then after the talking that show with the dialogue, the screen will showcase the NPC (the dead soldier) journal, and with the questions that the NPC ask to the player. The player need to read through each day journal then find out the answer to reply the NPC.
+
+If it is correct answer, the NPC will have corresponding feedback, while if it is answered wrongly, the NPC will have prompt that the player answer wrongly and need to re-answer again. While in this part I do not think that there should be a punishment, because the wrong answer prompt itself will already make the player feel bad, and maybe sorry, as the player may feel that due to answering wrongly, it causes the NPC to have a stress response.
+
+After I had the idea, I drew the low prototype of the game flow of the dialogue features. 
+
+So the Flow will be: 
+
+1. After the player lures the NPC to the therapy room, and the player transfers into the NPC mind (brain). Then a dialogue box shows up with typing animation, which represents the speech that the NPC (dead soldier) wants to say. Since it is inside the NPC mind, the player cannot see the NPC object, which works as a metaphor of entering the NPC brain.
+2. After several dialogue lines, a journal from the war period will show. The player can click each “Day X” button, and it will respond to that specific day’s journal. At the same time, below the journal, the dialogue box will still exist and show questions with choices. The player can read different journal entries to find the answer.
+3. If the player chooses the correct choice, it will show a correct follow-up text message and move to the next question. If the player chooses wrongly, it will show a stress response and the player must choose again until correct. (The default loop is 3 questions, but it can be extended later.)
+4. After finishing all questions, a final prompt panel appears showing that the NPC understands or remembers what actually happened, resolves their regret, and are willing to leave the world.
+
+For the story design, I try to make the journal content natural as a soldier journal that could seems realistically happen during the war period. I also design misunderstanding or forgotten key events that lead to regret.
+
+For the MCQ options setting, the questions are mainly based on the journal content. However, during testing, when every question had the same correct and wrong follow-up text, the game felt a bit too systematic and coded, so I changed it by adding corresponding follow-up text for each question.
+
+So now, the player can clearly know if they chose the correct answer or not, but it still feels like part of the dialogue. Now each response is more connected to the story.
+
+I also made a video prototype of how this will work smoothly. 
+
+### **Implementation Process**
+
+In the implementation process, I first implemented the dialogue box feature and tested whether the typing animation works smoothly. I experimented with several speed values and found that 0.03 gives the most smooth experience.
+
+Then I created the journal panel. I set it so the journal panel only appears after the first introduction dialogue (the NPC expressing their regret). After that, the questions and choices will activate together with the panel.
+
+I also created several buttons labeled “Day X”, where each button links to a specific journal text. For example, clicking “Day 3” will display the Day 3 journal content in the text box. The title and content are all editable through the Unity Inspector.
+
+The questions are also shown using the dialogue box typing animation. The question text, answers, and choices are also all editable through the Inspector, which makes it flexible for different NPCs. So now, all journal content, titles, and question sets can be changed easily depending on the character(NPC).
+
+The answers are linked to button objects. Since there are 4 buttons reused for choices, I assign the correct button object for each question’s answer. For example, if Q1 correct answer is option 3, it links to Button 3. If Q2 correct answer is option 2, it links to Button 2.
+
+After the last question, the journal and the dialogue box will close, and a big prompt panel with a “Next” button will appear. After clicking “Next,” all panels will be closed.
+
+### **Issues & Adjustments**
+
+During implementation, I found several issues and improved parts of the system.
+
+1. First, sometimes text overflowed outside the box. I tried to solve this using maxCharactersPerPage (default 180). But this did not really work. Some of the text is over 180 words, which splits the text, but because they are in paragraphs, they do not overflow the text box, so they should not split. However, if the text includes 2 new lines, it will overflow the text box, but it does not split through this solution.
+    
+    Then I updated `DialogueBox_TR.cs` so the page splitting would check the actual `TextMeshProUGUI` box height and line layout, not just the number of characters. But even after that, it still didn’t work.
+    
+2. Add “N-Next” Prompt for the next dialogue box. I first thought about using a button as “Next,” but that seemed to take up a bit of screen space and was not that important to show in the panel. I took reference from the *Phoenix Wright* game. In that game, the next button is “>>,” but I also noticed that they use the “Esc” key instruction to open the options, which looks good and is easy for the player to understand. Even though I never played the game before, I knew that pressing “Esc” would open the options. So, I added a similar feature with a prompt that says “N-Next” in the dialogue box, so the player can understand what they need to do at every step.
+
+3. After clicking the wrong choice button, the system shows the wrong follow-up text. However, during testing, I noticed that an extra “N” key press was needed before a choice could be selected again. The reason could be that the wrong follow-up text is using the dialogue box features, and every next step in the dialogue feature requires clicking the “N” key to move on. As a result, all the buttons became available, and the player could click them, but there was no response when clicking the right or wrong choice.
+    
+    To fix this, I made all the buttons block input and turn grey when the wrong prompt text is showing. This also creates a visual cue that the “N” key must be pressed before the player can choose a new option.
+    
+
+### **Refined Features**
+
+Following up from last week, I improved the falling system. Previously, the player would fall infinitely. Now I added UpdateFallTimer() and RespawnAtSpawnPoint() functions in PlayerMotor. If the player falls for more than 5 seconds, they will respawn at the original spawn point of the scene.
+
+### **What Success**
+
+The dialogue features work well. The dialogue text shows properly in the panel box, the buttons to switch between different journal content work smoothly, and the flow of the gameplay features works exactly as I originally imagined. The normal dialogue, question dialogue, correct/wrong follow-up text, re-choosing options, and smoothly ending this section all work perfectly!
+
+Here are some key highlights that I consider real successes:
+
+1. **GitHub batches and merging are successful**
+    
+    After working on this for some time, now every teammate can pull and push our own batches and merge them together without conflicts. This is great because everyone can follow each other’s work without manually combining features one by one.
+    
+    Previously, I did not pull Alex’s batches, so the way I solved it was to select from my Unity file, export it, and import it into the additional file pulled from Alex’s file. (Big thanks to Jimmy and Sean for helping me solve this issue!)
+    
+2. **Dialogue system success**
+    
+    The dialogue text now shows with typing animation, not just a bunch of pasted text. This makes the communication feel much more natural and gives the game a proper visual novel style.
+    
+3. **Buttons and question editing in Unity**
+    
+    I made the buttons linked to the option features, and the questions can now be edited directly through the Unity Inspector. This makes it much easier and more convenient to control, instead of editing code every time. Also, the number of questions is no longer limited to 3, they can be increased or reduced as needed.
+    
+    At the same time, all correct follow-up texts and wrong-answer texts can be edited according to each question. Now, each response can feel more connected to the story, and it is easy to change them whenever needed.
+    
+
+### **What Not Works**
+
+Following up from last week’s environment concerns, I tried to make the environment lighting darker and add an area light that spots on the bridge.
+
+However, when I tried to change the Directional Light, it only affected the light on the bridge (turning it orange, blue, or dark), and it did not change the overall environment lighting.
+
+Then I searched online and found [Unity - Manual: Add ambient light from the environment](https://docs.unity3d.com/6000.0/Documentation/Manual/lighting-ambient-light.html). I learned that I can edit the environment light through **Window > Rendering > Lighting > Environment** and change the **Skybox Material** property. I tried some material assets I had downloaded before, but they did not work and gave a warning: “Shader of this material does not support skybox rendering”. So, later I may need to import some specific material assets that support skybox rendering to fix this.
+
+### **Notes**
+
+I also want to document some important notes from this week’s process for future reference and reminders:
+
+- Remember to clone the GitHub and pull the latest batch first before making changes. Otherwise, it need to add back each change manually, which can lead to conflicts.
+- Be careful with the hierarchy of canvases and panels
+    - Use a `xxxManager` (by adding an empty GameObject and linking it to the related script). Do not attach scripts directly to panels or GameObjects that control many components. As it can become hard to figure out which GameObject is holding which script, and sometimes scripts may even get duplicated.
+- If the Inspector field is too small to edit, can change the `promptQuestion` string using a `[TextArea(...)]` attribute. Then , this could type the text with newlines and multiple sentences directly in the Unity Inspector.
+
+```
+    [TextArea(3, 8)]
+    [SerializeField] private string promptQuestion = "";
+```
+
+### **What I Learned**
+
+This is the first time I have worked on a [visual novel](https://en.wikipedia.org/wiki/Visual_novel) [adventure game](https://en.wikipedia.org/wiki/Adventure_game). Since I’m not a fan of this type of game and rarely play them, my only prior experience was seeing instructions or storyboards explained by assistant NPCs.
+
+So this has been a really good learning and iterative prototyping experiment. My teammate had a draft idea of how the communication part could work, and I explored possible features, looked at similar game types, found their common patterns, and considered ways to include them in the game we ate working on. I also tried to find features that could benefit the current prototype without feeling awkward or forced.
+
+It was a great experience because I explored an unfamiliar game type, figured out how to implement it in Unity, and at the same time iterated on ideas in the context of what our group had already built.
+
+Now, I feel much more familiar with visual novel adventure games and how to implement dialogue features in Unity.
+
+### **Future Plan**
+
+Overall, I am quite happy that the prototype actually works as I originally imagined. It answers the questions I set earlier about creating a text-based dialogue game with playful features.
+
+I also gave the prototype I built to my friends to play and test. They liked the journal idea and many of them said it was interesting and really fits the theme of dead soldiers and PTSD. They also gave some feedback that I think is useful for future improvements:
+
+1. The text in the journal is hard to read. This might be because I set the font size below 20, and they were testing it in the small Unity Scene view (not sure if I am naming it correctly). I need to double-check whether the unclear text issue only happens in the small view or if it will also appear in the full scene.
+2. The second issue is that while in the therapy room, even during the dialogue and journal questions, the player can still move using WASD. In the future, I need to force the player to stay in place during dialogue and questioning periods.
+3. Lastly, for the skybox material issue, I will keep looking for assets or other possible solutions to make the world environment darker. This will also be part of my future plan.
+
+Also, as mentioned in our group chat, Sean finished the 3D mansion, and now the majority of our group is successfully linked to GitHub. In our next meeting, we can see how the whole game flow works. I am looking forward to seeing how everyone combines our prototypes together and hope there are no conflicts when merging our batches.😃
