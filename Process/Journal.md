@@ -1573,15 +1573,15 @@ So my this week prototype is to build the game that works with the AI communicat
 
 The question that I am focusing this week is: 
 
-**How might the dialogue features work and could also be playful?**
+    **How might the dialogue features work and could also be playful?**
 
 ### **Reference Games & Research**
 
 Before I start the prototype, Bianca also showed me some reference games that I could take a reference of, so I take a note of how those games work.
 
-For Danganronpa Chapter 5 Trial, the gameplay includes exploring the school grounds, conversing with characters, and progressing the story. The player answers the questions by choosing the correct choice, while every choice has a follow-up explanation. There is also a time counter, and the communication happens through a communication bar.
+For [Danganronpa Chapter 5 Trial](https://www.youtube.com/watch?v=4D7Ejc-Y3gc), the gameplay includes exploring the school grounds, conversing with characters, and progressing the story. The player answers the questions by choosing the correct choice, while every choice has a follow-up explanation. There is also a time counter, and the communication happens through a communication bar.
 
-For Phoenix Wright: Ace Attorney Trilogy, the player takes the role of various defense attorneys and speaks in a communication bar. Similar to Danganronpa, communication is presented through a dialogue bar, but it also has an evidence system where players can collect and present evidence during interactions. The player can save evidence and choose choices by clicking buttons, which directly affect the progression of the case.
+For [Phoenix Wright: Ace Attorney Trilogy](https://www.youtube.com/watch?v=qx5BV__S3DE), the player takes the role of various defense attorneys and speaks in a communication bar. Similar to Danganronpa, communication is presented through a dialogue bar, but it also has an evidence system where players can collect and present evidence during interactions. The player can save evidence and choose choices by clicking buttons, which directly affect the progression of the case.
 
 So as a summary, both of these are visual novel adventure games. Based on that, I also searched through visual novel games on itch.io, especially those made with Unity. I found that most of them follow a similar structure. That, they all have a communication phase first, and then after the communication, there will be some mission that the player needs to complete. For example, answering the NPC questions through choices, or selecting objects to continue. So, all of these feature story-based progression, with player interaction (choices or actions) driving the story forward.
 
@@ -1589,7 +1589,7 @@ So as a summary, both of these are visual novel adventure games. Based on that, 
 
 Hence, I also search through the internet that see if any interesting idea will inspire me in designing this mechanic, specifically argumented or conversational game (play type) and work with text.
 
-So I again search through internet to find any journal game / communication game in itch.io. During this process, I found the “Bloom” which the cover pictures is catching my eyes.
+So I again search through internet to find any [journal game/communication game in itch.io](https://itch.io/games/genre-visual-novel/made-with-unity). During this process, I found the “Bloom” which the cover pictures is catching my eyes.
 
 After I clicking it, I found the “Bloom” game is based on The Wretched by Chris Bissette and was created for Wretched Jam. I watch the introduction/template video that explain how the The Wretched journal features look, I think is quite a cool idea and could be put into our communication part too. As, the journaling system feels very immersive and personal, and I think it could match well with our project theme, especially related to memory and emotion.
 
