@@ -1888,7 +1888,7 @@ To make it feel like the soldier is entering the picture frame, I took some refe
 
 **Canvas Setup**
 
-Also, this time I followed a YouTube tutorial almost 100% (since it is a really good reference, with clear tool settings and features that make the photo-taking mechanic feel more real). The only change I made is the canvas setup. I tried to use Screen Space - Camera, while I think it does not really match the presentation, because the camera screen looks a bit weird in that mode. So instead, I used Screen Space - Overlay, which is consistent with the rest of the project and looks more natural in the current setup.
+Also, this time I followed a [YouTube tutorial](https://www.youtube.com/watch?app=desktop&v=8LrTtfZedOk) almost 100% (since it is a really good reference, with clear tool settings and features that make the photo-taking mechanic feel more real). The only change I made is the canvas setup. I tried to use Screen Space - Camera, while I think it does not really match the presentation, because the camera screen looks a bit weird in that mode. So instead, I used Screen Space - Overlay, which is consistent with the rest of the project and looks more natural in the current setup.
 
 **Audio Effects**
 
@@ -1926,7 +1926,7 @@ This time I also documented some important notes from this week’s process for 
           <img src="Media/Week10_Imagewithblack.png" alt="Week10_Imagewithblack.png" width="400" height="500">
      </p> 
    
-2. Remember that when using `StartCoroutine(CameraFlashEffect());`, the “Start” must have a capital “S”. I made a mistake before by not capitalizing it, and it caused issues in running the coroutine.
+2. Remember that when using StartCoroutine(CameraFlashEffect());, the “Start” must have a capital “S”. I made a mistake before by not capitalizing it, and it caused issues in running the coroutine.
 3. Another important thing to realize is that when getting stuck on some progress, it is better to go back to a working stage instead of continuously editing the same broken code. For example, when I was implementing the overlay feature together with the trigger action, I got stuck for a long time and kept modifying the code, but nothing worked. Then I decided to revert back and test whether the system works without the overlay, and it worked immediately. So this reminds me that debugging step by step is more effective than trying to fix everything at once.
 4. For the overlay texture, when using OverlayTexture to apply the overlay object, it needs to go into the Inspector and enable “Read/Write Enabled”. This option is inside the “Advanced” section. If this is not enabled, it will cause conflicts and the overlay will not work properly.
 
