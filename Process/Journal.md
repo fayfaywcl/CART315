@@ -1797,9 +1797,9 @@ After solving these issues, I moved on to this week’s design question:
 
     How might the picture frame system (for the ending of the therapy room) work?
 
-Then I started searching online for ideas and brainstorming. I searched using the keyword “polaroid video game” and found Viewfinder, which is a really cool game. Although it uses a complex 2D-to-3D mechanic, which is a bit overcomplicated compared to what I want to implement, it still gave me inspiration.
+Then I started searching online for ideas and brainstorming. I searched using the keyword “polaroid video game” and found [Viewfinder](https://store.steampowered.com/app/1382070/Viewfinder/), which is a really cool game. Although it uses a complex 2D-to-3D mechanic, which is a bit overcomplicated compared to what I want to implement, it still gave me inspiration.
 
-I also searched for YouTube tutorials about “taking photos in Unity,” which is good for mechanic reference, and at the same time explored more examples on [itch.io](http://itch.io/). While browsing, I found a game demonstration that shows a photo-taking mechanic. From that, I realized that before taking a picture, there should be an action to trigger the camera, such as picking up the camera or activating it.
+I also searched for [YouTube tutorials “taking photos in Unity”](https://www.youtube.com/watch?app=desktop&v=8LrTtfZedOk), which is good for mechanic reference, and at the same time explored more examples on [itch.io](https://itch.io/search?type=games&q=polaroid). While browsing, I found a [game demonstration](https://www.youtube.com/watch?app=desktop&v=n6K9AlNzBdA) that shows a photo-taking mechanic. From that, I realized that before taking a picture, there should be an action to trigger the camera, such as picking up the camera or activating it.
 
 Based on that, I came up with several ideas for triggering the camera:
 
@@ -1811,7 +1811,7 @@ Rather than creating a new camera object or using additional assets, I decided t
 
 Then I started thinking about how the system should end after the photo is taken and how to transition back to the mansion scene.
 
-I considered several possibilities. One idea is to have the photo frame flow out with a blur effect and transition to the main scene. I also found tutorials online showing that this is doable. Another idea is a simpler solution, which is to use the 3-second counter that I implemented before. After the frame appears, the counter starts, and after a few seconds, the player is sent back to the main scene.
+I considered several possibilities. One idea is to have the photo frame flow out with a blur effect and transition to the main scene. I also found [tutorial](https://www.youtube.com/watch?app=desktop&v=nnDFXmoNBOo) online showing that this is doable. Another idea is a simpler solution, which is to use the 3-second counter that I implemented before. After the frame appears, the counter starts, and after a few seconds, the player is sent back to the main scene.
 
 As in previous , I have the experience of the timer counted and transfer to another scene, I will first try that possibilities , as I think the timer idea is quite well as when player sending the NPC leave, there are no way to back and need to soon say goodbye. This may also having a gameplay hidden prompt with the timer that show to the player it’s time to go back to the main scene ( the one with mansion). 
 
@@ -1858,7 +1858,7 @@ Also, this time I followed a YouTube tutorial almost 100% (since it is a really 
 
 **Audio Effects**
 
-This time I also started working on the audio. I added camera flash sound, and also set the beginning part of the therapy room to have a war soundtrack and military alarm sound. The reason why I placed the audio source near the starting point in the therapy scene is because when the player is doing the journal gameplay, they are actually entering the memory of the NPC, which is a dead soldier from a war period. The sound is used to create a feeling similar to being in that frustrating war environment. Then after finishing the question, the soldier begins to understand the correct story. When the player passes through the 3D pixel maze, both the player and NPC are leaving that memory. Because the player moves further away from the audio source, the sound becomes weaker, which represents that the “bad” or “sad” memory is fading away and the player is entering a better area or zone where the NPC is ready to leave the world.
+This time I also started working on the audio. I added [camera flash sound](https://pixabay.com/sound-effects/film-special-effects-camera-flash-204151/), and also set the beginning part of the therapy room to have a [war soundtrack](https://pixabay.com/sound-effects/film-special-effects-distant-war-377958/). The reason why I placed the audio source near the starting point in the therapy scene is because when the player is doing the journal gameplay, they are actually entering the memory of the NPC, which is a dead soldier from a war period. The sound is used to create a feeling similar to being in that frustrating war environment. Then after finishing the question, the soldier begins to understand the correct story. When the player passes through the 3D pixel maze, both the player and NPC are leaving that memory. Because the player moves further away from the audio source, the sound becomes weaker, which represents that the “bad” or “sad” memory is fading away and the player is entering a better area or zone where the NPC is ready to leave the world.
 
 **Therapy Room Trigger Adjustment**
 
@@ -1872,9 +1872,9 @@ This time I also documented some important notes from this week’s process for 
 2. Remember that when using `StartCoroutine(CameraFlashEffect());`, the “Start” must have a capital “S”. I made a mistake before by not capitalizing it, and it caused issues in running the coroutine.
 3. Another important thing I realized is that when I get stuck in some progress, it is better to go back to a working stage instead of continuously editing the same broken code. For example, when I was implementing the overlay feature together with the trigger action, I got stuck for a long time and kept modifying the code, but nothing worked. Then I decided to revert back and test whether the system works without the overlay, and it worked immediately. So this reminds me that debugging step by step is more effective than trying to fix everything at once.
 4. For the overlay texture, when using OverlayTexture to apply the overlay object, it needs to go into the Inspector and enable “Read/Write Enabled”. This option is inside the “Advanced” section. If this is not enabled, it will cause conflicts and the overlay will not work properly.
-5. I also faced an issue where the images I imported could not be placed into the canvas image. I already changed the Texture Type to “Sprite (2D and UI)” instead of Default in the Inspector and clicked Apply, but it still did not work. This was quite frustrating at that moment.
+5. I also faced an issue where the images I imported could not be placed into the canvas image. I already changed the Texture Type to “Sprite (2D and UI)” instead of Default in the Inspector and clicked Apply, by following the [Unity documentation guide](https://docs.unity3d.com/2022.3/Documentation/Manual/sprites-setup.html), but it still did not work. This was quite frustrating at that moment.
     
-    After searching through the internet again and checking the documentation, I found that in a 3D project, it is not enough to only change the Texture Type. The Sprite Mode also needs to be set to “Single”, because by default it was set to “Multiple”. After changing it to Single, the image finally worked correctly in the UI.
+    After searching online again, I found a [discussion in Unity forums](https://discussions.unity.com/t/2d-sprite-image-not-available-for-image-source-in-ui/936134) where other developers faced similar issues. I found that in a 3D project, it is not enough to only change the Texture Type. The Sprite Mode also needs to be set to “Single”, because by default it was set to “Multiple”. After changing it to Single, the image finally worked correctly in the UI.
     
 
 ### What I learned:
