@@ -1770,7 +1770,7 @@ So this week, the first thing I did is continue working on the merge batches. I 
 At the beginning, I tried to move all these elements into the mansion scene, but I found that the player was not moving. I then renamed the Player in the mansion scene to Player3D, and also renamed all the subobjects and unselected them, because previously I did not rename the subobjects, and I think that caused duplicate object names, which made the player unable to move.
 
 <p align="left">
-          <img src="Media/Week10_NextText.png" alt="Week10_RenamePlayer3D.png" width="400" height="500"> 
+          <img src="Media/Week10_RenamePlayer3D.png" alt="Week10_RenamePlayer3D.png" width="400" height="500"> 
           <img src="Media/Week10_unselectPlayer3D.png" alt="Week10_unselectPlayer3D.png" width="400" height="500"> 
 </p> 
 
