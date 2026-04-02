@@ -1916,7 +1916,7 @@ Overall, the system now shows the NPC leaving process clearly, and all the visua
 
 ![Week10_GameFlow.gif](Media/Week10_GameFlow.gif)
 
-### Debugging and Notes
+### Notes
 
 This time I also documented some important notes from this week’s process for future reference and reminders.
 
