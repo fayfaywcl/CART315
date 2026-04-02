@@ -1760,3 +1760,162 @@ I also gave the prototype I built to my friends to play and test. They liked the
 3. Lastly, for the skybox material issue, I will keep looking for assets or other possible solutions to make the world environment darker. This will also be part of my future plan.
 
 Also, as mentioned in our group chat, Sean finished the 3D mansion, and now the majority of our group is successfully linked to GitHub. In our next meeting, we can see how the whole game flow works. I am looking forward to seeing how everyone combines our prototypes together and hope there are no conflicts when merging our batches.😃
+
+## **Week10** (27.3.2026 to 2.4.2026) – Iterative Prototyping 5 (Photo Capture System)
+
+####Merging and Fixing Prototype Features
+
+So this week, the first thing I did is continue working on the merge batches. I started moving the content from the “Sample Scene” that me, Alex, and Bianca worked on before, including the therapy room objects, NPC, and player setup, into the mansion scene. 
+
+At the beginning, I tried to move all these elements into the mansion scene, but I found that the player is not moving. Even when I unchecked the Player object that was already built inside the 3D scene, the issue still happens. I also tried to reassign and reconstruct the trigger box again, thinking that maybe the collision or trigger detection is the problem.
+
+When I pressed play, the “new text” UI shows immediately at the start, without any interaction. That means something is triggering automatically, which should not happen. After spending several minutes checking, I found that some of the linked objects in the Inspector were not correctly assigned. For example, I had previously fixed the prompt text reference in the Player UI, but it was not showing now.
+
+So I added Debug.Log to check whether the interaction is being triggered incorrectly. Then I realized that the “E” key is also used for the TTS system. That means both systems are using the same key input, which causes conflict.
+
+Because I do not want to duplicate the key with TTS, I changed the key for opening the NPC interaction panel to “O”. I also announced in the group that I changed the NPC interaction key to “O”, while the TTS remains using “E”.
+
+However, even after changing the key to “O”, it still did not work. So I added more Debug.Log to trace the NPC status, including isFollowing, currentHealth, and other values.
+
+From the console log:
+
+```
+NPC.Interact called. isFollowing=False, isDead=False, currentHealth=30, maxHealth=100, healthRatio=0.3, threshold=0.3, isCombatActive=True
+```
+
+Then I realized the problem is actually not the key input. The issue is coming from the float comparison. The NPC health is 30/100, which is 0.3, but using exact float comparison causes it to stay in combat mode instead of switching state.
+
+So I fixed the NPC.cs logic by adding a small tolerance instead of checking exact 0.3. After that, the issue is finally solved, and all the prototype features start working again.
+
+**3D World Environment Setup**
+
+Also, I worked on the 3D world environment setting, which was my last week future plan. I noticed that the scene with the mansion has a really good world setting, so I asked Sean how to implement it. Sean had already imported some 3D environment assets. Following the process I mentioned last week, I went to Window > Rendering > Lighting > Environment and changed the Skybox Material to the asset material. This time it worked. The 3D world I chose for the therapy room is a bit grey, as a metaphor that the NPC’s mind is confused and frustrated, with several concerns.
+
+### Picture Frame System Inspiration
+
+After solving these issues, I moved on to this week’s design question:
+
+    How might the picture frame system (for the ending of the therapy room) work?
+
+Then I started searching online for ideas and brainstorming. I searched using the keyword “polaroid video game” and found Viewfinder, which is a really cool game. Although it uses a complex 2D-to-3D mechanic, which is a bit overcomplicated compared to what I want to implement, it still gave me inspiration.
+
+I also searched for YouTube tutorials about “taking photos in Unity,” which is good for mechanic reference, and at the same time explored more examples on [itch.io](http://itch.io/). While browsing, I found a game demonstration that shows a photo-taking mechanic. From that, I realized that before taking a picture, there should be an action to trigger the camera, such as picking up the camera or activating it.
+
+Based on that, I came up with several ideas for triggering the camera:
+
+1. Have a solid object (like a column or static camera object). When the player gets close, it shows a prompt text, and pressing a key (like “C”) opens the camera screen.
+2. Pick up a camera object from a table, which then enables the photo-taking function.
+3. Always hold a camera while walking or running, and use a button to enter camera mode.
+
+Rather than creating a new camera object or using additional assets, I decided to implement the first idea for now, since it is simpler and suitable for the current prototype.
+
+Then I started thinking about how the system should end after the photo is taken and how to transition back to the mansion scene.
+
+I considered several possibilities. One idea is to have the photo frame flow out with a blur effect and transition to the main scene. I also found tutorials online showing that this is doable. Another idea is a simpler solution, which is to use the 3-second counter that I implemented before. After the frame appears, the counter starts, and after a few seconds, the player is sent back to the main scene.
+
+As in previous , I have the experience of the timer counted and transfer to another scene, I will first try that possibilities , as I think the timer idea is quite well as when player sending the NPC leave, there are no way to back and need to soon say goodbye. This may also having a gameplay hidden prompt with the timer that show to the player it’s time to go back to the main scene ( the one with mansion). 
+
+### Low Prototype
+
+After that, I designed the full game flow for the polaroid system, based on the tutorials and references I found:
+
+1. After finishing the questions and passing through the 3D pixel maze, the player reaches the end zone of the floating bridge and sees a camera object. When the player gets close to it, a prompt appears telling them to press “C” to pick up the camera and shows instructions on how to capture a photo.
+2. Then a camera frame appears on the screen, representing the player’s view through the camera. The player uses the mouse to capture the scene.
+3. After capturing, a flash effect and capture sound play, and a photo frame appears. The image slowly develops, similar to a real polaroid effect. After 1–2 seconds, the picture shows the soldier NPC (the one whose mind the player entered) on top of the therapy world background.
+4. Then a 5-second countdown appears (5 → 4 → 3 → 2 → 1 Returning…), and the player is sent back to the same location in the therapy room inside the mansion scene.
+
+I also created a video prototype for this to clearly demonstrate the game flow.
+
+### Implementation
+
+So overall this week I implemented the whole therapy-room photo capture system and connected it to the current game flow.
+
+So the first thing I implemented is the photo capture flow. I added the full process including 
+
+- opening the camera mode,
+- capturing the current view,
+- showing the captured photo in the UI,
+- adding a flash light effect and capture audio effect,
+- and also overlaying the solider.png onto the final captured image.
+
+So now the system is not just simply taking a screenshot, but more like simulating the whole process of taking a photo.
+
+Secondly, I also implemented a pickup trigger. Unlike the YouTube tutorial I referenced, where the camera capture frame starts at the beginning, I changed the logic so that the camera frame only appears when the player approaches the camera object and presses “C” to pick up or unlock the camera. For this process, I also added a prompt text when the player gets close to the camera, before pressing C. This prompt includes instructions on which key to press and how to capture the photo. So now the interaction is clearer and feels more like an actual gameplay action. The control is also updated so that the player uses left mouse click to take the photo.
+
+I also added several Debug.Log throughout the whole system flow. This is because after I added the overlay soldier image and triggered the camera features at the same time, I found that when I clicked the left mouse button, all the picture frames were closing immediately. To debug this issue, I added logs to track each step, including entering the trigger, pressing C to pick up the camera, opening the camera, clicking the mouse to capture the image, and showing the preview UI. This helps me identify where the issue is happening in the flow.
+
+**Removing Trigger Zones**
+
+I also edited the previous system. Before, the player needed to choose between Zone A, B, C, and D, and each zone would give a correct or wrong result and then transfer the player back to the mansion page. Now, I removed the answer trigger zones. The transfer back feature is now handled by the photo capture trigger and a countdown timer as a prompt. So there is no specific zone or area that the player must stand in to transfer back anymore.
+
+**Soldier Overlay**
+
+To make it feel like the soldier is entering the picture frame, I took some reference and slightly edited a pixel art soldier image to test this feature. This is mainly to demonstrate the function (the soldier design may be updated later).
+
+**Canvas Setup**
+
+Also, this time I followed a YouTube tutorial almost 100% (since it is a really good reference, with clear tool settings and features that make the photo-taking mechanic feel more real). The only change I made is the canvas setup. I tried to use Screen Space - Camera, while I think it does not really match the presentation, because the camera screen looks a bit weird in that mode. So instead, I used Screen Space - Overlay, which is consistent with the rest of the project and looks more natural in the current setup.
+
+**Audio Effects**
+
+This time I also started working on the audio. I added camera flash sound, and also set the beginning part of the therapy room to have a war soundtrack and military alarm sound. The reason why I placed the audio source near the starting point in the therapy scene is because when the player is doing the journal gameplay, they are actually entering the memory of the NPC, which is a dead soldier from a war period. The sound is used to create a feeling similar to being in that frustrating war environment. Then after finishing the question, the soldier begins to understand the correct story. When the player passes through the 3D pixel maze, both the player and NPC are leaving that memory. Because the player moves further away from the audio source, the sound becomes weaker, which represents that the “bad” or “sad” memory is fading away and the player is entering a better area or zone where the NPC is ready to leave the world.
+
+**Therapy Room Trigger Adjustment**
+
+At last, I also enlarged the therapy room trigger box. Since now, when returning from the photo system, the player goes back to the mansion scene, but the door is static and the player was getting locked inside the room. Instead of creating a more complex system to detect the direction of entering or leaving (like from main hall to therapy room or the opposite), I chose a simpler solution. I just enlarged the trigger box to reduce the complexity and avoid needing to redesign the door interaction system.
+
+### Debugging and Notes
+
+This time I also documented some important notes from this week’s process for future reference and reminders.
+
+1. Remember that for the photo capture, the image color default must be white, and only the background of the frame should be set as black. Otherwise, the result does not look correct when the photo is displayed.
+2. Remember that when using `StartCoroutine(CameraFlashEffect());`, the “Start” must have a capital “S”. I made a mistake before by not capitalizing it, and it caused issues in running the coroutine.
+3. Another important thing I realized is that when I get stuck in some progress, it is better to go back to a working stage instead of continuously editing the same broken code. For example, when I was implementing the overlay feature together with the trigger action, I got stuck for a long time and kept modifying the code, but nothing worked. Then I decided to revert back and test whether the system works without the overlay, and it worked immediately. So this reminds me that debugging step by step is more effective than trying to fix everything at once.
+4. For the overlay texture, when using OverlayTexture to apply the overlay object, it needs to go into the Inspector and enable “Read/Write Enabled”. This option is inside the “Advanced” section. If this is not enabled, it will cause conflicts and the overlay will not work properly.
+5. I also faced an issue where the images I imported could not be placed into the canvas image. I already changed the Texture Type to “Sprite (2D and UI)” instead of Default in the Inspector and clicked Apply, but it still did not work. This was quite frustrating at that moment.
+    
+    After searching through the internet again and checking the documentation, I found that in a 3D project, it is not enough to only change the Texture Type. The Sprite Mode also needs to be set to “Single”, because by default it was set to “Multiple”. After changing it to Single, the image finally worked correctly in the UI.
+    
+
+### What I learned:
+
+This week, I built quite a complete game prototype, including the actions, the visual effects, the audio resources to support the actions, and also the animation features.
+
+I think this is the first time in the whole semester that I used animation in my prototype. By learning how to use animation and using the animator for the picture-taking effect, it let me clearly see the difference between having no animation and having animation. Even with just adding the flash light effect and the capture sound, together with the animation where the picture inside the frame slowly appears, it creates a feeling much closer to the real-world experience of taking a polaroid photo, where we need to wait for a moment before the picture shows up.
+
+So overall, this makes me realize that animation is not just an extra visual feature, but it really helps to improve the realism and the feeling of the interaction in the game.
+
+### Future Plan:
+
+Overall, I think this week’s process has been quite successful, especially with the picture capture system showcasing how the NPC leaves the scene. 
+
+The next step is to merge my work with other teammates’ GitHub branches. Last time when we merged, we had some issues, and I spent one to two hours restoring the sample scene features and functions in the 3D mansion scene. This process can be tricky, especially with triggers and GameObjects, particularly subobjects hidden within a GameObject that have the same name, use the same key to trigger, or have tags used differently by other teammates. For the merge, I will need to carefully check for conflicts, both in the code and in the Inspector, and decide where manual adjustments are needed. Let’s see how it goes this week. Hopefully there won’t be too many errors, whether compile errors or logic errors.
+
+Another improvement could be adding a “start gameplay” panel with instructions or a prompt message indicating that the game has begun. Right now, after clicking Play, the player suddenly appears in front of the mansion. When I let friends play, if I do not guide them, they may not know that the first thing they need to do is go into the mansion to find the NPC, or that the shooting mechanics are already available. Even though they eventually figure out the flow, a start prompt would better introduce the game and prepare the player for the experience.
+
+Additionally, I could add more ambient sound resources in the mansion world to create a slightly darker, more horror-like atmosphere, which would help perfect the overall gameplay experience.
+
+### Elevator Pitch:
+
+I also noticed in this week’s GitHub prototype requirements that we should craft a succinct one-sentence elevator pitch describing the game and what makes it unique and exciting. From reviewing the slides and PDF from last week, the pitch should include the game name, what it is, and use no more than one comma, ideally covering Game Title (logo), graphics, platform/game type, and target audience. 
+
+Since we have not named the game yet, I brainstormed a possible title and came up with “Echoes of the Fallen”, because I like the word “echoes” for its depth, and “fallen” works on two levels: the NPC fallen into memory and the player immersed in the NPC’s mind and memories.
+
+So the elevator pitch I drafted is:
+
+Echoes of the Fallen is a first-person story game where players battle and heal broken soldiers by navigating their memories and confronting psychological trauma.
+
+This pitch has a more emotional tone, so the target audience would be players interested in narrative-driven, meaningful gameplay.
+
+For the game’s selling points, I referred to the pitchTemplate.pdf in GitHub:
+
+- **Value Propositions (Cultural, Creative, Intellectual):**
+    - *Cultural*: The game raises awareness of psychological trauma caused by war and encourages players to empathize with those affected.
+    - *Creative*: The game creatively blends action with therapeutic interaction, using mechanics as metaphors for memory and recovery.
+    - *Intellectual*: Players engage in critical thinking by interpreting journal entries and identifying emotional or logical inconsistencies in NPC dialogue.
+- **Unique Formal Elements (Gameplay Systems):** The game features a hybrid system combining AI-driven dialogue, interactive journals, and 3D memory mazes to create a multi-layered gameplay experience.
+- **Unique Narrative Elements:** Instead of focusing on large-scale war events, the narrative is delivered through personal memories of individual soldiers, which an intimate and emotional storytelling experience.
+- **Unique Mechanics:** The core mechanic transforms traditional combat into a healing process, where players navigate memory spaces and reconstruct fragmented narratives to help NPCs recover from trauma.
+    - This is the key selling point of our game: healing instead of killing. Gameplay mechanics metaphorically represent the actions or feelings of a PTSD patient. Rather than marking wrong answers, we provide emotional feedback, not punishment. The maze metaphor represents trauma, and the NPC being “attacked” symbolizes fear or avoidance of past memories.
+
+Overall, I hope this pitch helps showcase the game, as I believe our game presents a unique gameplay flow with meaningful depth. 😉
