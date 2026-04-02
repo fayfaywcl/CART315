@@ -1763,7 +1763,7 @@ Also, as mentioned in our group chat, Sean finished the 3D mansion, and now the 
 
 ## **Week10** (27.3.2026 to 2.4.2026) – Iterative Prototyping 5 (Photo Capture System)
 
-####Merging and Fixing Prototype Features
+### Merging and Fixing Prototype Features
 
 So this week, the first thing I did is continue working on the merge batches. I started moving the content from the “Sample Scene” that me, Alex, and Bianca worked on before, including the therapy room objects, NPC, and player setup, into the mansion scene. 
 
@@ -1820,7 +1820,7 @@ Also, I worked on the 3D world environment setting, which was my last week futur
 
 After solving these issues, I moved on to this week’s design question:
 
-    How might the picture frame system (for the ending of the therapy room) work?
+- How might the picture frame system (for the ending of the therapy room) work?
 
 Then I started searching online for ideas and brainstorming. I searched using the keyword “polaroid video game” and found [Viewfinder](https://store.steampowered.com/app/1382070/Viewfinder/), which is a really cool game. Although it uses a complex 2D-to-3D mechanic, which is a bit overcomplicated compared to what I want to implement, it still gave me inspiration.
 
