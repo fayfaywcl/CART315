@@ -1767,13 +1767,30 @@ Also, as mentioned in our group chat, Sean finished the 3D mansion, and now the 
 
 So this week, the first thing I did is continue working on the merge batches. I started moving the content from the “Sample Scene” that me, Alex, and Bianca worked on before, including the therapy room objects, NPC, and player setup, into the mansion scene. 
 
-At the beginning, I tried to move all these elements into the mansion scene, but I found that the player is not moving. Even when I unchecked the Player object that was already built inside the 3D scene, the issue still happens. I also tried to reassign and reconstruct the trigger box again, thinking that maybe the collision or trigger detection is the problem.
+At the beginning, I tried to move all these elements into the mansion scene, but I found that the player was not moving. I then renamed the Player in the mansion scene to Player3D, and also renamed all the subobjects and unselected them, because previously I did not rename the subobjects, and I think that caused duplicate object names, which made the player unable to move.
 
-When I pressed play, the “new text” UI shows immediately at the start, without any interaction. That means something is triggering automatically, which should not happen. After spending several minutes checking, I found that some of the linked objects in the Inspector were not correctly assigned. For example, I had previously fixed the prompt text reference in the Player UI, but it was not showing now.
+<p align="left">
+          <img src="Media/Week10_NextText.png" alt="Week10_RenamePlayer3D.png" width="400" height="500"> 
+          <img src="Media/Week10_unselectPlayer3D.png" alt="Week10_unselectPlayer3D.png" width="400" height="500"> 
+</p> 
+
+When I pressed play, the “New Text” UI shows immediately at the start, without any interaction. That means something is triggering automatically, which should not happen. After spending several minutes checking, I found that some of the linked objects in the Inspector were not correctly assigned. For example, I had previously fixed the prompt text reference in the Player UI, but it was not showing now.
+
+<p align="left">
+          <img src="Media/Week10_NextText.png" alt="Week10_NextText.png" width="400" height="500"> 
+</p> 
 
 So I added Debug.Log to check whether the interaction is being triggered incorrectly. Then I realized that the “E” key is also used for the TTS system. That means both systems are using the same key input, which causes conflict.
 
+<p align="left">
+          <img src="Media/Week10_conflictKeyE.png" alt="Week10_conflictKeyE.png" width="400" height="500">    
+</p> 
+
 Because I do not want to duplicate the key with TTS, I changed the key for opening the NPC interaction panel to “O”. I also announced in the group that I changed the NPC interaction key to “O”, while the TTS remains using “E”.
+
+<p align="left">
+          <img src="Media/Week10changethegameplaytoO.png" alt="Week10changethegameplaytoO.png" width="400" height="500"> 
+</p> 
 
 However, even after changing the key to “O”, it still did not work. So I added more Debug.Log to trace the NPC status, including isFollowing, currentHealth, and other values.
 
@@ -1787,9 +1804,17 @@ Then I realized the problem is actually not the key input. The issue is coming f
 
 So I fixed the NPC.cs logic by adding a small tolerance instead of checking exact 0.3. After that, the issue is finally solved, and all the prototype features start working again.
 
+<p align="left">
+          <img src="Media/Week10_UsingOtotalk.png" alt="Week10_UsingOtotalk.png" width="400" height="500"> 
+</p> 
+
 **3D World Environment Setup**
 
 Also, I worked on the 3D world environment setting, which was my last week future plan. I noticed that the scene with the mansion has a really good world setting, so I asked Sean how to implement it. Sean had already imported some 3D environment assets. Following the process I mentioned last week, I went to Window > Rendering > Lighting > Environment and changed the Skybox Material to the asset material. This time it worked. The 3D world I chose for the therapy room is a bit grey, as a metaphor that the NPC’s mind is confused and frustrated, with several concerns.
+
+<p align="left">
+          <img src="Media/Week10_CreateGrey3Dworld.png" alt="Week10_CreateGrey3Dworld.png" width="400" height="500">    
+</p> 
 
 ### Picture Frame System Inspiration
 
@@ -1819,12 +1844,18 @@ As in previous , I have the experience of the timer counted and transfer to anot
 
 After that, I designed the full game flow for the polaroid system, based on the tutorials and references I found:
 
+<p align="left">
+          <img src="Media/Week10_drawprototype.jpeg" alt="Week10_drawprototype.jpeg" width="500" height="500">    
+</p> 
+
 1. After finishing the questions and passing through the 3D pixel maze, the player reaches the end zone of the floating bridge and sees a camera object. When the player gets close to it, a prompt appears telling them to press “C” to pick up the camera and shows instructions on how to capture a photo.
 2. Then a camera frame appears on the screen, representing the player’s view through the camera. The player uses the mouse to capture the scene.
 3. After capturing, a flash effect and capture sound play, and a photo frame appears. The image slowly develops, similar to a real polaroid effect. After 1–2 seconds, the picture shows the soldier NPC (the one whose mind the player entered) on top of the therapy world background.
 4. Then a 5-second countdown appears (5 → 4 → 3 → 2 → 1 Returning…), and the player is sent back to the same location in the therapy room inside the mansion scene.
 
 I also created a video prototype for this to clearly demonstrate the game flow.
+
+![Week10_videoprototype.gif](Media/Week10_videoprototype.gif)
 
 ### Implementation
 
@@ -1851,6 +1882,9 @@ I also edited the previous system. Before, the player needed to choose between Z
 **Soldier Overlay**
 
 To make it feel like the soldier is entering the picture frame, I took some reference and slightly edited a pixel art soldier image to test this feature. This is mainly to demonstrate the function (the soldier design may be updated later).
+<p align="left">
+          <img src="Media/Week10_soliderdesign.png" alt="Week10_soliderdesign.png" width="300" height="500">    
+</p> 
 
 **Canvas Setup**
 
@@ -1860,28 +1894,64 @@ Also, this time I followed a YouTube tutorial almost 100% (since it is a really 
 
 This time I also started working on the audio. I added [camera flash sound](https://pixabay.com/sound-effects/film-special-effects-camera-flash-204151/), and also set the beginning part of the therapy room to have a [war soundtrack](https://pixabay.com/sound-effects/film-special-effects-distant-war-377958/). The reason why I placed the audio source near the starting point in the therapy scene is because when the player is doing the journal gameplay, they are actually entering the memory of the NPC, which is a dead soldier from a war period. The sound is used to create a feeling similar to being in that frustrating war environment. Then after finishing the question, the soldier begins to understand the correct story. When the player passes through the 3D pixel maze, both the player and NPC are leaving that memory. Because the player moves further away from the audio source, the sound becomes weaker, which represents that the “bad” or “sad” memory is fading away and the player is entering a better area or zone where the NPC is ready to leave the world.
 
+<p align="left">
+          <img src="Media/Week10_audioposition.png" alt="Week10_audioposition.png" width="400" height="500">    
+</p> 
+
 **Therapy Room Trigger Adjustment**
 
 At last, I also enlarged the therapy room trigger box. Since now, when returning from the photo system, the player goes back to the mansion scene, but the door is static and the player was getting locked inside the room. Instead of creating a more complex system to detect the direction of entering or leaving (like from main hall to therapy room or the opposite), I chose a simpler solution. I just enlarged the trigger box to reduce the complexity and avoid needing to redesign the door interaction system.
+
+<p align="left">
+          <img src="Media/Week10_enlargeDoorTriggerbox.png" alt="Week10_enlargeDoorTriggerbox.png" width="500" height="500">    
+</p> 
+
+### What Success:
+
+This week, the photo capture system works just like I imagined. The player can pick up the camera with C, open it, take photos with left-click, and see the captured image with the flash effect and sound. The soldier overlay shows correctly, and the preview UI appears smoothly. The triggers feel natural, nothing happens until the player interacts, and the prompt text guides them clearly. 
+
+Also, returning from the therapy room to the mansion now works without specific zones, and the enlarged trigger makes movement simpler. The war soundtrack and camera sounds add immersion, which helps the player feel the memory and story of the NPC. 
+
+Overall, the system now shows the NPC leaving process clearly, and all the visual, audio, and interactive parts work together the way I planned.
+
+![Week10_GameFlow.gif](Media/Week10_GameFlow.gif)
 
 ### Debugging and Notes
 
 This time I also documented some important notes from this week’s process for future reference and reminders.
 
 1. Remember that for the photo capture, the image color default must be white, and only the background of the frame should be set as black. Otherwise, the result does not look correct when the photo is displayed.
+
+   <p align="left">
+          <img src="Media/Week10_Imagewithblack.png" alt="Week10_Imagewithblack.png" width="400" height="500">
+     </p> 
+   
 2. Remember that when using `StartCoroutine(CameraFlashEffect());`, the “Start” must have a capital “S”. I made a mistake before by not capitalizing it, and it caused issues in running the coroutine.
-3. Another important thing I realized is that when I get stuck in some progress, it is better to go back to a working stage instead of continuously editing the same broken code. For example, when I was implementing the overlay feature together with the trigger action, I got stuck for a long time and kept modifying the code, but nothing worked. Then I decided to revert back and test whether the system works without the overlay, and it worked immediately. So this reminds me that debugging step by step is more effective than trying to fix everything at once.
+3. Another important thing to realize is that when getting stuck on some progress, it is better to go back to a working stage instead of continuously editing the same broken code. For example, when I was implementing the overlay feature together with the trigger action, I got stuck for a long time and kept modifying the code, but nothing worked. Then I decided to revert back and test whether the system works without the overlay, and it worked immediately. So this reminds me that debugging step by step is more effective than trying to fix everything at once.
 4. For the overlay texture, when using OverlayTexture to apply the overlay object, it needs to go into the Inspector and enable “Read/Write Enabled”. This option is inside the “Advanced” section. If this is not enabled, it will cause conflicts and the overlay will not work properly.
+
+   <p align="left">
+          <img src="Media/Week10_ReadandWrite.png" alt="Week10_ReadandWrite.png" width="400" height="500">
+     </p> 
+
 5. I also faced an issue where the images I imported could not be placed into the canvas image. I already changed the Texture Type to “Sprite (2D and UI)” instead of Default in the Inspector and clicked Apply, by following the [Unity documentation guide](https://docs.unity3d.com/2022.3/Documentation/Manual/sprites-setup.html), but it still did not work. This was quite frustrating at that moment.
     
     After searching online again, I found a [discussion in Unity forums](https://discussions.unity.com/t/2d-sprite-image-not-available-for-image-source-in-ui/936134) where other developers faced similar issues. I found that in a 3D project, it is not enough to only change the Texture Type. The Sprite Mode also needs to be set to “Single”, because by default it was set to “Multiple”. After changing it to Single, the image finally worked correctly in the UI.
-    
+
+   <p align="left">
+          <img src="Media/Week10_SingleMode.png" alt="Week10_SingleMode.png" width="400" height="500">
+     </p>     
 
 ### What I learned:
 
 This week, I built quite a complete game prototype, including the actions, the visual effects, the audio resources to support the actions, and also the animation features.
 
 I think this is the first time in the whole semester that I used animation in my prototype. By learning how to use animation and using the animator for the picture-taking effect, it let me clearly see the difference between having no animation and having animation. Even with just adding the flash light effect and the capture sound, together with the animation where the picture inside the frame slowly appears, it creates a feeling much closer to the real-world experience of taking a polaroid photo, where we need to wait for a moment before the picture shows up.
+
+<p align="left">
+          <img src="Media/Week10_animation.png" alt="Week10_animation.png" width="400" height="500">
+          <img src="Media/Week10_animator.png" alt="Week10_animator.png" width="400" height="500">
+</p> 
 
 So overall, this makes me realize that animation is not just an extra visual feature, but it really helps to improve the realism and the feeling of the interaction in the game.
 
@@ -1910,9 +1980,9 @@ This pitch has a more emotional tone, so the target audience would be players in
 For the game’s selling points, I referred to the pitchTemplate.pdf in GitHub:
 
 - **Value Propositions (Cultural, Creative, Intellectual):**
-    - *Cultural*: The game raises awareness of psychological trauma caused by war and encourages players to empathize with those affected.
-    - *Creative*: The game creatively blends action with therapeutic interaction, using mechanics as metaphors for memory and recovery.
-    - *Intellectual*: Players engage in critical thinking by interpreting journal entries and identifying emotional or logical inconsistencies in NPC dialogue.
+    - Cultural: The game raises awareness of psychological trauma caused by war and encourages players to empathize with those affected.
+    - Creative: The game creatively blends action with therapeutic interaction, using mechanics as metaphors for memory and recovery.
+    - Intellectual: Players engage in critical thinking by interpreting journal entries and identifying emotional or logical inconsistencies in NPC dialogue.
 - **Unique Formal Elements (Gameplay Systems):** The game features a hybrid system combining AI-driven dialogue, interactive journals, and 3D memory mazes to create a multi-layered gameplay experience.
 - **Unique Narrative Elements:** Instead of focusing on large-scale war events, the narrative is delivered through personal memories of individual soldiers, which an intimate and emotional storytelling experience.
 - **Unique Mechanics:** The core mechanic transforms traditional combat into a healing process, where players navigate memory spaces and reconstruct fragmented narratives to help NPCs recover from trauma.
