@@ -1991,3 +1991,87 @@ For the game’s selling points, I referred to the pitchTemplate.pdf in GitHub:
 Overall, I hope this pitch helps showcase the game, as I believe our game presents a unique gameplay flow with meaningful depth. 😉
 
 ## Week11 (3.4.2026 to 9.4.2026) – Final Iterative Prototype
+
+For this week, as following from the previous progress, we already built a clear schedule and most of the core systems are completed. So the main focus of this week is no longer creating new systems, but instead **refining, integrating, and solving conflicts**, especially during the merging process.
+
+From our previous experience, we realized that working in the same scene at the same time can very easily cause merging conflicts. Based on what I experienced before, solving one conflict can take around one to two hours, especially when dealing with GameObjects, triggers, and Inspector references. As our project scope becomes larger and we also started integrating AI this week, this issue becomes even more critical.
+
+So for this week, Sean and Bianca first focused on completing their AI implementation. During that time, me and Alex paused working on major features and waited until their system reached a more stable stage. Then during their break, we separated our tasks into polishing different parts of the gameplay.
+
+Alex focused on improving the soldier health system, while I focused on refining the therapy room mechanics, especially how to guide the player through the gameplay. From both our internal testing and feedback from friends, we clearly noticed that players were confused during the journal section and did not know what they were supposed to do. So my main goal this week was to improve clarity and make the flow more understandable.
+
+#### Fixing Prompt Logic and UI Placement
+
+While working on the interaction system, I spent quite some time trying to figure out why the “Talk to User” prompt was not behaving correctly. After around half an hour of checking different parts, I realized that the issue was because the prompt text was attached to the NPC object instead of the player.
+
+This became a really important reminder that the placement of UI logic, whether it is attached to the player or the NPC, can directly affect how the interaction behaves in the game.
+
+#### Supporting Team Integration and Inspector Issues
+
+At the same time, Bianca implemented the soldier image system and a dashboard that allows captured images to be displayed in a gallery. However, she encountered an issue where the image could not be correctly assigned through the Inspector.
+
+I helped to solve this by identifying that the image should be assigned through the Photo Overlay Texture in the Project panel instead. This is a small fix, but it helped connect the system properly.
+
+#### Adding Journal Guide and Improving Player Understanding
+
+To address the confusion in the journal gameplay, I added a guide panel before the journal interaction begins. This panel explains how the system works and what the player needs to do. It appears before the first journal question, so the player can understand the mechanic before actually interacting with it.
+
+At the same time, I also implemented a movement lock system. During the dialogue and journal sections, the player is no longer able to move. The movement will only be unlocked after the journal gameplay is completed. This helps ensure that the player stays focused and does not accidentally move around and break the experience.
+
+#### Improving Movement Lock System
+
+Initially, I tried to manually disable movement-related scripts such as InputManager, PlayerMotor, PlayerLook, and PlayerInteract. However, Unity did not allow me to drag these scripts directly into the Inspector, which made this approach difficult to manage.
+
+So instead, I changed the system to assign a Player GameObject and let the script automatically detect and disable the related movement scripts. This makes the system much cleaner and easier to maintain, especially as the project grows.
+
+After implementing this, the movement lock now works correctly, and the player cannot move until the journal sequence fully finishes and the next button is pressed.
+
+#### UI Issues and Fixes
+
+After adding the guide system, I encountered several UI issues. The buttons and text were not aligned properly and appeared to be “flying” around, and the help and close buttons were not correctly linked to each other.
+
+At first, I thought the issue might come from incorrect assignment, but later I realized it was due to how the buttons were set up. I initially assigned separate functions to open and close the panel, which caused inconsistency.
+
+I then simplified the system by using a toggle method, allowing one button to handle both opening and closing. After that, I removed the extra close button and assigned the help button to control the panel. This made the interaction much cleaner and more intuitive.
+
+I also refined the size of the buttons and text, since they were too small during testing and affected readability.
+
+#### Environment Adjustments and Maze Fixes
+
+During testing, I noticed that some of the blocks in the therapy room maze did not have textures applied. Since the maze is made of hundreds of blocks, I needed to manually assign textures to ensure visual consistency and variation.
+
+Another issue was that the player could jump onto the top of the maze, which breaks the intended gameplay. After several tests, I adjusted the jump height to 1 and verified that the player can still complete the maze while preventing unintended movement.
+
+Previously, for testing purposes, I extended the left and right paths to avoid going through the maze every time. For the final implementation, I reduced the platform size to match the actual maze layout, making the experience more aligned with the intended design.
+
+#### Extending Movement Lock to Dialogue
+
+Originally, the movement lock only applied during the journal section. However, I realized that the player could still move during the initial dialogue, which could break immersion.
+
+So I extended the movement lock to start from the beginning of the therapy room dialogue and continue through the journal sequence. The player only regains control after pressing the final next button. This creates a more controlled and immersive narrative flow.
+
+#### Lighting Issue and Limitations
+
+I also attempted to improve the lighting by adding a spotlight to highlight the camera object and adjusting the environment lighting to create a darker mood. However, the spotlight did not appear to have any visible effect, even after changing the environment settings.
+
+This issue is still unresolved and may require further investigation into Unity’s lighting system or rendering setup.
+
+#### Adding Ambient Audio
+
+To improve the atmosphere, I added ambient sound to the main scene. This helps create a darker and more immersive environment, supporting the emotional tone of the game. Even though it is a small addition, it enhances the overall feeling of the experience.
+
+#### Floating Environment Effect
+
+To further enhance the therapy room environment, I implemented a floating effect for all the blocks. The blocks now move up and down in sync, creating a surreal and unstable feeling that matches the theme of entering a fragmented memory.
+
+I chose to keep all blocks moving in sync instead of random movement, because it is easier to implement and visually feels more controlled and intentional.
+
+### Reflection
+
+This week is mainly about refinement rather than creation. Instead of building new systems, I focused on improving player understanding, fixing interaction issues, and polishing the gameplay flow.
+
+One important realization is that even if a system works technically, it does not mean players will understand how to use it. Adding the journal guide and locking player movement significantly improved the clarity and overall experience.
+
+### Future Plan
+
+For the next step, I will continue fixing the lighting issue, further refine UI readability, and improve the onboarding experience at the beginning of the game. I will also continue testing the merged systems, especially with the AI integration, to ensure everything works smoothly together.🙂
