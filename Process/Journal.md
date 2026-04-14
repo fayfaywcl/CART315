@@ -2012,7 +2012,7 @@ While working on the interaction system, I spent quite some time trying to figur
 
 From this, I realized that having a Manager empty object to store scripts is actually really important. It helps organize everything better and avoids the need to click through each object to check which script belongs to which GameObject. This becomes especially useful when we use the Inspector to control outputs or key bindings.
 
-### Supporting Team Integration and Inspector Issues
+#### Supporting Team Integration and Inspector Issues
 
 At the same time, Bianca implemented the soldier image system and a dashboard that allows captured images to be displayed in a gallery. However, she encountered an issue where the image could not be correctly assigned through the Inspector.
 
@@ -2042,7 +2042,7 @@ Here’s my drawn prototype showing how the refined version should be implemente
 
 After adding this guide system, I encountered several UI issues. Buttons and text were not aligned properly and appeared to be “flying” around. The help button were also not correctly linked. At first, I thought it was an assignment issue, but later I realized it was due to how the buttons were set up.
 
-So I simplified everything by using a toggle method, allowing the button to handle both opening and closing. This made the system cleaner and easier to manage.
+So I simplified everything by using [a toggle method](https://docs.unity3d.com/20), allowing the button to handle both opening and closing. This made the system cleaner and easier to manage.
 
 I also refined the size of the buttons and text, since they were too small during testing and affected readability.
 
@@ -2085,7 +2085,7 @@ Previously, for testing purposes, I extended the left and right paths to avoid g
 
 **Adding Ambient Audio**
 
-To improve the atmosphere, I added ambient sound to the main scene. This creates a darker and more immersive environment to support the emotional tone. Even though it is a small addition, it enhances the overall feeling of the experience.
+To improve the atmosphere, I added [ambient sound](https://pixabay.com/music/ambient-sound-ambience-sonido-ambiente-2-14039/) to the main scene. This creates a darker and more immersive environment to support the emotional tone. Even though it is a small addition, it enhances the overall feeling of the experience.
 
 **Floating Environment Effect**
 
@@ -2175,8 +2175,6 @@ Also from the feedback from the class playing, I marked down some notes of the i
     - Also, due to scaling issues, if the screen size is adjusted or enlarged, the button and text can duplicate or misalign on the screen.
     - Because of this, the player can currently only properly play the game in the Unity implementation resolution, which is not ideal for actual gameplay experience.
     - This is a UI scaling problem that needs further refinement. It could be solve by Canvas scaling and resolution adaptation.
-
----
 
 **General Feedback (Positive)**
 
