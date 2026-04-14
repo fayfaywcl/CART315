@@ -2027,7 +2027,7 @@ At the same time, Bianca implemented the soldier image system and a dashboard th
 Since I am the creator of that part, she asked for my help. I identified that the image should actually be assigned through the Photo Overlay Texture in the Project panel instead. This was a small fix, but it helped connect the system properly, and now both the drawing and the photo capture features are working.
 
 <p align="left">
-          <img src="Media/Week11_captureoutput.png" alt="Week11_captureoutput.png" width="400" height="500">
+          <img src="Media/Week11_captureoutput.png" alt="Week11_captureoutput.png" width="300" height="500">
 </p> 
 
 I think this also shows a good practice. Since I am the one who created that mechanic, I am more familiar with how it works, including how the scripts are linked and how the Inspector is used. That allowed me to solve the issue quickly. So separating tasks clearly within a team and letting others know who is responsible for what can really help speed up debugging and problem-solving.
@@ -2102,6 +2102,10 @@ So I extended the movement lock:
 This creates a more controlled and immersive narrative flow.
 
 So the locked period is like what I draw :
+
+<p align="left">
+          <img src="Media/Week11_lock period.jpeg" alt="Week11_lock period.jpeg" width="400" height="500">
+</p> 
 
 ### Environment Adjustments and Maze Fixes
 
@@ -2279,4 +2283,4 @@ Hence, I am also facing other project deadlines, and many of the mechanics are b
           <img src="Media/Week11_more path in maze.png" alt="Week11_more path in maze.png" width="400" height="500">
 </p> 
 
-Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, such as some of the maze textures being implemented in Unity but not consistently appearing during gameplay, this may require further investigation and future refinement to ensure they are properly retained and displayed. There are also several other minor issues that still need to be improved. Overall, I am quite happy with the current game flow implementation at this stage, and I will continue to improve the game over the summer. 😄
+Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, such as some of the maze textures being implemented in Unity but not consistently appearing during gameplay, this may require further investigation and future refinement to ensure they are properly retained and displayed. There are also several other minor issues that still need to be improved. At present, I am quite happy with the current game flow implementation at this stage, and I will continue to improve the game over the summer. 😄
