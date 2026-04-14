@@ -2093,6 +2093,12 @@ I also considered how I could improve the therapy room environment. I decided to
 
 Through testing, I also considered whether the blocks should move in the same direction or in random directions. Ultimately, I chose to keep all the blocks moving in sync rather than randomly, as it is easier to implement and feels more controlled and intentional visually. The random movement felt too chaotic and slightly disorienting, so I decided against it.
 
+### What Was Successful
+
+Overall, the ideation and refinement process worked well in improving the game flow through better player guidance and control systems. I added a control guidance panel to help players understand the input system more clearly, which significantly improved onboarding and reduced confusion during gameplay. I also added a lock feature during the journal sequence to better control pacing and player interaction. This helped refine the overall game flow in the therapy room sequence, making the experience more structured and easier to follow. 
+
+Overall, these changes improved both usability and player comprehension which ensure that players can engage with the mechanics without needing external explanation.
+
 ### What Was Not Successful
 
 **Lighting Issue and Limitations**
