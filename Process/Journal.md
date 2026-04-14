@@ -2008,7 +2008,15 @@ We spent almost more than half an hour debugging this. I first checked the edite
 
 Once we figured out that the actual key was set to “F”, we decided to improve the NPC interaction prompt to make it more obvious. As developers testing the game ourselves, we already felt confused by the interaction trigger, so there is a high chance that players would feel the same confusion too.
 
+<p align="left">
+          <img src="Media/Week11_Fkey.png" alt="Week11_Fkey.png" width="400" height="500">
+</p> 
+
 While working on the interaction system, I spent quite some time trying to figure out where could change the prompt text “Talk to User”. After around half an hour of checking different parts, I realized that the issue was because the prompt text was attached to the NPC object instead of the player.
+
+   <p align="left">
+             <img src="Media/Week11_NPCsetting.png" alt="Week11_NPCsetting.png" width="400" height="500">
+   </p> 
 
 From this, I realized that having a Manager empty object to store scripts is actually really important. It helps organize everything better and avoids the need to click through each object to check which script belongs to which GameObject. This becomes especially useful when we use the Inspector to control outputs or key bindings.
 
@@ -2017,6 +2025,10 @@ From this, I realized that having a Manager empty object to store scripts is act
 At the same time, Bianca implemented the soldier image system and a dashboard that allows captured images to be displayed in a gallery. However, she encountered an issue where the image could not be correctly assigned through the Inspector.
 
 Since I am the creator of that part, she asked for my help. I identified that the image should actually be assigned through the Photo Overlay Texture in the Project panel instead. This was a small fix, but it helped connect the system properly, and now both the drawing and the photo capture features are working.
+
+<p align="left">
+          <img src="Media/Week11_captureoutput.png" alt="Week11_captureoutput.png" width="400" height="500">
+</p> 
 
 I think this also shows a good practice. Since I am the one who created that mechanic, I am more familiar with how it works, including how the scripts are linked and how the Inspector is used. That allowed me to solve the issue quickly. So separating tasks clearly within a team and letting others know who is responsible for what can really help speed up debugging and problem-solving.
 
@@ -2059,9 +2071,20 @@ This ensures players stay focused and do not accidentally break the experience.
 
 Initially, I tried manually disabling movement-related scripts such as InputManager, PlayerMotor, PlayerLook, and PlayerInteract. However, Unity did not allow me to drag these scripts directly into the Inspector, which made it difficult to manage.
 
+<p align="left">
+          <img src="Media/Week11_scriptLock.png" alt="Week11_scriptLock.png" width="400" height="500">
+</p> 
+
+
 So instead, I changed the approach by referencing the Player GameObject and letting the script automatically detect and disable related movement scripts. This worked much better.
 
+<p align="left">
+          <img src="Media/Week11_gameobjectLock.png" alt="Week11_gameobjectLock.png" width="400" height="500">
+</p> 
+
 Originally, the movement lock only applied during the journal section. But I realized that players could still move during the initial dialogue, which breaks immersion.
+
+![Week11_playermoveinfirst_dialogue.gif](Media/Week11_playermoveinfirst_dialogue.gif)
 
 So I extended the movement lock:
 
@@ -2077,15 +2100,32 @@ So the locked period is like what I draw :
 
 During testing and based on Sean’s suggestion, I noticed that the blocks in the therapy room maze could benefit from added textures. Since the maze consists of hundreds of blocks, I had to manually assign textures to maintain consistency and variation, while also avoiding rebuilding the maze entirely.
 
-Another issue was that players could jump onto the top of the maze in one jump, which breaks the gameplay. After testing, I reduced the jump height to 1. This still allows players to complete the maze but prevents unintended shortcuts.
+<p align="left">
+          <img src="Media/Week11_addmazetexture.png" alt="Week11_addmazetexture.png" width="400" height="500">
+</p> 
+
+Another issue was that players could jump onto the top of the maze in one jump, which breaks the gameplay. 
+
+![Week11_jumpingheightissue.gif](Media/Week11_jumpingheightissue.gif)
+
+After testing, I reduced the jump height to 1. This still allows players to complete the maze but prevents unintended shortcuts.
 
 Previously, for testing purposes, I extended the left and right paths to avoid going through the maze each time. For the final implementation, I reduced the platform size to match the actual maze layout, making the experience more aligned with the intended design.
+
+<p align="left">
+          <img src="Media/Week11_withsidepath.png" alt="Week11_withsidepath.png" width="400" height="500">
+          <img src="Media/Week11_withoutsidepath.png" alt="Week11_withoutsidepath.png" width="400" height="500">
+</p> 
 
 ### Improving the Environment Atmosphere
 
 **Adding Ambient Audio**
 
 To improve the atmosphere, I added [ambient sound](https://pixabay.com/music/ambient-sound-ambience-sonido-ambiente-2-14039/) to the main scene. This creates a darker and more immersive environment to support the emotional tone. Even though it is a small addition, it enhances the overall feeling of the experience.
+
+<p align="left">
+          <img src="Media/Week11_.ambient sound.png" alt="Week11_.ambient sound.png" width="400" height="500">
+</p> 
 
 **Floating Environment Effect**
 
@@ -2099,6 +2139,7 @@ Overall, the ideation and refinement process worked well in improving the game f
 
 Overall, these changes improved both usability and player comprehension which ensure that players can engage with the mechanics without needing external explanation.
 
+
 ### What Was Not Successful
 
 **Lighting Issue and Limitations**
@@ -2106,6 +2147,10 @@ Overall, these changes improved both usability and player comprehension which en
 To improve the game experience, I attempted to enhance the lighting by adding a spotlight to highlight the camera object and adjusting the environment lighting to create a darker mood. However, the spotlight did not produce any visible effect, even after modifying the environment settings.
 
 This issue remains unresolved and may require further investigation into Unity’s lighting system or rendering setup. I plan to revisit this later.
+
+<p align="left">
+          <img src="Media/Week11_lighting.png" alt="Week11_lighting.png" width="400" height="500">
+</p> 
 
 ### Notes
 
@@ -2152,7 +2197,7 @@ Also from the feedback from the class playing, I marked down some notes of the i
 
 - Players do not know they can press Q to trigger the gun.
     - This shows that the control feedback is not clear enough during gameplay, especially for combat-related actions.
-    - A possible improvement is to add a prompt like **“Press Q”** when the player first obtains or approaches the gun, so players clearly understand how to equip or use it without needing to guess.
+    - A possible improvement is to add a prompt like “Press Q” when the player first obtains or approaches the gun, so players clearly understand how to equip or use it without needing to guess.
 
 **Movement & Exploration**
 
@@ -2201,11 +2246,29 @@ Hence, I am also facing other project deadlines, and many of the mechanics are b
 
 1. I changed the audio source of the war sound in the therapy room from 0.89 to 0.2. Through testing (previously from 0.5 and 0.3), I found that 0.2 is the most suitable value for this section.
 2. I also fixed the UI issue. As suggested by Matthew, I set the screen to Full HD (1920×1080) and changed the canvas scaler to “Scale With Screen Size”.  In my implementation, each canvas contains multiple panels, texts, and buttons, so I needed to adjust them one by one across around 3 to 4 canvases.
+
+    <p align="left">
+                 <img src="Media/Week11_setFullHDsize.png" alt="Week11_setFullHDsize.png" width="400" height="500">
+                 <img src="Media/Week11_ScalewithScreenSize.png" alt="Week11_ScalewithScreenSize.png" width="400" height="500">
+    </p> 
     
     For example, the journal titles, buttons, and panels were overlapping and misaligned. I also had to reassign the text fonts, as they appeared too small and hard to read on a larger screen. Additionally, I resized all buttons and text elements. I found that instead of manually resizing each UI box, it is better to use scaling. For example, enlarging the scale by 2x automatically scales the text inside as well.
+
+    <p align="left">
+                 <img src="Media/Week11_needalightext.png" alt="Week11_needalightext.png" width="400" height="500">
+                 <img src="Media/Week11_needaligntext2.png" alt="Week11_needaligntext2.png" width="400" height="500">
+    </p> 
     
     As a result, the UI issue in the therapy room is now fixed, and the text is much clearer and easier to read on screen.
+
+    <p align="left">
+                 <img src="Media/Week11_refineUI.png" alt="Week11_refineUI.png" width="400" height="500">
+    </p> 
     
 3. I also refined the bridge in the maze so that the player can no longer walk along the sides and can instead follow clearer paths through the maze. Previously, I had designed it so that only one path was available through the maze. Now, near the exit of the maze, there are more routes to exit it.
+
+<p align="left">
+          <img src="Media/Week11_more path in maze.png" alt="Week11_more path in maze.png" width="400" height="500">
+</p> 
 
 Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, I am quite happy with the overall game flow implementation at this stage, and I will continue to improve it over the summer. 😄
