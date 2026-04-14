@@ -2038,6 +2038,10 @@ After fixing and ensuring that the gameplay flow worked as before, I moved on to
 
 Originally, I thought about adding a guide panel before the first dialogue opens. Here is the flow that I draw:
 
+<p align="left">
+          <img src="Media/Week11_Oridrawprototype.jpeg" alt="Week11_Oridrawprototype.jpeg" width="400" height="500">
+</p> 
+
 - Add a guide panel before the journal interaction begins
 - This panel explains how the system works and what the player needs to do
 - It appears before the first journal question so players understand the mechanic before interacting
@@ -2047,6 +2051,9 @@ However, it did not work as I expected. The dialogue was set to trigger immediat
 This might be due to my implementation order, but due to time limits and multiple testing attempts, I decided to change the approach. Instead of forcing instructions, I made it an optional “Help” button.
 
 Here’s my drawn prototype showing how the refined version should be implemented: 
+<p align="left">
+          <img src="Media/Week11_refinedrawprototype.jpeg" alt="Week11_refinedrawprototype.jpeg" width="500" height="500">
+</p> 
 
 - Place a “Help” button between the journal section and the question
 - When clicked, it opens a note-style instruction panel
@@ -2139,6 +2146,7 @@ Overall, the ideation and refinement process worked well in improving the game f
 
 Overall, these changes improved both usability and player comprehension which ensure that players can engage with the mechanics without needing external explanation.
 
+![Week11_donegameflow.gif](Media/Week11_donegameflow.gif)
 
 ### What Was Not Successful
 
@@ -2271,4 +2279,4 @@ Hence, I am also facing other project deadlines, and many of the mechanics are b
           <img src="Media/Week11_more path in maze.png" alt="Week11_more path in maze.png" width="400" height="500">
 </p> 
 
-Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, I am quite happy with the overall game flow implementation at this stage, and I will continue to improve it over the summer. 😄
+Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, such as some of the maze textures being implemented in Unity but not consistently appearing during gameplay, this may require further investigation and future refinement to ensure they are properly retained and displayed. There are also several other minor issues that still need to be improved. Overall, I am quite happy with the current game flow implementation at this stage, and I will continue to improve the game over the summer. 😄
