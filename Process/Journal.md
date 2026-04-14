@@ -1992,86 +1992,216 @@ Overall, I hope this pitch helps showcase the game, as I believe our game presen
 
 ## Week11 (3.4.2026 to 9.4.2026) – Final Iterative Prototype
 
-For this week, as following from the previous progress, we already built a clear schedule and most of the core systems are completed. So the main focus of this week is no longer creating new systems, but instead **refining, integrating, and solving conflicts**, especially during the merging process.
+For this week, as following from the previous progress, we already built a clear schedule and most of the core systems are completed. So the main focus of this week is no longer creating new systems, but instead refining, integrating, and solving conflicts, especially during the merging process.
 
 From our previous experience, we realized that working in the same scene at the same time can very easily cause merging conflicts. Based on what I experienced before, solving one conflict can take around one to two hours, especially when dealing with GameObjects, triggers, and Inspector references. As our project scope becomes larger and we also started integrating AI this week, this issue becomes even more critical.
 
 So for this week, Sean and Bianca first focused on completing their AI implementation. During that time, me and Alex paused working on major features and waited until their system reached a more stable stage. Then during their break, we separated our tasks into polishing different parts of the gameplay.
 
-Alex focused on improving the soldier health system, while I focused on refining the therapy room mechanics, especially how to guide the player through the gameplay. From both our internal testing and feedback from friends, we clearly noticed that players were confused during the journal section and did not know what they were supposed to do. So my main goal this week was to improve clarity and make the flow more understandable.
+Alex focused on improving the soldier health system, while I focused on refining the therapy room mechanics, especially how to guide the player through the gameplay. From both our internal testing and feedback from friends, we noticed that players were confused during the journal section and did not know what they were supposed to do. So my main goal this week was to improve clarity and make the flow more understandable.
 
-#### Fixing Prompt Logic and UI Placement
+### Fixing Prompt Logic and UI Placement
 
-While working on the interaction system, I spent quite some time trying to figure out why the “Talk to User” prompt was not behaving correctly. After around half an hour of checking different parts, I realized that the issue was because the prompt text was attached to the NPC object instead of the player.
+So the first thing that I worked on is handling the merging issue. After Bianca and Sean finished most of the AI implementation, they passed it to us to check whether there were any conflicts in the game flow that we had implemented. However, during testing, we found that we could not talk to the NPC. Even when we clicked either the “O” or “E” key (which were supposed to trigger the dialogue after shooting the NPC), nothing happened.
 
-This became a really important reminder that the placement of UI logic, whether it is attached to the player or the NPC, can directly affect how the interaction behaves in the game.
+We spent almost more than half an hour debugging this. I first checked the edited code that we had previously changed, and it was still using “O” (I confirmed this by checking the screenshot I pasted in the journal). But after continuing to explore, I found that there was another piece of code overriding the one we modified. The key setting was actually controlled in the Inspector, which overrode what we previously set in code. Because of that, the code we changed was not working, even when we tried switching to other keys. We also didn’t realize earlier that the key binding had been moved into the Inspector, since previously we were only working within code control.
 
-#### Supporting Team Integration and Inspector Issues
+Once we figured out that the actual key was set to “F”, we decided to improve the NPC interaction prompt to make it more obvious. As developers testing the game ourselves, we already felt confused by the interaction trigger, so there is a high chance that players would feel the same confusion too.
+
+While working on the interaction system, I spent quite some time trying to figure out where could change the prompt text “Talk to User”. After around half an hour of checking different parts, I realized that the issue was because the prompt text was attached to the NPC object instead of the player.
+
+From this, I realized that having a Manager empty object to store scripts is actually really important. It helps organize everything better and avoids the need to click through each object to check which script belongs to which GameObject. This becomes especially useful when we use the Inspector to control outputs or key bindings.
+
+### Supporting Team Integration and Inspector Issues
 
 At the same time, Bianca implemented the soldier image system and a dashboard that allows captured images to be displayed in a gallery. However, she encountered an issue where the image could not be correctly assigned through the Inspector.
 
-I helped to solve this by identifying that the image should be assigned through the Photo Overlay Texture in the Project panel instead. This is a small fix, but it helped connect the system properly.
+Since I am the creator of that part, she asked for my help. I identified that the image should actually be assigned through the Photo Overlay Texture in the Project panel instead. This was a small fix, but it helped connect the system properly, and now both the drawing and the photo capture features are working.
 
-#### Adding Journal Guide and Improving Player Understanding
+I think this also shows a good practice. Since I am the one who created that mechanic, I am more familiar with how it works, including how the scripts are linked and how the Inspector is used. That allowed me to solve the issue quickly. So separating tasks clearly within a team and letting others know who is responsible for what can really help speed up debugging and problem-solving.
 
-To address the confusion in the journal gameplay, I added a guide panel before the journal interaction begins. This panel explains how the system works and what the player needs to do. It appears before the first journal question, so the player can understand the mechanic before actually interacting with it.
+### Small Prototype in Improving Player Understanding in the Journal Section
 
-At the same time, I also implemented a movement lock system. During the dialogue and journal sections, the player is no longer able to move. The movement will only be unlocked after the journal gameplay is completed. This helps ensure that the player stays focused and does not accidentally move around and break the experience.
+After fixing and ensuring that the gameplay flow worked as before, I moved on to addressing why players felt confused about the journal gameplay.
 
-#### Improving Movement Lock System
+Originally, I thought about adding a guide panel before the first dialogue opens. Here is the flow that I draw:
 
-Initially, I tried to manually disable movement-related scripts such as InputManager, PlayerMotor, PlayerLook, and PlayerInteract. However, Unity did not allow me to drag these scripts directly into the Inspector, which made this approach difficult to manage.
+- Add a guide panel before the journal interaction begins
+- This panel explains how the system works and what the player needs to do
+- It appears before the first journal question so players understand the mechanic before interacting
 
-So instead, I changed the system to assign a Player GameObject and let the script automatically detect and disable the related movement scripts. This makes the system much cleaner and easier to maintain, especially as the project grows.
+However, it did not work as I expected. The dialogue was set to trigger immediately after the player enters the therapy room, and once the player clicks “next,” the journal appears right away. Because of this, the instruction panel ended up appearing after the dialogue and overlapping with the journal, making it feel messy and unclear.
 
-After implementing this, the movement lock now works correctly, and the player cannot move until the journal sequence fully finishes and the next button is pressed.
+This might be due to my implementation order, but due to time limits and multiple testing attempts, I decided to change the approach. Instead of forcing instructions, I made it an optional “Help” button.
 
-#### UI Issues and Fixes
+Here’s my drawn prototype showing how the refined version should be implemented: 
 
-After adding the guide system, I encountered several UI issues. The buttons and text were not aligned properly and appeared to be “flying” around, and the help and close buttons were not correctly linked to each other.
+- Place a “Help” button between the journal section and the question
+- When clicked, it opens a note-style instruction panel
+- Clicking again will close it
 
-At first, I thought the issue might come from incorrect assignment, but later I realized it was due to how the buttons were set up. I initially assigned separate functions to open and close the panel, which caused inconsistency.
+After adding this guide system, I encountered several UI issues. Buttons and text were not aligned properly and appeared to be “flying” around. The help button were also not correctly linked. At first, I thought it was an assignment issue, but later I realized it was due to how the buttons were set up.
 
-I then simplified the system by using a toggle method, allowing one button to handle both opening and closing. After that, I removed the extra close button and assigned the help button to control the panel. This made the interaction much cleaner and more intuitive.
+So I simplified everything by using a toggle method, allowing the button to handle both opening and closing. This made the system cleaner and easier to manage.
 
 I also refined the size of the buttons and text, since they were too small during testing and affected readability.
 
-#### Environment Adjustments and Maze Fixes
+### Improving Movement Lock System
 
-During testing, I noticed that some of the blocks in the therapy room maze did not have textures applied. Since the maze is made of hundreds of blocks, I needed to manually assign textures to ensure visual consistency and variation.
+At the same time, I noticed during testing that players could go through the maze and use the screenshot capture function without playing the journal game at all. So I implemented a movement lock system to better control the flow.
 
-Another issue was that the player could jump onto the top of the maze, which breaks the intended gameplay. After several tests, I adjusted the jump height to 1 and verified that the player can still complete the maze while preventing unintended movement.
+My idea was:
 
-Previously, for testing purposes, I extended the left and right paths to avoid going through the maze every time. For the final implementation, I reduced the platform size to match the actual maze layout, making the experience more aligned with the intended design.
+- During in journal gameplay sections, the player cannot move
+- Movement is only unlocked after completing the journal
 
-#### Extending Movement Lock to Dialogue
+This ensures players stay focused and do not accidentally break the experience.
 
-Originally, the movement lock only applied during the journal section. However, I realized that the player could still move during the initial dialogue, which could break immersion.
+Initially, I tried manually disabling movement-related scripts such as InputManager, PlayerMotor, PlayerLook, and PlayerInteract. However, Unity did not allow me to drag these scripts directly into the Inspector, which made it difficult to manage.
 
-So I extended the movement lock to start from the beginning of the therapy room dialogue and continue through the journal sequence. The player only regains control after pressing the final next button. This creates a more controlled and immersive narrative flow.
+So instead, I changed the approach by referencing the Player GameObject and letting the script automatically detect and disable related movement scripts. This worked much better.
 
-#### Lighting Issue and Limitations
+Originally, the movement lock only applied during the journal section. But I realized that players could still move during the initial dialogue, which breaks immersion.
 
-I also attempted to improve the lighting by adding a spotlight to highlight the camera object and adjusting the environment lighting to create a darker mood. However, the spotlight did not appear to have any visible effect, even after changing the environment settings.
+So I extended the movement lock:
 
-This issue is still unresolved and may require further investigation into Unity’s lighting system or rendering setup.
+- Starts from the beginning of the therapy room dialogue
+- Continues through the journal sequence
+- Ends only after pressing the final “next” button
 
-#### Adding Ambient Audio
+This creates a more controlled and immersive narrative flow.
 
-To improve the atmosphere, I added ambient sound to the main scene. This helps create a darker and more immersive environment, supporting the emotional tone of the game. Even though it is a small addition, it enhances the overall feeling of the experience.
+So the locked period is like what I draw :
 
-#### Floating Environment Effect
+### Environment Adjustments and Maze Fixes
 
-To further enhance the therapy room environment, I implemented a floating effect for all the blocks. The blocks now move up and down in sync, creating a surreal and unstable feeling that matches the theme of entering a fragmented memory.
+During testing and based on Sean’s suggestion, I noticed that the blocks in the therapy room maze could benefit from added textures. Since the maze consists of hundreds of blocks, I had to manually assign textures to maintain consistency and variation, while also avoiding rebuilding the maze entirely.
 
-I chose to keep all blocks moving in sync instead of random movement, because it is easier to implement and visually feels more controlled and intentional.
+Another issue was that players could jump onto the top of the maze in one jump, which breaks the gameplay. After testing, I reduced the jump height to 1. This still allows players to complete the maze but prevents unintended shortcuts.
 
-### Reflection
+Previously, for testing purposes, I extended the left and right paths to avoid going through the maze each time. For the final implementation, I reduced the platform size to match the actual maze layout, making the experience more aligned with the intended design.
 
-This week is mainly about refinement rather than creation. Instead of building new systems, I focused on improving player understanding, fixing interaction issues, and polishing the gameplay flow.
+### Improving the Environment Atmosphere
 
-One important realization is that even if a system works technically, it does not mean players will understand how to use it. Adding the journal guide and locking player movement significantly improved the clarity and overall experience.
+**Adding Ambient Audio**
+
+To improve the atmosphere, I added ambient sound to the main scene. This creates a darker and more immersive environment to support the emotional tone. Even though it is a small addition, it enhances the overall feeling of the experience.
+
+**Floating Environment Effect**
+
+I also considered how I could improve the therapy room environment. I decided to implement a floating effect for all the blocks so that players feel as though they are entering a brain or memory space, which create a slightly unnatural and fuzzy atmosphere. To achieve this, I made the blocks move up and down in sync, producing a surreal and unstable feeling that aligns with the theme of entering a fragmented memory.
+
+Through testing, I also considered whether the blocks should move in the same direction or in random directions. Ultimately, I chose to keep all the blocks moving in sync rather than randomly, as it is easier to implement and feels more controlled and intentional visually. The random movement felt too chaotic and slightly disorienting, so I decided against it.
+
+### What Was Not Successful
+
+**Lighting Issue and Limitations**
+
+To improve the game experience, I attempted to enhance the lighting by adding a spotlight to highlight the camera object and adjusting the environment lighting to create a darker mood. However, the spotlight did not produce any visible effect, even after modifying the environment settings.
+
+This issue remains unresolved and may require further investigation into Unity’s lighting system or rendering setup. I plan to revisit this later.
+
+### Notes
+
+This time, I also made some notes that may be useful for future implementation:
+
+- Using a Manager object to store scripts which improves structure and makes collaboration easier, especially in group work.
+- Using toggle logic instead of handling separate “first-time open” and “second-time close” cases when implementing features with two states.
+- Use GameObjects to group and manage related scripts, so there is no need to manually find and link them one by one in code or in the Inspector.
+- Unity undo/redo shortcut is Ctrl + Y, not Ctrl + Shift + Z
+
+### Reflection – Focusing My Efforts on Refinement
+
+Over the past few weeks, I have developed and iterated on several core systems for my game through multiple prototype cycles. Each iteration has helped shape the overall experience into a more cohesive and playable game.
+
+So far, I have worked on:
+
+- **3D Environment Exploration**: Designing and implementing a playable 3D space where the player can freely explore and interact with the environment.
+- **Player Navigation System**: Allowing the player to transition between different scenes.
+- **Dialogue & Visual Novel Features**: Developing a narrative system that supports character interaction and storytelling through dialogue sequences.
+- **Photo Capture System**: Implementing a mechanic that allows the player to take in-game photos as part of the gameplay experience.
+
+In addition, my teammate contributed significantly to other core components of the project, including the 3D mansion environment, character design, AI systems, and the implementation of player shooting and NPC behavior. These contributions helped establish a strong foundation for the overall game structure and flow.
+
+Since we had already built a solid game flow structure earlier in development, there was less need to introduce entirely new complex systems during this stage. As a result, this week I focused primarily on refinement rather than new feature creation. My main focus was improving player understanding, fixing interaction issues, and polishing the overall gameplay experience.
+
+One important realization is that just because a system works technically does not mean players will understand it. Good guidance and controlled flow (like movement locking or optional help systems) can greatly improve clarity and overall experience.
 
 ### Future Plan
 
-For the next step, I will continue fixing the lighting issue, further refine UI readability, and improve the onboarding experience at the beginning of the game. I will also continue testing the merged systems, especially with the AI integration, to ensure everything works smoothly together.🙂
+For the next step, I will continue fixing the lighting issue, further refine the UI readability, and improve the onboarding experience at the start of the game. I will also work on merging the AI integration and check whether it works smoothly as part of the overall game flow. This may require additional adjustments, especially around the integration, to make sure everything runs properly together.
+
+And lastly, we will have game testing in the final class game prototype, by collecting feedback and taking note of the confusion that the players face, to see how we could improve.🙂
+
+### User Testing Feedback (in the prototype party)
+
+Also from the feedback from the class playing, I marked down some notes of the issues and the possible reasons behind them, based on observation during the playtest and what players mentioned afterwards.
+
+**Audio**
+
+- Some players reduced the sound output during the journal playing section.
+    - The possible reason behind this may be because the sound effect in the therapy room feels too loud compared to the main scene, so there is an inconsistency in audio balance between different areas of the game.
+
+**Controls & Instructions**
+
+- Players do not know they can press Q to trigger the gun.
+    - This shows that the control feedback is not clear enough during gameplay, especially for combat-related actions.
+    - A possible improvement is to add a prompt like **“Press Q”** when the player first obtains or approaches the gun, so players clearly understand how to equip or use it without needing to guess.
+
+**Movement & Exploration**
+
+- Players can jump over the fence, which may break intended boundaries. For example, they can climb the mountain and jump in and out over the fence area.
+    - A possible fix would be to set proper boundary limits around the playable area, so the player cannot leave the intended zone even with jumping or climbing.
+
+**Combat**
+
+- The gun currently cannot aim up or down when the player view is looking above or below.
+    - This limits the combat flexibility and makes shooting feel a bit rigid, especially when enemies are not on the same horizontal level.
+    - Maybe adding vertical aiming would improve the combat system and make it feel more responsive and natural.
+- Attacks feel helpful overall, but the gun mechanics could still be refined or even replaced with a different design direction.
+    - This is mainly because it feels slightly disorienting in terms of narrative context, since the idea is that we are trying to free the NPC’s soul, but at the same time we are attacking them.
+    - So there is a bit of conflict between gameplay action and story meaning, which can confuse players about what they are actually supposed to feel during combat.
+
+**Environment & Collision Issues**
+
+- The NPC soldier can pass through the mansion
+    - Hence, there should be colliders that be properly applied across the entire structure.
+    - This breaks immersion because the player expects solid architecture, but instead can see characters clipping through objects.
+
+**UI Issue**
+
+- The text in the journal dialogue, especially the note inside the help button, is too small.
+    - This makes it hard for players to read properly during gameplay, especially when they are in a more focused or fast-paced interaction moment.
+    - Also, due to scaling issues, if the screen size is adjusted or enlarged, the button and text can duplicate or misalign on the screen.
+    - Because of this, the player can currently only properly play the game in the Unity implementation resolution, which is not ideal for actual gameplay experience.
+    - This is a UI scaling problem that needs further refinement. It could be solve by Canvas scaling and resolution adaptation.
+
+---
+
+**General Feedback (Positive)**
+
+I also noted some feedback that was quite positive from players, which I think is important to highlight as well:
+
+- Players really liked the tree design and its implementation before the mansion.
+    - It feels like the tree interaction works well and stands out as a strong environmental feature, helping set the mood early in the game.
+- Although there was a jump scare moment, players actually quite liked the sudden appearance of the “god companion”.
+    - Even though it is unexpected, it adds impact and surprise in a good way, which fits the emotional tone of the experience.
+- The reading journal idea was considered interesting.
+    - Players seemed engaged with the concept.
+- They also liked the mansion design overall.
+    - The environment was described as visually strong and immersive, which is a good sign that the atmosphere direction is working well.
+
+### Final Refinements Based on Feedback
+
+Hence, I am also facing other project deadlines, and many of the mechanics are being handled by my teammate. Therefore, I only focused on some refinements based on feedback in the therapy room scene, as this is the part I am more familiar with and it does not affect the main scene gameplay flow.
+
+1. I changed the audio source of the war sound in the therapy room from 0.89 to 0.2. Through testing (previously from 0.5 and 0.3), I found that 0.2 is the most suitable value for this section.
+2. I also fixed the UI issue. As suggested by Matthew, I set the screen to Full HD (1920×1080) and changed the canvas scaler to “Scale With Screen Size”.  In my implementation, each canvas contains multiple panels, texts, and buttons, so I needed to adjust them one by one across around 3 to 4 canvases.
+    
+    For example, the journal titles, buttons, and panels were overlapping and misaligned. I also had to reassign the text fonts, as they appeared too small and hard to read on a larger screen. Additionally, I resized all buttons and text elements. I found that instead of manually resizing each UI box, it is better to use scaling. For example, enlarging the scale by 2x automatically scales the text inside as well.
+    
+    As a result, the UI issue in the therapy room is now fixed, and the text is much clearer and easier to read on screen.
+    
+3. I also refined the bridge in the maze so that the player can no longer walk along the sides and can instead follow clearer paths through the maze. Previously, I had designed it so that only one path was available through the maze. Now, near the exit of the maze, there are more routes to exit it.
+
+Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, I am quite happy with the overall game flow implementation at this stage, and I will continue to improve it over the summer. 😄
