@@ -2284,3 +2284,165 @@ Hence, I am also facing other project deadlines, and many of the mechanics are b
 </p> 
 
 Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, such as some of the maze textures being implemented in Unity but not consistently appearing during gameplay, this may require further investigation and future refinement to ensure they are properly retained and displayed. There are also several other minor issues that still need to be improved. At present, I am quite happy with the current game flow implementation at this stage, and I will continue to improve the game over the summer. 😄
+
+## Week11 (10.4.2026 to 16.4.2026) – Design Journal: Final Reflection
+
+So this will be the last journal that I wrote for this course and for this semester.
+
+When reflecting, I reviewed the whole journal and all the journal entries again, not just quickly scrolling through, but actually reading week by week, and trying to remember what I was thinking at that time. I found that it was really a great success to see the prototype journal that I wrote, not only because I completed it, but because I can clearly see my growth across the whole semester. It is not just a final result, but a full process that I can look back on.
+
+Since I am not a journal writer, this prototype journal is actually my first time continuing to write and record my process in such a consistent and detailed way. At the beginning, I did not actually have a clear idea of how to structure my writing. Sometimes I just wrote what I did, sometimes I forgot to reflect. But slowly, week by week, I started to build a habit of not only recording actions, but also recording thinking, decision-making, and problem-solving. I think this is something very important that I did not realize before.
+
+It is rewarding to see how I moved from just an idea, sometimes even just a very rough or unclear idea, and then move into a low prototype, then slowly build into something more structured. I began to develop a clearer idea of how the game flow should work, and how the UI and environment should look, and what kind of experience I want to create. At the same time, I also did research from the internet to explore possible ideas and references. Sometimes I would find similar games, sometimes I would find completely different mechanics that inspired me.
+
+Every week I challenge myself with questions like: is my idea unique? Or is it just something very common? If it is common, how can I refine it? Are these ideas actually doable in Unity with my current skill level? If not, how can I simplify or adjust them? And if they are doable, how can I prove it through a small prototype? This kind of self-questioning becomes a very important part of my process.
+
+**From Ideas to Visual and Playable Prototypes**
+
+I also quite enjoy the drawing prototypes and video prototypes ( the low prototypes) that I made every time. For me, this is one of the most interesting parts of the whole journal. Because sometimes when I only write text, the idea is still very abstract. But when I start drawing or making a simple video flow, the idea becomes much more clear. It shows how I could transform idea from text → to 2D flow → to a rough 3D game flow → and finally into Unity implementation. This step-by-step transformation makes me feel like the idea is becoming more “real” each time.
+
+Also, during this process, I realized that sometimes my idea changes when I try to visualize it. Some parts do not work as I expected, or I find better ways to design it. So the prototype is not just for showing, but it is also a tool for thinking and refining ideas.
+
+**Learning Unity Through Early Exploration**
+
+I also really want to highlight that the first exploration prototype that I did using the Unity official tutorial to learn the UI setting is an important starting point for me. At that time, I was still very unfamiliar with Unity, and everything felt confusing. But this tutorial gave me a structured way to understand how the interface works, how different panels connect, and how to start building something simple.
+
+Because of that, later when I watched YouTube tutorials or searched for solutions, I could understand the terms more easily. For example, learning about the bounding box (collider/trigger) is something I found very useful. I used it many times in later prototypes, especially for detecting when a player enters a certain area or interacts with an object. Also using tags together with triggers becomes something I use very often.
+
+These small mechanics might seem simple, but they are actually very important building blocks for many gameplay systems. I think this is something I gradually realized during the process.
+
+Also, the canvas panel and scene manager are two other mechanics that I now use very frequently in my project. At the beginning, UI felt very confusing, but now I am much more familiar with how buttons, text fields, and panels work. I understand how to organize UI elements, how to connect them with scripts, and how they affect the player experience.
+
+For the first tutorial that I highlighted, because it covers many different types of objects and mechanics, it also helped me later in the final project. For example, when I wanted to add audio to enhance the emotion of the game, I already had a basic idea of how to implement it. 
+
+**Recording and Revisiting the Development Process**
+
+Another part that I think is very important is the note section in each week prototype. I marked down notes, common mistakes, bugs, and how I solved them. At first, I thought this is just a simple record, but later I realized how powerful it is.
+
+In the last weeks of the final project, when I faced problems, I did not always need to search from zero. Instead, I could go back to my previous notes and check if I had faced a similar issue before. From my experience, I think I went back to my notes at least more than 5 times to solve problems. Especially for issues related to the inspector, missing references, or wrong settings.
+
+I am glad that I took many screenshots to highlight where the problem happened and where I fixed it. Because sometimes the problem is very specific, and it is hard to describe only with text. These screenshots become very useful references.
+
+Also, I remember my classmates said they love that my journal is full of pictures and GIF videos. I would say I also really like this part. The images and GIFs are not just decoration, they actually provide support to the text that I wrote. It feels like a full recording of my process, not just writing.
+
+It is like I can “see” my past process again. It enhances my memory and helps me understand what I was doing at that time.
+
+Although every week I spent around an extra 1 hour to refine the journal, adding images, GIFs, and screenshots for different parts like brainstorming, research, implementation, and mistakes, I think it is worth it now. When I look back, the journal feels complete.
+
+Other than images and GIFs, I also attached the links that I used during my research and problem-solving. I think this is also a very useful part. It is not only a record of my exploration process, but also something that I can share with others.
+
+Sometimes my friends ask me how I solved a problem, and I can just send them the YouTube tutorial or Unity discussion link that I already recorded. This makes my journal not only beneficial for myself, but also helpful for others.
+
+### **Challenges and Learning in the Final Project**
+
+The collaboration with teamwork in GitHub and in a big scope game project is also a great learning path for me, and also a very different experience compared to what I did before in individual prototypes. It is not only about making the game itself, but also learning how to work with others, how to communicate ideas, and how to solve problems together in a shared project environment.
+
+Hence, we are working as a four ppl, and we having quite a lot of different idea in the beginning at first on ideation, how game should work and what it should be. Everyone comes with their own expectation and their own imagination of the game, so at the beginning it is a bit messy, but also interesting. We did spend some time to come up a overall final idea, and during that process we also learn how to combine ideas instead of just choosing one. I think this part is actually very important, because it set the direction for the whole project.
+
+**Version Control, GitHub Workflow, and Merge Conflicts**
+
+Also start from the 2nd week, we use the GitHub as push and pull the newest version of each of us branch. At first, we face that the GitHub merge issue, by not doing sub branch from the main one. Hence that require the need to manually solve in the Unity inspector and dashboard, which really require time in it and also make me realize how important version control structure is. At that time, I also feel a bit confused and sometimes frustrated, because some changes will suddenly break or disappear.
+
+And we face quite a lot issue in the merging, and for each week we need spend more than 1 to 2 hrs to solving the merge conflict and let the gameflow work as previously did. Sometimes the conflict is not just code, but also scene file, object reference, or missing components, which make it even harder to fix. But through this repeated process, I slowly understand how Unity project structure works with GitHub.
+
+**Improving Workflow and Communication in Team Production**
+
+While it is good experience that at the last week, we separate the period in working in the same scene issue due to the experience. We learn not to overlap too much and try to divide the work clearly. This actually improve our efficiency a lot. Generally, I did feel having a team work is harder than working individually during the exploration one. Because I need to care about the other ideas and others implement, also due with the merging conflict and communication.
+
+But it is a good experience other than game jam for this final project, as we got time to refine and build on what we want. Compared to game jam, we are not rushing everything in 2–3 days, but actually have time to test, fail, fix, and improve. I am quite appreciate that after I figure out the ProBuilder issue is not working, and highlight the textures issue, our group is willing to spend their effort in it. Like Sean, he toke the responsibility to handle in the assets creation, as he did have the previous experience, which also help the project move forward smoother.
+
+That is true that we have the communicate conflict, also understanding the implementation conflict, as we are working on different implementation, like AI implement, the health implement or in my end the journal implement. Sometimes we do not fully understand each other’s system, which can cause confusion. But at the same time, this also pushed us to explain more clearly and document our work better.
+
+While everyone of us willing to spend time at least a week, usually in the class lab time to discuss the current process, and align what we are doing. Or if one of us could not come to course, we will have a Discord call meeting to showcase the process that we current focusing on, or the issue that is facing. The group chat also being more active as to communicate the progress and highlight where should improve. I think this communication habit is something very important that we built during the project.
+
+**From Concept to Playable Prototype**
+
+I could see how the game is showing the outline out through our prototype. I remember that at first, we did already think about whole scope game should look like, while I just got the general scope, a kind of outline of it. But through the prototype process, things become more clear. We are not only thinking, but actually testing each part.
+
+While for the prototype we explored more opportunities or trying/testing how part of the whole scope, like the transfer scene, the shooting, the environment should be and check is it doable and also refine it if facing any issue. Some idea worked, some needed to change, and some idea is too complex so we simplify it. This step-by-step to build the whole final game out.
+
+**Final Outcome and Prototype Learning Value**
+
+Although the result of the final project now seems not exactly as what we(I) though at the beginning, but all the basic mechanic, like the luring, the 3D mansion, the story based, are all implement. And also with some surprise in the therapy room implement and the mansion design, which actually become an interesting part of the game.
+
+This group work experience in a longer period compare to game jam could also build a strong foundation in how I should work with others in future game jam or other projects. For example, starting with smaller prototype, or separate the system clearly, or communicate earlier about the structure.
+
+As we said at the end, our game may not already for deploy yet or may be a super good game at now. But it must be a super good game for prototype learning. Because through this project, we actually test many systems and ideas that we did not try before.
+
+Such as for me, I experience the 3D environment exploration, transfer the player through the scene (also with maze and choice to go back the main scene), the Dialogue & Visual Novel Features, the photo capture system and final overall refinement for the whole game. These are all new experiences for me, and I think they are very valuable.
+
+That I try out using several gameplay features and try to implement in a unique way, and try to implement as testing. Hence, I already gain the basic of how to implement, and there are more way to finetone the gameplay features to make the game have the topic/theme. While as I got the basic, it would be easier for me in later for saying the project is doable.
+
+And also I think this part is important, because now when I think about a new idea, I will not only think “is it interesting”, but also “is it possible”, and “how can I prototype it first”. This mindset is something I learned from this whole process.
+
+### Learning Through the Course Structure and Activities
+
+For the Class, I like the beginning session, where we start with exploring Unity first. As outside of this class, I only tried Unity to implement a game one time, so at the beginning I was not familiar with the interface and how things work. Because of that, starting from exploration instead of jumping directly into a project is really helpful for me. It gives me time to slowly understand the system without too much pressure.
+
+**Learning Through Step-by-Step Idea Development**
+
+For the exploration, I like how we start idea from a basic/general/common game first, and experiment how to turn or refine it, then go to the big scope. I think this step is very important, because instead of thinking something very complex at the beginning, we start from something simple and then gradually improve it. It makes the whole process more manageable and also helps me understand how ideas can grow step-by-step.
+
+As for my learning experience, I found that in many courses there is always an expectation that we already understand how to use the platform, which makes it hard for me to catch up at first. Sometimes I feel a bit lost because I do not know the basic tools yet. But this time, the course allows me to explore and also have a small refinement (or a kind of prototype to showcase ourselves), which makes me feel more comfortable and confident.
+
+Also, in the first period, I did read through the readings or watch the suggested videos. Those also gave me some ideas on how the game design works and how others approach their projects. Even though at that time I may not fully understand everything, it still helps me build some background knowledge.
+
+**Technical Skill Development Through Tutorials and Practice**
+
+While I also did the Unity Beginner Gameplay Scripting tutorial, I did complete all of them. Hence, I got the basic on how the special keyword, or debug log should be used. This part is very useful for me, because before that I do not actually understand how scripting works in Unity. After completing it, I at least know how to read simple scripts and how to debug when something is not working.
+
+I really want to highlight them, and also the first week that the Unity Essentials Pathway. From my (user) experience, I found that the Unity official tutorials are quite useful and easy to follow. The structure is very clear, and each step is well guided. Through the first 1–2 weeks, I can understand how the Unity dashboard and the inspector work, and also complete a small project at the end to review everything that I learned.
+
+Because of this, it also becomes easier for me to catch up with the class lecture, especially when the instructor mentions some mechanic features. I think this is because the tutorial itself is clearly structured, so I already have a mental model of how Unity works.
+
+I will also explore the mobile AR and VR pathway during the summer, because I think they are quite interesting features. It is something that I did not try before, and I feel like it could open another direction for game development. So I will put that into my future plan and try to continue learning after this course.
+
+**Ideation Workshops and Broadening Creative Thinking**
+
+After the session about the Ideation Workshop (ideation speed dating), I think it really works well. I think there are many great ideas coming out from the process. It is also great because we can discuss, share, and learn from game types that we (I) do not originally know. This allows me to explore more game types and not just stay within what I am familiar with.
+
+It really helps to widen my horizon in different game types, and also makes me more open to different styles of gameplay. Sometimes other people’s ideas can inspire me to think in a different direction.
+
+Also, in my finding, it could also help solve idea conflict if a team has different ideas. For example, in our final project, we also used two keywords that we are focusing on, and think about what kind of game could come out from those keywords. This method helps us narrow down ideas and find a common direction.
+
+Hence, I think this method is also good to use in game jam progress when we are facing conflicts or when everyone has different ideas about the theme. It gives a more structured way to decide instead of just randomly choosing.
+
+**Communication and Pitching as a Design Skill**
+
+For the pitch template, I like that we have a well-structured way to present our work or our game. For example, for the unique selling point, we could explain it in different fields like value propositions (cultural, creative, intellectual), the unique formal elements (gameplay systems), and the unique mechanics. This helps us organize our ideas more clearly instead of just describing them in a general way.
+
+Also, depending on our target audience, like publisher, player, or boss, we can change our tone and present in a suitable way. This was especially useful skill, because presenting a game is not only about the idea itself, but also how we communicate it to different people.
+
+I think this will be really beneficial in the future, especially if I want to work in the game industry or present my own project. It helps me understand how to structure my ideas professionally, and also how to make others understand the value of the game.
+
+### Final Thoughts on My Learning Journey
+
+Overall in the class, for me I love how is the prototype flow that we learned, that we accurately go to implement our ideas. This is something I did not really experience before in this structured way. As many time in my game jam experience, we did not have time to build a prototype or record our process. Everything was very rushed, and we usually jump directly into making the final thing without testing small parts first.
+
+And for every time I am working on a game before, I thought I am jumping into the step that implement it while do not know the basic stuff. I did not accurately understand the mechanics or the workflow clearly, and that makes it harder when something goes wrong. I just try to fix it without really knowing why.
+
+But this time, I got a better flow on learning how accurate Unity work, and what kind of mechanic that they have. I start to understand how different parts connect together, like UI, scene, interaction, and scripting. It is not just randomly trying anymore, but more like step-by-step building and testing.
+
+Also for the exploration process, I look for more other type of the game that I rarely play, like the visual journal one, the photo capture one. These are types of games that I usually do not pay attention to before. But during this course, I try to explore more and understand how they work.
+
+I also explore more in the itch.io website, and find more in low budget or self deploy games (non-big company). That is very helpful, because these games are closer to what I can achieve right now. I can see whether others could implement similar ideas and how they structure their gameplay. Then I can reference their ideas and try to refine my own one. It also makes me feel that game development is not only for big companies, but also something individual or small team can do.
+
+And as I kind of a reply of what I talk in the first class, at that time I was thinking maybe game industry is not for me. Because many of my friends want to get into the game industry, and I think myself is not a game player. The games I know are not a lot, and usually are just the general popular ones. So I was thinking maybe it should not be included in my future career plan.
+
+Also, I experienced some game jam before, and I found it is so hard to catch up or implement what our group want to do. No matter in the mechanic support or how the whole game flow should work, I feel I am always behind or not fully understanding. That experience makes me feel less confident at that time.
+
+However, after this course, or this 12-week prototype journal process, I quite enjoy what I am forcing myself learning and trying. It is not like game jam, where everything is done in 2–3 days. Here, we have a whole week to organize, to start from a low prototype, to do research, to find similar game flow, take references, and think about how to improve the idea to be more unique. Then test it in Unity step by step.
+
+Through this process, I now understand the flow of implementing a game, from ideation to an actual playable version. And I quite enjoy that my idea is finally could be implemented at the end. This feeling is very different from before, because now I can see the full process, not just the result.
+
+Looking through the process, I can clearly see that my game implementation skill is improving week by week. Each week is like a small game jam, where I challenge myself to think a new idea, test it, and refine it. Sometimes it works, sometimes it doesn’t, but each time I learn something.
+
+It seems like this process is building a habit for me in this type of organization and game making. I think this is a really important foundation, not only for game development, but also for learning any new skill. The idea of testing, reflecting, and improving becomes something more natural to me now.
+
+Now, I am thinking maybe the game industry could be a good choice that I could get into. I would not say I am well equipped for this field yet, but I feel that I am much more prepared compared to before. At least now I understand the workflow, and I know how to start and how to continue learning.
+
+Also, I will keep the game/progress journal habit too (I will try it), because I think it is very useful. It helps me to showcase my work to others, and also allows others to track how I come from idea → implement → testing → refine → and continue the loop.
+
+And also, the note section is very helpful, not only for myself but also for others. It helps to solve the same or similar issues in the future, without starting from zero again. I think this kind of documentation is something I will continue to use in future projects.
+
+Overall, this course not only teaches me how to use Unity, but also teaches me how to think, how to organize, and how to approach game development in a more structured and realistic way. And I think this is the most valuable part for me.😉
