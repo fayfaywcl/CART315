@@ -2285,7 +2285,7 @@ Hence, I am also facing other project deadlines, and many of the mechanics are b
 
 Overall, I think the therapy room mechanics are working quite well now, and I have also addressed some of the feedback issues. While there are still many refinements needed in the game, such as some of the maze textures being implemented in Unity but not consistently appearing during gameplay, this may require further investigation and future refinement to ensure they are properly retained and displayed. There are also several other minor issues that still need to be improved. At present, I am quite happy with the current game flow implementation at this stage, and I will continue to improve the game over the summer. 😄
 
-## Week11 (10.4.2026 to 16.4.2026) – Design Journal: Final Reflection
+## Week12 (10.4.2026 to 16.4.2026) – Final Reflection
 
 So this will be the last journal that I wrote for this course and for this semester.
 
@@ -2305,7 +2305,7 @@ Also, during this process, I realized that sometimes my idea changes when I try 
 
 **Learning Unity Through Early Exploration**
 
-I also really want to highlight that the first exploration prototype that I did using the Unity official tutorial to learn the UI setting is an important starting point for me. At that time, I was still very unfamiliar with Unity, and everything felt confusing. But this tutorial gave me a structured way to understand how the interface works, how different panels connect, and how to start building something simple.
+I also really want to highlight that the first exploration prototype that I did using the [Unity official tutorial](https://learn.unity.com/pathway/unity-essentials) to learn the UI setting is an important starting point for me. At that time, I was still very unfamiliar with Unity, and everything felt confusing. But this tutorial gave me a structured way to understand how the interface works, how different panels connect, and how to start building something simple.
 
 Because of that, later when I watched YouTube tutorials or searched for solutions, I could understand the terms more easily. For example, learning about the bounding box (collider/trigger) is something I found very useful. I used it many times in later prototypes, especially for detecting when a player enters a certain area or interacts with an object. Also using tags together with triggers becomes something I use very often.
 
@@ -2391,11 +2391,11 @@ Also, in the first period, I did read through the readings or watch the suggeste
 
 While I also did the Unity Beginner Gameplay Scripting tutorial, I did complete all of them. Hence, I got the basic on how the special keyword, or debug log should be used. This part is very useful for me, because before that I do not actually understand how scripting works in Unity. After completing it, I at least know how to read simple scripts and how to debug when something is not working.
 
-I really want to highlight them, and also the first week that the Unity Essentials Pathway. From my (user) experience, I found that the Unity official tutorials are quite useful and easy to follow. The structure is very clear, and each step is well guided. Through the first 1–2 weeks, I can understand how the Unity dashboard and the inspector work, and also complete a small project at the end to review everything that I learned.
+I really want to highlight them, and also the first week that the[Unity Essentials Pathway](https://learn.unity.com/pathway/unity-essentials). From my (user) experience, I found that the Unity official tutorials are quite useful and easy to follow. The structure is very clear, and each step is well guided. Through the first 1–2 weeks, I can understand how the Unity dashboard and the inspector work, and also complete a small project at the end to review everything that I learned.
 
 Because of this, it also becomes easier for me to catch up with the class lecture, especially when the instructor mentions some mechanic features. I think this is because the tutorial itself is clearly structured, so I already have a mental model of how Unity works.
 
-I will also explore the mobile AR and VR pathway during the summer, because I think they are quite interesting features. It is something that I did not try before, and I feel like it could open another direction for game development. So I will put that into my future plan and try to continue learning after this course.
+I will also explore the [mobile AR](https://learn.unity.com/pathway/mobile-ar-development) and [VR pathway](https://learn.unity.com/pathway/vr-development) during the summer, because I think they are quite interesting features. It is something that I did not try before, and I feel like it could open another direction for game development. So I will put that into my future plan and try to continue learning after this course.
 
 **Ideation Workshops and Broadening Creative Thinking**
 
@@ -2425,7 +2425,7 @@ But this time, I got a better flow on learning how accurate Unity work, and what
 
 Also for the exploration process, I look for more other type of the game that I rarely play, like the visual journal one, the photo capture one. These are types of games that I usually do not pay attention to before. But during this course, I try to explore more and understand how they work.
 
-I also explore more in the itch.io website, and find more in low budget or self deploy games (non-big company). That is very helpful, because these games are closer to what I can achieve right now. I can see whether others could implement similar ideas and how they structure their gameplay. Then I can reference their ideas and try to refine my own one. It also makes me feel that game development is not only for big companies, but also something individual or small team can do.
+I also explore more in the [itch.io website](https://itch.io/), and find more in low budget or self deploy games (non-big company). That is very helpful, because these games are closer to what I can achieve right now. I can see whether others could implement similar ideas and how they structure their gameplay. Then I can reference their ideas and try to refine my own one. It also makes me feel that game development is not only for big companies, but also something individual or small team can do.
 
 And as I kind of a reply of what I talk in the first class, at that time I was thinking maybe game industry is not for me. Because many of my friends want to get into the game industry, and I think myself is not a game player. The games I know are not a lot, and usually are just the general popular ones. So I was thinking maybe it should not be included in my future career plan.
 
@@ -2435,7 +2435,7 @@ However, after this course, or this 12-week prototype journal process, I quite e
 
 Through this process, I now understand the flow of implementing a game, from ideation to an actual playable version. And I quite enjoy that my idea is finally could be implemented at the end. This feeling is very different from before, because now I can see the full process, not just the result.
 
-Looking through the process, I can clearly see that my game implementation skill is improving week by week. Each week is like a small game jam, where I challenge myself to think a new idea, test it, and refine it. Sometimes it works, sometimes it doesn’t, but each time I learn something.
+Looking through the process, I can clearly see that my game implementation skill is improving week by week. Each week is like a small game jam, where I challenge myself to think a new idea, test it, and refine it. Sometimes it works, sometimes it does not, but each time I learn something.
 
 It seems like this process is building a habit for me in this type of organization and game making. I think this is a really important foundation, not only for game development, but also for learning any new skill. The idea of testing, reflecting, and improving becomes something more natural to me now.
 
