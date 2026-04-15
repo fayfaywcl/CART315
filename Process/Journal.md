@@ -2299,7 +2299,14 @@ Every week I challenge myself with questions like: is my idea unique? Or is it j
 
 **From Ideas to Visual and Playable Prototypes**
 
-I also quite enjoy the drawing prototypes and video prototypes ( the low prototypes) that I made every time. For me, this is one of the most interesting parts of the whole journal. Because sometimes when I only write text, the idea is still very abstract. But when I start drawing or making a simple video flow, the idea becomes much more clear. It shows how I could transform idea from text → to 2D flow → to a rough 3D game flow → and finally into Unity implementation. This step-by-step transformation makes me feel like the idea is becoming more “real” each time.
+I also quite enjoy the drawing prototypes and video prototypes ( the low prototypes) that I made every time. For me, this is one of the most interesting parts of the whole journal. Because sometimes when I only write text, the idea is still very abstract. But when I start drawing or making a simple video flow, the idea becomes much more clear. It shows how I could transform idea from research → to text → to 2D flow → to a rough 3D game flow → and finally into Unity implementation. This step-by-step transformation makes me feel like the idea is becoming more “real” each time.
+
+<p align="left">
+          <img src="Media/Week9_WretchedGame.gif" alt="Week9_WretchedGame.gif" width="250" height="500">
+          <img src="Media/Week9_LowPropotype.jpeg" alt="Week9_LowPropotype.jpeg" width="230" height="500">
+          <img src="Media/Week9_VideoPropotype_1.gif" alt="Week9_VideoPropotype_1.gif" width="250" height="500">
+          <img src="Media/Week9_GameFlow.gif" alt="Week9_GameFlow.gif" width="230" height="500">
+</p> 
 
 Also, during this process, I realized that sometimes my idea changes when I try to visualize it. Some parts do not work as I expected, or I find better ways to design it. So the prototype is not just for showing, but it is also a tool for thinking and refining ideas.
 
@@ -2318,6 +2325,12 @@ For the first tutorial that I highlighted, because it covers many different type
 **Recording and Revisiting the Development Process**
 
 Another part that I think is very important is the note section in each week prototype. I marked down notes, common mistakes, bugs, and how I solved them. At first, I thought this is just a simple record, but later I realized how powerful it is.
+
+<p align="left">
+          <img src="Media/Week12_Note1.png" alt="Week12_Note1.png" width="300" height="500">
+          <img src="Media/Week12_Note2.png" alt="Week12_Note2.png" width="300" height="500">
+          <img src="Media/Week12_Note3.png" alt="Week12_Note3.png" width="300" height="500">
+</p> 
 
 In the last weeks of the final project, when I faced problems, I did not always need to search from zero. Instead, I could go back to my previous notes and check if I had faced a similar issue before. From my experience, I think I went back to my notes at least more than 5 times to solve problems. Especially for issues related to the inspector, missing references, or wrong settings.
 
@@ -2391,7 +2404,7 @@ Also, in the first period, I did read through the readings or watch the suggeste
 
 While I also did the Unity Beginner Gameplay Scripting tutorial, I did complete all of them. Hence, I got the basic on how the special keyword, or debug log should be used. This part is very useful for me, because before that I do not actually understand how scripting works in Unity. After completing it, I at least know how to read simple scripts and how to debug when something is not working.
 
-I really want to highlight them, and also the first week that the[Unity Essentials Pathway](https://learn.unity.com/pathway/unity-essentials). From my (user) experience, I found that the Unity official tutorials are quite useful and easy to follow. The structure is very clear, and each step is well guided. Through the first 1–2 weeks, I can understand how the Unity dashboard and the inspector work, and also complete a small project at the end to review everything that I learned.
+I really want to highlight them, and also the first week that the [Unity Essentials Pathway](https://learn.unity.com/pathway/unity-essentials). From my (user) experience, I found that the Unity official tutorials are quite useful and easy to follow. The structure is very clear, and each step is well guided. Through the first 1–2 weeks, I can understand how the Unity dashboard and the inspector work, and also complete a small project at the end to review everything that I learned.
 
 Because of this, it also becomes easier for me to catch up with the class lecture, especially when the instructor mentions some mechanic features. I think this is because the tutorial itself is clearly structured, so I already have a mental model of how Unity works.
 
@@ -2400,6 +2413,12 @@ I will also explore the [mobile AR](https://learn.unity.com/pathway/mobile-ar-de
 **Ideation Workshops and Broadening Creative Thinking**
 
 After the session about the Ideation Workshop (ideation speed dating), I think it really works well. I think there are many great ideas coming out from the process. It is also great because we can discuss, share, and learn from game types that we (I) do not originally know. This allows me to explore more game types and not just stay within what I am familiar with.
+
+<p align="left">
+          <img src="Media/Week12_SpeedDating1.png" alt="Week12_SpeedDating1.png" width="300" height="500">
+          <img src="Media/Week12_SpeedDating2.png" alt="Week12_SpeedDating2.png" width="300" height="500">
+          <img src="Media/Week12_SpeedDating3.png" alt="Week12_SpeedDating3.png" width="300" height="500">
+</p> 
 
 It really helps to widen my horizon in different game types, and also makes me more open to different styles of gameplay. Sometimes other people’s ideas can inspire me to think in a different direction.
 
